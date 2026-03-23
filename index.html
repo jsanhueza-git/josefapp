@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Material de Estudio - 2° Básico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2a4d69;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            display: none;
+            margin-top: 10px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        a {
+            display: block;
+            padding: 10px;
+            margin: 8px 0;
+            background: #d9ecf2;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #03396c;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background: #b3cde0;
+        }
+    </style>
+
+    <script>
+        function toggleContent(id) {
+            const section = document.getElementById(id);
+            section.style.display = section.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>Material de Estudio - 2° Básico</h1>
+
+<div class="grid">
+
+    <div class="card" onclick="toggleContent('english')">
+        <div class="icon">🇬🇧</div>
+        <h3>English Language</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('math')">
+        <div class="icon">🔢</div>
+        <h3>Math</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('science')">
+        <div class="icon">🌱</div>
+        <h3>Natural Science</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('social')">
+        <div class="icon">🌍</div>
+        <h3>Social Studies</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('spanish')">
+        <div class="icon">📘</div>
+        <h3>Spanish</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('literacy')">
+        <div class="icon">📚</div>
+        <h3>Literacy</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('stem')">
+        <div class="icon">🧪</div>
+        <h3>STEM</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('art')">
+        <div class="icon">🎨</div>
+        <h3>Art</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('music')">
+        <div class="icon">🎵</div>
+        <h3>Music</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('drama')">
+        <div class="icon">🎭</div>
+        <h3>Drama</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('pe')">
+        <div class="icon">🏃‍♂️</div>
+        <h3>Educación Física</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('ciudadana')">
+        <div class="icon">🤝</div>
+        <h3>Formación Ciudadana</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('integral')">
+        <div class="icon">💛</div>
+        <h3>Formación Integral</h3>
+    </div>
+
+    <div class="card" onclick="toggleContent('comms')">
+        <div class="icon">🗣️</div>
+        <h3>Communicative Skills</h3>
+    </div>
+
+</div>
+
+<!-- English -->
+<div class="content" id="english">
+    <a href="http://www.youtube.com/watch?v=DEO7Z4thvuM" target="_blank">Video: There is / There are</a>
+    <a href="http://www.youtube.com/watch?v=g7kK989HiRQ" target="_blank">Video: School Supplies</a>
+    <a href="https://wordwall.net/resource/16338408/there-is-there-are" target="_blank">Juego: There is / There are</a>
+    <a href="https://wordwall.net/resource/13739396/describing-school-supplies" target="_blank">Juego: School Supplies</a>
+    <a href="https://wordwall.net/resource/70785962/classroom-objects" target="_blank">Juego: Classroom Objects</a>
+    <a href="https://wordwall.net/es/resource/74808243/esl/in-the-classroom-window-board-chair-bookcase-wall-floor" target="_blank">Juego: In the Classroom</a>
+</div>
+
+<!-- Math -->
+<div class="content" id="math">
+    <a href="https://wordwall.net/resource/12530452/numbers-1-100-game" target="_blank">Juego: Numbers 1–100</a>
+</div>
+
+<!-- Empty sections -->
+<div class="content" id="science"></div>
+<div class="content" id="social"></div>
+<div class="content" id="spanish"></div>
+<div class="content" id="literacy"></div>
+<div class="content" id="stem"></div>
+<div class="content" id="art"></div>
+<div class="content" id="music"></div>
+<div class="content" id="drama"></div>
+<div class="content" id="pe"></div>
+<div class="content" id="ciudadana"></div>
+<div class="content" id="integral"></div>
+<div class="content" id="comms"></div>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+    }
+</script>
+
+</body>
+</html>

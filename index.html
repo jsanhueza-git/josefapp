@@ -90,29 +90,21 @@
             font-weight: bold;
         }
 
-        a.link {
-            display: block;
-            padding: 12px;
-            margin: 10px 0;
-            background: #d9ecf2;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #03396c;
-            font-weight: bold;
-        }
-
-        a.link:hover {
-            background: #b3cde0;
+        iframe {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 15px 0;
         }
     </style>
 
     <script>
-        function openSubject(title, linksHTML) {
+        function openSubject(title, contentHTML) {
             document.getElementById("home").classList.remove("active");
             document.getElementById("content").classList.add("active");
 
             document.getElementById("subject-title").innerText = title;
-            document.getElementById("subject-links").innerHTML = linksHTML;
+            document.getElementById("subject-body").innerHTML = contentHTML;
 
             window.scrollTo(0, 0);
         }
@@ -134,25 +126,60 @@
 
     <div class="grid">
 
+        <!-- ENGLISH -->
         <div class="card" onclick="openSubject('English Language',`
-            <a class='link' href='http://www.youtube.com/watch?v=DEO7Z4thvuM' target='_blank'>Video: There is / There are</a>
-            <a class='link' href='http://www.youtube.com/watch?v=g7kK989HiRQ' target='_blank'>Video: School Supplies</a>
-            <a class='link' href='https://wordwall.net/resource/16338408/there-is-there-are' target='_blank'>Juego: There is / There are</a>
-            <a class='link' href='https://wordwall.net/resource/13739396/describing-school-supplies' target='_blank'>Juego: School Supplies</a>
-            <a class='link' href='https://wordwall.net/resource/70785962/classroom-objects' target='_blank'>Juego: Classroom Objects</a>
-            <a class='link' href='https://wordwall.net/es/resource/74808243/esl/in-the-classroom-window-board-chair-bookcase-wall-floor' target='_blank'>Juego: In the Classroom</a>
+            <h3>Videos</h3>
+
+            <iframe height='315'
+                src='https://www.youtube.com/embed/DEO7Z4thvuM'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='315'
+                src='https://www.youtube.com/embed/g7kK989HiRQ'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <h3>Juegos</h3>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/16338408?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/13739396?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/70785962?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/74808243?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
         `)">
             <div class="icon">🇬🇧</div>
             <h3>English</h3>
         </div>
 
+        <!-- MATH -->
         <div class="card" onclick="openSubject('Math',`
-            <a class='link' href='https://wordwall.net/resource/12530452/numbers-1-100-game' target='_blank'>Juego: Numbers 1–100</a>
+            <h3>Juegos</h3>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/12530452?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
         `)">
             <div class="icon">🔢</div>
             <h3>Math</h3>
         </div>
 
+        <!-- OTRAS ASIGNATURAS (vacías por ahora) -->
         <div class="card" onclick="openSubject('Natural Science',``)">
             <div class="icon">🌱</div>
             <h3>Science</h3>
@@ -220,7 +247,7 @@
 <div id="content" class="screen">
     <a class="back-btn" onclick="goHome()">← Volver</a>
     <h2 id="subject-title"></h2>
-    <div id="subject-links"></div>
+    <div id="subject-body"></div>
 </div>
 
 <script>

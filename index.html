@@ -16,6 +16,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f2f4f7;
+            padding-top: env(safe-area-inset-top); /* iPhone/iPad fix */
         }
 
         /* Pantallas completas */
@@ -23,8 +24,9 @@
             display: none;
             height: 100vh;
             width: 100vw;
-            padding: 20px;
+            padding: 0; /* antes 20px */
             box-sizing: border-box;
+            overflow-y: auto; /* scroll solo si es necesario */
         }
 
         .active {
@@ -35,9 +37,8 @@
         #home {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
             align-items: center;
-            padding-top: 40px;
+            padding-top: 20px;
         }
 
         h1 {
@@ -78,6 +79,11 @@
         }
 
         /* Pantalla de contenido */
+        #content {
+            padding: 20px;
+            padding-top: 10px; /* más pegado arriba */
+        }
+
         #content h2 {
             text-align: center;
             color: #2a4d69;
@@ -117,11 +123,14 @@
 
             document.getElementById("subject-title").innerText = title;
             document.getElementById("subject-links").innerHTML = linksHTML;
+
+            window.scrollTo(0, 0); // asegura que siempre se vea arriba
         }
 
         function goHome() {
             document.getElementById("content").classList.remove("active");
             document.getElementById("home").classList.add("active");
+            window.scrollTo(0, 0);
         }
     </script>
 </head>

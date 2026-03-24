@@ -13,22 +13,45 @@
 
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
             background: #f2f4f7;
-            margin: 0;
+        }
+
+        /* Pantallas completas */
+        .screen {
+            display: none;
+            height: 100vh;
+            width: 100vw;
             padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Menú principal */
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
 
         h1 {
             text-align: center;
             color: #2a4d69;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 20px;
+            width: 100%;
+            max-width: 600px;
         }
 
         .card {
@@ -50,145 +73,151 @@
             margin-bottom: 10px;
         }
 
-        .content {
-            display: none;
-            margin-top: 10px;
-            padding: 15px;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* Pantalla de contenido */
+        #content h2 {
+            text-align: center;
+            color: #2a4d69;
         }
 
-        a {
+        .back-btn {
+            background: #4b86b4;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        a.link {
             display: block;
-            padding: 10px;
-            margin: 8px 0;
+            padding: 12px;
+            margin: 10px 0;
             background: #d9ecf2;
-            border-radius: 6px;
+            border-radius: 8px;
             text-decoration: none;
             color: #03396c;
             font-weight: bold;
         }
 
-        a:hover {
+        a.link:hover {
             background: #b3cde0;
         }
     </style>
 
     <script>
-        function toggleContent(id) {
-            const section = document.getElementById(id);
-            section.style.display = section.style.display === "block" ? "none" : "block";
+        function openSubject(name, title, linksHTML) {
+            document.getElementById("home").classList.remove("active");
+            document.getElementById("content").classList.add("active");
+
+            document.getElementById("subject-title").innerText = title;
+            document.getElementById("subject-links").innerHTML = linksHTML;
+        }
+
+        function goHome() {
+            document.getElementById("content").classList.remove("active");
+            document.getElementById("home").classList.add("active");
         }
     </script>
 </head>
 
 <body>
 
-<h1>Material de Estudio - 2° Básico</h1>
+<!-- Pantalla principal -->
+<div id="home" class="screen active">
+    <h1>Material de Estudio - 2° Básico</h1>
 
-<div class="grid">
+    <div class="grid">
 
-    <div class="card" onclick="toggleContent('english')">
-        <div class="icon">🇬🇧</div>
-        <h3>English Language</h3>
+        <div class="card" onclick="openSubject('english','English Language',`
+            <a class='link' href='http://www.youtube.com/watch?v=DEO7Z4thvuM' target='_blank'>Video: There is / There are</a>
+            <a class='link' href='http://www.youtube.com/watch?v=g7kK989HiRQ' target='_blank'>Video: School Supplies</a>
+            <a class='link' href='https://wordwall.net/resource/16338408/there-is-there-are' target='_blank'>Juego: There is / There are</a>
+            <a class='link' href='https://wordwall.net/resource/13739396/describing-school-supplies' target='_blank'>Juego: School Supplies</a>
+            <a class='link' href='https://wordwall.net/resource/70785962/classroom-objects' target='_blank'>Juego: Classroom Objects</a>
+            <a class='link' href='https://wordwall.net/es/resource/74808243/esl/in-the-classroom-window-board-chair-bookcase-wall-floor' target='_blank'>Juego: In the Classroom</a>
+        `)">
+            <div class="icon">🇬🇧</div>
+            <h3>English</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('math','Math',`
+            <a class='link' href='https://wordwall.net/resource/12530452/numbers-1-100-game' target='_blank'>Juego: Numbers 1–100</a>
+        `)">
+            <div class="icon">🔢</div>
+            <h3>Math</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('science','Natural Science',``)">
+            <div class="icon">🌱</div>
+            <h3>Natural Science</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('social','Social Studies',``)">
+            <div class="icon">🌍</div>
+            <h3>Social Studies</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('spanish','Spanish',``)">
+            <div class="icon">📘</div>
+            <h3>Spanish</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('literacy','Literacy',``)">
+            <div class="icon">📚</div>
+            <h3>Literacy</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('stem','STEM',``)">
+            <div class="icon">🧪</div>
+            <h3>STEM</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('art','Art',``)">
+            <div class="icon">🎨</div>
+            <h3>Art</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('music','Music',``)">
+            <div class="icon">🎵</div>
+            <h3>Music</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('drama','Drama',``)">
+            <div class="icon">🎭</div>
+            <h3>Drama</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('pe','Educación Física',``)">
+            <div class="icon">🏃‍♂️</div>
+            <h3>Educación Física</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('ciudadana','Formación Ciudadana',``)">
+            <div class="icon">🤝</div>
+            <h3>Formación Ciudadana</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('integral','Formación Integral',``)">
+            <div class="icon">💛</div>
+            <h3>Formación Integral</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('comms','Communicative Skills',``)">
+            <div class="icon">🗣️</div>
+            <h3>Communicative Skills</h3>
+        </div>
+
     </div>
-
-    <div class="card" onclick="toggleContent('math')">
-        <div class="icon">🔢</div>
-        <h3>Math</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('science')">
-        <div class="icon">🌱</div>
-        <h3>Natural Science</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('social')">
-        <div class="icon">🌍</div>
-        <h3>Social Studies</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('spanish')">
-        <div class="icon">📘</div>
-        <h3>Spanish</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('literacy')">
-        <div class="icon">📚</div>
-        <h3>Literacy</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('stem')">
-        <div class="icon">🧪</div>
-        <h3>STEM</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('art')">
-        <div class="icon">🎨</div>
-        <h3>Art</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('music')">
-        <div class="icon">🎵</div>
-        <h3>Music</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('drama')">
-        <div class="icon">🎭</div>
-        <h3>Drama</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('pe')">
-        <div class="icon">🏃‍♂️</div>
-        <h3>Educación Física</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('ciudadana')">
-        <div class="icon">🤝</div>
-        <h3>Formación Ciudadana</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('integral')">
-        <div class="icon">💛</div>
-        <h3>Formación Integral</h3>
-    </div>
-
-    <div class="card" onclick="toggleContent('comms')">
-        <div class="icon">🗣️</div>
-        <h3>Communicative Skills</h3>
-    </div>
-
 </div>
 
-<!-- English -->
-<div class="content" id="english">
-    <a href="http://www.youtube.com/watch?v=DEO7Z4thvuM" target="_blank">Video: There is / There are</a>
-    <a href="http://www.youtube.com/watch?v=g7kK989HiRQ" target="_blank">Video: School Supplies</a>
-    <a href="https://wordwall.net/resource/16338408/there-is-there-are" target="_blank">Juego: There is / There are</a>
-    <a href="https://wordwall.net/resource/13739396/describing-school-supplies" target="_blank">Juego: School Supplies</a>
-    <a href="https://wordwall.net/resource/70785962/classroom-objects" target="_blank">Juego: Classroom Objects</a>
-    <a href="https://wordwall.net/es/resource/74808243/esl/in-the-classroom-window-board-chair-bookcase-wall-floor" target="_blank">Juego: In the Classroom</a>
+<!-- Pantalla de contenido -->
+<div id="content" class="screen">
+    <a class="back-btn" onclick="goHome()">← Volver</a>
+    <h2 id="subject-title"></h2>
+    <div id="subject-links"></div>
 </div>
-
-<!-- Math -->
-<div class="content" id="math">
-    <a href="https://wordwall.net/resource/12530452/numbers-1-100-game" target="_blank">Juego: Numbers 1–100</a>
-</div>
-
-<!-- Empty sections -->
-<div class="content" id="science"></div>
-<div class="content" id="social"></div>
-<div class="content" id="spanish"></div>
-<div class="content" id="literacy"></div>
-<div class="content" id="stem"></div>
-<div class="content" id="art"></div>
-<div class="content" id="music"></div>
-<div class="content" id="drama"></div>
-<div class="content" id="pe"></div>
-<div class="content" id="ciudadana"></div>
-<div class="content" id="integral"></div>
-<div class="content" id="comms"></div>
 
 <script>
     if ('serviceWorker' in navigator) {

@@ -17,16 +17,13 @@
             font-family: Arial, sans-serif;
             background: #f2f4f7;
             padding-top: env(safe-area-inset-top);
-            overflow-x: hidden;
         }
 
         /* Pantallas */
         .screen {
             display: none;
-            width: 100vw;
-            min-height: 100vh; /* ← LA SOLUCIÓN */
-            height: auto;      /* ← LA SOLUCIÓN */
-            padding: 0;
+            width: 100%;
+            min-height: 100vh;
             box-sizing: border-box;
         }
 
@@ -36,61 +33,45 @@
 
         /* Pantalla principal */
         #home {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 10px;
-            gap: 10px;
+            padding: 20px;
         }
 
         h1 {
             text-align: center;
             color: #2a4d69;
-            margin: 0 0 10px 0;
-            font-size: 22px;
+            margin-bottom: 20px;
+            font-size: 24px;
         }
 
-        /* Carrusel */
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            gap: 16px;
-            padding: 0 10px;
-            scroll-snap-type: x mandatory;
-            width: 100%;
-            height: 160px;
-            align-items: center;
-        }
-
-        .carousel::-webkit-scrollbar {
-            display: none;
+        /* GRID DE TARJETAS */
+        .grid {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         }
 
         .card {
-            min-width: 130px;
-            height: 130px;
             background: white;
-            padding: 10px;
+            padding: 20px 10px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
             cursor: pointer;
-            scroll-snap-align: center;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            transition: transform 0.15s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
         }
 
         .icon {
-            font-size: 36px;
-            margin-bottom: 6px;
+            font-size: 40px;
+            margin-bottom: 10px;
         }
 
         /* Pantalla de contenido */
         #content {
             padding: 20px;
-            padding-top: 10px;
         }
 
         #content h2 {
@@ -133,14 +114,14 @@
             document.getElementById("subject-title").innerText = title;
             document.getElementById("subject-links").innerHTML = linksHTML;
 
-            window.scrollTo(0, 0); /* ← fuerza scroll arriba */
+            window.scrollTo(0, 0);
         }
 
         function goHome() {
             document.getElementById("content").classList.remove("active");
             document.getElementById("home").classList.add("active");
 
-            window.scrollTo(0, 0); /* ← fuerza scroll arriba */
+            window.scrollTo(0, 0);
         }
     </script>
 </head>
@@ -151,7 +132,7 @@
 <div id="home" class="screen active">
     <h1>Material de Estudio - 2° Básico</h1>
 
-    <div class="carousel">
+    <div class="grid">
 
         <div class="card" onclick="openSubject('English Language',`
             <a class='link' href='http://www.youtube.com/watch?v=DEO7Z4thvuM' target='_blank'>Video: There is / There are</a>

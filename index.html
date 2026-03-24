@@ -31,41 +31,45 @@
             display: block;
         }
 
-        /* Menú principal */
+        /* Pantalla principal */
         #home {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            gap: 20px;
+            padding-top: 40px;
         }
 
         h1 {
             text-align: center;
             color: #2a4d69;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        /* Carrusel horizontal */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
             gap: 20px;
+            padding: 10px;
+            scroll-snap-type: x mandatory;
             width: 100%;
-            max-width: 600px;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
         }
 
         .card {
+            min-width: 140px;
             background: white;
             padding: 20px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
             cursor: pointer;
-            transition: transform 0.15s ease;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
+            scroll-snap-align: center;
+            flex-shrink: 0;
         }
 
         .icon {
@@ -107,7 +111,7 @@
     </style>
 
     <script>
-        function openSubject(name, title, linksHTML) {
+        function openSubject(title, linksHTML) {
             document.getElementById("home").classList.remove("active");
             document.getElementById("content").classList.add("active");
 
@@ -128,9 +132,9 @@
 <div id="home" class="screen active">
     <h1>Material de Estudio - 2° Básico</h1>
 
-    <div class="grid">
+    <div class="carousel">
 
-        <div class="card" onclick="openSubject('english','English Language',`
+        <div class="card" onclick="openSubject('English Language',`
             <a class='link' href='http://www.youtube.com/watch?v=DEO7Z4thvuM' target='_blank'>Video: There is / There are</a>
             <a class='link' href='http://www.youtube.com/watch?v=g7kK989HiRQ' target='_blank'>Video: School Supplies</a>
             <a class='link' href='https://wordwall.net/resource/16338408/there-is-there-are' target='_blank'>Juego: There is / There are</a>
@@ -142,71 +146,71 @@
             <h3>English</h3>
         </div>
 
-        <div class="card" onclick="openSubject('math','Math',`
+        <div class="card" onclick="openSubject('Math',`
             <a class='link' href='https://wordwall.net/resource/12530452/numbers-1-100-game' target='_blank'>Juego: Numbers 1–100</a>
         `)">
             <div class="icon">🔢</div>
             <h3>Math</h3>
         </div>
 
-        <div class="card" onclick="openSubject('science','Natural Science',``)">
+        <div class="card" onclick="openSubject('Natural Science',``)">
             <div class="icon">🌱</div>
-            <h3>Natural Science</h3>
+            <h3>Science</h3>
         </div>
 
-        <div class="card" onclick="openSubject('social','Social Studies',``)">
+        <div class="card" onclick="openSubject('Social Studies',``)">
             <div class="icon">🌍</div>
             <h3>Social Studies</h3>
         </div>
 
-        <div class="card" onclick="openSubject('spanish','Spanish',``)">
+        <div class="card" onclick="openSubject('Spanish',``)">
             <div class="icon">📘</div>
             <h3>Spanish</h3>
         </div>
 
-        <div class="card" onclick="openSubject('literacy','Literacy',``)">
+        <div class="card" onclick="openSubject('Literacy',``)">
             <div class="icon">📚</div>
             <h3>Literacy</h3>
         </div>
 
-        <div class="card" onclick="openSubject('stem','STEM',``)">
+        <div class="card" onclick="openSubject('STEM',``)">
             <div class="icon">🧪</div>
             <h3>STEM</h3>
         </div>
 
-        <div class="card" onclick="openSubject('art','Art',``)">
+        <div class="card" onclick="openSubject('Art',``)">
             <div class="icon">🎨</div>
             <h3>Art</h3>
         </div>
 
-        <div class="card" onclick="openSubject('music','Music',``)">
+        <div class="card" onclick="openSubject('Music',``)">
             <div class="icon">🎵</div>
             <h3>Music</h3>
         </div>
 
-        <div class="card" onclick="openSubject('drama','Drama',``)">
+        <div class="card" onclick="openSubject('Drama',``)">
             <div class="icon">🎭</div>
             <h3>Drama</h3>
         </div>
 
-        <div class="card" onclick="openSubject('pe','Educación Física',``)">
+        <div class="card" onclick="openSubject('Educación Física',``)">
             <div class="icon">🏃‍♂️</div>
-            <h3>Educación Física</h3>
+            <h3>Ed. Física</h3>
         </div>
 
-        <div class="card" onclick="openSubject('ciudadana','Formación Ciudadana',``)">
+        <div class="card" onclick="openSubject('Formación Ciudadana',``)">
             <div class="icon">🤝</div>
-            <h3>Formación Ciudadana</h3>
+            <h3>Ciudadana</h3>
         </div>
 
-        <div class="card" onclick="openSubject('integral','Formación Integral',``)">
+        <div class="card" onclick="openSubject('Formación Integral',``)">
             <div class="icon">💛</div>
-            <h3>Formación Integral</h3>
+            <h3>Integral</h3>
         </div>
 
-        <div class="card" onclick="openSubject('comms','Communicative Skills',``)">
+        <div class="card" onclick="openSubject('Communicative Skills',``)">
             <div class="icon">🗣️</div>
-            <h3>Communicative Skills</h3>
+            <h3>Comms</h3>
         </div>
 
     </div>

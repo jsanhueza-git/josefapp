@@ -43,7 +43,11 @@ function generarHTML(data) {
     if (data.games?.length) {
         html += `<h3>Juegos</h3>`;
         data.games.forEach(g => {
-            html += `<a class="game-link" href="${g.url}" target="_blank">${g.title}</a>`;
+            html += `
+                <div class="game-container">
+                    <iframe src="${g.url}" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+                </div>
+            `;
         });
     }
 

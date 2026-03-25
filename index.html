@@ -96,6 +96,46 @@
             border-radius: 10px;
             margin: 15px 0;
         }
+
+        .horario-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e8f0fe;
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #c5d3f6;
+            transition: transform 0.1s, background 0.2s;
+        }
+
+        .horario-btn:hover {
+            background: #d7e3fc;
+            transform: scale(1.03);
+        }
+
+        .horario-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .horario-table th {
+            background: #4b86b4;
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .horario-table td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+
     </style>
 
     <script>
@@ -115,6 +155,154 @@
 
             window.scrollTo(0, 0);
         }
+
+        
+function openFromSchedule(subjectName) {
+    const subjects = {
+        "MUSIC": "Music",
+        "ART": "Art",
+        "F. INTEGRAL": "Integral",
+        "F. CIUDADANA": "Ciudadana",
+        "ENG. LANGUAGE": "English Language",
+        "SPANISH": "Spanish",
+        "MATH": "Math",
+        "LITERACY": "Literacy",
+        "DRAMA": "Drama",
+        "PHYSICAL EDUCATION": "Educación Física",
+        "SOCIAL STUDIES": "Social Studies",
+        "NATURAL SCIENCE": "Natural Science",
+        "STEM": "STEM",
+        "COM. SKILLS": "Communicative Skills"
+    };
+
+    const target = subjects[subjectName];
+
+    if (!target) return;
+
+    openSubject(target, ""); // abrir pantalla correspondiente
+}
+
+
+const horarioInteractivoHTML = `
+    <h3>Horario de Clases — 2°A</h3>
+
+    <table class="horario-table">
+
+        <tr>
+            <th>Bloque</th>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+        </tr>
+
+        <!-- BLOQUE 1 -->
+        <tr>
+            <td>1</td><td>8:15 - 8:55</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MUSIC')">🎵 MUSIC</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ART')">🎨 ART</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('F. INTEGRAL')">💛 F. INTEGRAL</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('F. CIUDADANA')">🤝 F. CIUDADANA</div></td>
+        </tr>
+
+        <!-- BLOQUE 2 -->
+        <tr>
+            <td>2</td><td>8:55 - 9:35</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MUSIC')">🎵 MUSIC</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ART')">🎨 ART</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('F. INTEGRAL')">💛 F. INTEGRAL</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+        </tr>
+
+        <!-- RECREO -->
+        <tr><td colspan="7" style="background:#eef; padding:8px;">Recreo (9:35 - 9:50)</td></tr>
+
+        <!-- BLOQUE 3 -->
+        <tr>
+            <td>3</td><td>9:50 - 10:30</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('LITERACY')">📚 LITERACY</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+        </tr>
+
+        <!-- BLOQUE 4 -->
+        <tr>
+            <td>4</td><td>10:30 - 11:15</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('LITERACY')">📚 LITERACY</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('DRAMA')">🎭 DRAMA</div></td>
+        </tr>
+
+        <!-- RECREO -->
+        <tr><td colspan="7" style="background:#eef; padding:8px;">Recreo (11:15 - 11:30)</td></tr>
+
+        <!-- BLOQUE 5 -->
+        <tr>
+            <td>5</td><td>11:30 - 12:15</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('COM. SKILLS')">🗣️ COM. SKILLS</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('COM. SKILLS')">🗣️ COM. SKILLS</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+        </tr>
+
+        <!-- ALMUERZO -->
+        <tr><td colspan="7" style="background:#eef; padding:8px;">Almuerzo (12:15 - 13:00)</td></tr>
+
+        <!-- BLOQUE 6 -->
+        <tr>
+            <td>6</td><td>13:00 - 13:45</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('PHYSICAL EDUCATION')">🏃‍♂️ PHYSICAL ED.</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('LITERACY')">📚 LITERACY</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SOCIAL STUDIES')">🌍 SOCIAL STUDIES</div></td>
+            <td></td>
+        </tr>
+
+        <!-- BLOQUE 7 -->
+        <tr>
+            <td>7</td><td>13:45 - 14:30</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('PHYSICAL EDUCATION')">🏃‍♂️ PHYSICAL ED.</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SOCIAL STUDIES')">🌍 SOCIAL STUDIES</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SOCIAL STUDIES')">🌍 SOCIAL STUDIES</div></td>
+            <td></td>
+        </tr>
+
+        <!-- RECREO -->
+        <tr><td colspan="7" style="background:#eef; padding:8px;">Recreo (14:30 - 14:40)</td></tr>
+
+        <!-- BLOQUE 8 -->
+        <tr>
+            <td>8</td><td>14:40 - 15:25</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('NATURAL SCIENCE')">🌱 NATURAL SCIENCE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('PHYSICAL EDUCATION')">🏃‍♂️ PHYSICAL ED.</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('STEM')">🧪 STEM</div></td>
+            <td></td>
+        </tr>
+
+        <!-- BLOQUE 9 -->
+        <tr>
+            <td>9</td><td>15:25 - 16:10</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('NATURAL SCIENCE')">🌱 NATURAL SCIENCE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('PHYSICAL EDUCATION')">🏃‍♂️ PHYSICAL ED.</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('STEM')">🧪 STEM</div></td>
+            <td></td>
+        </tr>
+
+    </table>
+`;
+
     </script>
 </head>
 
@@ -125,6 +313,14 @@
     <h1>Material de Estudio - 2° Básico</h1>
 
     <div class="grid">
+
+        <!-- HORARIO -->
+
+        <div class="card" onclick="openSubject('Horario de Clases', horarioInteractivoHTML)">
+            <div class="icon">🗓️</div>
+            <h3>Horario</h3>
+        </div>
+
 
         <!-- ENGLISH -->
         <div class="card" onclick="openSubject('English Language',`

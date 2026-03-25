@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Material de Estudio - 2° Básico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            padding-top: env(safe-area-inset-top);
+        }
+
+        /* Pantallas */
+        .screen {
+            display: none;
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Pantalla principal */
+        #home {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2a4d69;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* GRID DE TARJETAS */
+        .grid {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 20px 10px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* Pantalla de contenido */
+        #content {
+            padding: 20px;
+        }
+
+        #content h2 {
+            text-align: center;
+            color: #2a4d69;
+        }
+
+        .back-btn {
+            background: #4b86b4;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .horario-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e8f0fe;
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #c5d3f6;
+            transition: transform 0.1s, background 0.2s;
+        }
+
+        .horario-btn:hover {
+            background: #d7e3fc;
+            transform: scale(1.03);
+        }
+
+        .horario-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .horario-table th {
+            background: #4b86b4;
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .horario-table td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    <script>
+        function openSubject(title, contentHTML) {
+            document.getElementById("home").classList.remove("active");
+            document.getElementById("content").classList.add("active");
+
+            document.getElementById("subject-title").innerText = title;
+            document.getElementById("subject-body").innerHTML = contentHTML;
+
+            window.scrollTo(0, 0);
+        }
+
+        function goHome() {
+            document.getElementById("content").classList.remove("active");
+            document.getElementById("home").classList.add("active");
+
+            window.scrollTo(0, 0);
+        }
+
+        
+function openFromSchedule(subjectName) {
+    const subjects = {
+        "MUSIC": "Music",
+        "ART": "Art",
+        "F. INTEGRAL": "Integral",
+        "F. CIUDADANA": "Ciudadana",
+        "ENG. LANGUAGE": "English Language",
+        "SPANISH": "Spanish",
+        "MATH": "Math",
+        "LITERACY": "Literacy",
+        "DRAMA": "Drama",
+        "PHYSICAL EDUCATION": "Educación Física",
+        "SOCIAL STUDIES": "Social Studies",
+        "NATURAL SCIENCE": "Natural Science",
+        "STEM": "STEM",
+        "COM. SKILLS": "Communicative Skills"
+    };
+
+    const target = subjects[subjectName];
+
+    if (!target) return;
+
+    openSubject(target, ""); // abrir pantalla correspondiente
+}
+
+
+const horarioInteractivoHTML = `
+    <h3>Horario de Clases — 2°A</h3>
+
+    <table class="horario-table">
+
+        <tr>
+            <th>Bloque</th>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+        </tr>
+
+        <!-- BLOQUE 1 -->
+        <tr>
+            <td>1</td><td>8:15 - 8:55</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MUSIC')">🎵 MUSIC</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ART')">🎨 ART</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('F. INTEGRAL')">💛 F. INTEGRAL</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('F. CIUDADANA')">🤝 F. CIUDADANA</div></td>
+        </tr>
+
+        <!-- BLOQUE 2 -->
+        <tr>
+            <td>2</td><td>8:55 - 9:35</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MUSIC')">🎵 MUSIC</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ART')">🎨 ART</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('F. INTEGRAL')">💛 F. INTEGRAL</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+        </tr>
+
+        <!-- RECREO -->
+        <tr><td colspan="7" style="background:#eef; padding:8px;">Recreo (9:35 - 9:50)</td></tr>
+
+        <!-- BLOQUE 3 -->
+        <tr>
+            <td>3</td><td>9:50 - 10:30</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('LITERACY')">📚 LITERACY</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+        </tr>
+
+        <!-- BLOQUE 4 -->
+        <tr>
+            <td>4</td><td>10:30 - 11:15</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('LITERACY')">📚 LITERACY</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('DRAMA')">🎭 DRAMA</div></td>
+        </tr>
+
+        <!-- RECREO -->
+        <tr><td colspan="7" style="background:#eef; padding:8px;">Recreo (11:15 - 11:30)</td></tr>
+
+        <!-- BLOQUE 5 -->
+        <tr>
+            <td>5</td><td>11:30 - 12:15</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('COM. SKILLS')">🗣️ COM. SKILLS</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('COM. SKILLS')">🗣️ COM. SKILLS</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+        </tr>
+
+        <!-- ALMUERZO -->
+        <tr><td colspan="7" style="background:#eef; padding:8px;">Almuerzo (12:15 - 13:00)</td></tr>
+
+        <!-- BLOQUE 6 -->
+        <tr>
+            <td>6</td><td>13:00 - 13:45</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('PHYSICAL EDUCATION')">🏃‍♂️ PHYSICAL ED.</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('LITERACY')">📚 LITERACY</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SOCIAL STUDIES')">🌍 SOCIAL STUDIES</div></td>
+            <td></td>
+        </tr>
+
+        <!-- BLOQUE 7 -->
+        <tr>
+            <td>7</td><td>13:45 - 14:30</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('PHYSICAL EDUCATION')">🏃‍♂️ PHYSICAL ED.</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SOCIAL STUDIES')">🌍 SOCIAL STUDIES</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('SOCIAL STUDIES')">🌍 SOCIAL STUDIES</div></td>
+            <td></td>
+        </tr>
+
+        <!-- RECREO -->
+        <tr><td colspan="7" style="background:#eef; padding:8px;">Recreo (14:30 - 14:40)</td></tr>
+
+        <!-- BLOQUE 8 -->
+        <tr>
+            <td>8</td><td>14:40 - 15:25</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('NATURAL SCIENCE')">🌱 NATURAL SCIENCE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('PHYSICAL EDUCATION')">🏃‍♂️ PHYSICAL ED.</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('STEM')">🧪 STEM</div></td>
+            <td></td>
+        </tr>
+
+        <!-- BLOQUE 9 -->
+        <tr>
+            <td>9</td><td>15:25 - 16:10</td>
+            <td><div class='horario-btn' onclick="openFromSchedule('NATURAL SCIENCE')">🌱 NATURAL SCIENCE</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('PHYSICAL EDUCATION')">🏃‍♂️ PHYSICAL ED.</div></td>
+            <td><div class='horario-btn' onclick="openFromSchedule('STEM')">🧪 STEM</div></td>
+            <td></td>
+        </tr>
+
+    </table>
+`;
+
+    </script>
+</head>
+
+<body>
+
+<!-- Pantalla principal -->
+<div id="home" class="screen active">
+    <h1>Material de Estudio - 2° Básico</h1>
+
+    <div class="grid">
+
+        <!-- HORARIO -->
+
+        <div class="card" onclick="openSubject('Horario de Clases', horarioInteractivoHTML)">
+            <div class="icon">🗓️</div>
+            <h3>Horario</h3>
+        </div>
+
+
+        <!-- ENGLISH -->
+        <div class="card" onclick="openSubject('English Language',`
+            <h3>Videos</h3>
+
+            <iframe height='315'
+                src='https://www.youtube.com/embed/DEO7Z4thvuM'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='315'
+                src='https://www.youtube.com/embed/g7kK989HiRQ'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <h3>Juegos</h3>
+ 
+            <iframe height='380'
+                src='https://wordwall.net/embed/e3ec19f852584f38888c472319ab8d90?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/e18252ebb14f461f961e936c8d18cbfe?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/8f310edbc7d3457585ff4d2ddad1aa3c?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/15b13c7d127a40f6a7cb98670b3a44a6?themeId=1&templateId=22&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe> 
+    
+
+        `)">
+            <div class="icon">🇬🇧</div>
+            <h3>English Language</h3>
+        </div>
+
+        <!-- MATH -->
+        <div class="card" onclick="openSubject('Math',`
+            <h3>Juegos</h3>
+
+            <iframe style='max-width:100%' 
+                src='https://wordwall.net/embed/42a7916e3c0d45d085d929112e8fd79e?themeId=21&templateId=46&fontStackId=0' 
+                width='500'
+                height='380'
+                frameborder='0'
+                allowfullscreen>
+            </iframe>
+
+        `)">
+            <div class="icon">🔢</div>
+            <h3>Math</h3>
+        </div>
+
+        <!-- OTRAS ASIGNATURAS (vacías por ahora) -->
+        <div class="card" onclick="openSubject('Natural Science',``)">
+            <div class="icon">🌱</div>
+            <h3>Natual Science</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Social Studies',``)">
+            <div class="icon">🌍</div>
+            <h3>Social Studies</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Spanish',``)">
+            <div class="icon">📘</div>
+            <h3>Spanish</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Literacy',``)">
+            <div class="icon">📚</div>
+            <h3>Literacy</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('STEM',``)">
+            <div class="icon">🧪</div>
+            <h3>STEM</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Art',``)">
+            <div class="icon">🎨</div>
+            <h3>Art</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Music',``)">
+            <div class="icon">🎵</div>
+            <h3>Music</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Drama',``)">
+            <div class="icon">🎭</div>
+            <h3>Drama</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Educación Física',``)">
+            <div class="icon">🏃‍♂️</div>
+            <h3>Ed. Física</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Formación Ciudadana',``)">
+            <div class="icon">🤝</div>
+            <h3>Formación Ciudadana</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Formación Integral',``)">
+            <div class="icon">💛</div>
+            <h3>Formación Integral</h3>
+        </div>
+
+        <div class="card" onclick="openSubject('Communicative Skills',``)">
+            <div class="icon">🗣️</div>
+            <h3>Communicative Skills</h3>
+        </div>
+
+    </div>
+</div>
+
+<!-- Pantalla de contenido -->
+<div id="content" class="screen">
+    <a class="back-btn" onclick="goHome()">← Volver</a>
+    <h2 id="subject-title"></h2>
+    <div id="subject-body"></div>
+</div>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+    }
+</script>
+
+</body>
+</html>

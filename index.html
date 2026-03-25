@@ -178,7 +178,8 @@
 
             if (!target) return;
 
-            openSubject(target, contenidos[target]);
+            //openSubject(target, contenidos[target]);
+            loadSubjectData(target);
 
         }
 
@@ -391,7 +392,7 @@
 
 
             <!-- MATH -->
-            <div class="card" onclick="openSubject('Math', contenidos['Math'])">
+            <div class="card" onclick="loadSubjectData('Math')">
                 <div class="icon">🧮</div>
                 <h3>Math</h3>
             </div>
@@ -505,10 +506,13 @@
         <div id="subject-body"></div>
     </div>
 
-    <script>
+    <script src="script.js">
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js');
         }
+        
+
+
     </script>
 
 </body>

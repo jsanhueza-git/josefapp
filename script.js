@@ -21,7 +21,7 @@ function loadSubjectData(subjectKey) {
             openSubject(data.title, html);
         })
         .catch(err => {
-            openSubject("Error", "<p>No se pudo cargar el contenido.</p>");
+            openSubject("Error", "<p>No se pudo cargar el contenido :'( ).</p>");
         });
 }
 

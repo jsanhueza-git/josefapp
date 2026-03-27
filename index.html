@@ -138,25 +138,7 @@
     </style>
 
     <script>
-        /*
-        function openSubject(title, contentHTML) {
-            document.getElementById("home").classList.remove("active");
-            document.getElementById("content").classList.add("active");
-
-            document.getElementById("subject-title").innerText = title;
-            document.getElementById("subject-body").innerHTML = contentHTML;
-
-            window.scrollTo(0, 0);
-        }
-
-        function goHome() {
-            document.getElementById("content").classList.remove("active");
-            document.getElementById("home").classList.add("active");
-
-            window.scrollTo(0, 0);
-        }*/
-
-
+     
         function openFromSchedule(subjectName) {
             const subjects = {
                 "MUSIC": "Music",
@@ -172,8 +154,8 @@
                 "SOCIAL STUDIES": "SocialStudies",
                 "NATURAL SCIENCE": "NaturalScience",
                 "STEM": "STEM",
-                "COM. SKILLS": "CommunicativeSkills",
-                "Calendario Pruebas": "CalendarioPruebas"
+                "COM. SKILLS": "CommunicativeSkills"
+               
             };
 
             const target = subjects[subjectName];
@@ -384,9 +366,11 @@
 
             <!-- CALENDARIO DE PRUEBAS -->
             <div class="card" onclick="loadSubjectData('CalendarioPruebas')">
-                <div class="icon">🗓️</div>
+                <div class="icon">📝</div>
                 <h3>Calendario de Pruebas</h3>
             </div>
+
+
 
             <!-- ENGLISH -->
             <div class="card" onclick="openSubject('EnglishLanguage', contenidos['EnglishLanguage'])">

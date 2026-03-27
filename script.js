@@ -50,15 +50,7 @@ function generarHTML(data) {
             `;
         });
     }
-/*
-    if (data.important_dates?.length) {
-        html += `<h3>Fechas Importantes</h3><ul>`;
-        data.important_dates.forEach(d => {
-            html += `<li><strong>${d.date}</strong>: ${d.description}</li>`;
-        });
-        html += `</ul>`;
-    }
-        */
+
 
     if (data.important_dates?.length) {
     const grupos = agruparPorMes(data.important_dates);
@@ -134,9 +126,15 @@ function generarCalendarioVisual(month, year, events) {
 
         html += `</td>`;
 
-        if ((day + dayOfWeek) % 5 === 0) {
+          // Índice de columna actual (0 a 4)
+        const col = (dayOfWeek + (day - 1)) % 5;
+
+        // Si llegamos al viernes → salto de fila
+        if (col === 4) {
             html += "</tr><tr>";
         }
+
+
     }
 
     html += "</tr></table>";

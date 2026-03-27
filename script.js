@@ -91,8 +91,12 @@ function agruparPorMes(events) {
 
 function generarCalendarioVisual(month, year, events) {
     const date = new Date(year, month - 1, 1);
-    const firstDay = date.getDay();
+    const firstDay = date.getDay(); // 0=Domingo, 1=Lunes...
     const daysInMonth = new Date(year, month, 0).getDate();
+
+    // Convertimos a índice 0–4 (Lun–Vie)
+    let startCol = firstDay === 0 ? 6 : firstDay - 1;
+    if (startCol > 4) startCol = 4; // Si cae sábado o domingo → lo mandamos al viernes
 
     let html = `
         <h3>${date.toLocaleString('es-ES', { month: 'long' })} ${year}</h3>
@@ -107,11 +111,12 @@ function generarCalendarioVisual(month, year, events) {
             <tr>
     `;
 
-    let dayOfWeek = (firstDay === 0 ? 6 : firstDay - 1);
-
-    for (let i = 0; i < dayOfWeek; i++) {
+    // Celdas vacías antes del día 1
+    for (let i = 0; i < startCol; i++) {
         html += "<td></td>";
     }
+
+    let col = startCol;
 
     for (let day = 1; day <= daysInMonth; day++) {
         const dateStr = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
@@ -126,15 +131,19 @@ function generarCalendarioVisual(month, year, events) {
 
         html += `</td>`;
 
-          // Índice de columna actual (0 a 4)
-        const col = (dayOfWeek + (day - 1)) % 5;
+        col++;
 
         // Si llegamos al viernes → salto de fila
-        if (col === 4) {
+        if (col === 5) {
             html += "</tr><tr>";
+            col = 0;
         }
+    }
 
-
+    // Rellenar celdas vacías al final
+    while (col > 0 && col < 5) {
+        html += "<td></td>";
+        col++;
     }
 
     html += "</tr></table>";

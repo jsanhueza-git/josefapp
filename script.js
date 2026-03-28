@@ -52,19 +52,6 @@ function generarHTML(data) {
     }
 
 
-    /*
-    if (data.important_dates?.length) {
-    const grupos = agruparPorMes(data.important_dates);
-    let html = "";
-
-    for (const key in grupos) {
-        const [year, month] = key.split("-");
-        html += generarCalendarioVisual(parseInt(month), parseInt(year), grupos[key]);
-    }
-
-    return html;
-    }*/
-
     if (data.important_dates?.length) {
     let html = `<h3>${data.title}</h3><ul>`;
 

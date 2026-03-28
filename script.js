@@ -88,9 +88,11 @@ function generarHTML(data) {
         html += `
             <div class="filters-container">
 
-                <div id="filter-subjects"></div>
-                <div id="filter-months"></div>
-                <div id="filter-order"></div>
+                <div class="filter-row" id="filter-subjects"></div>
+
+                <div class="filter-row" id="filter-months"></div>
+
+                <div class="filter-row" id="filter-order"></div>
 
                 <input id="filter-search" class="filter-search" placeholder="Buscar..." />
 

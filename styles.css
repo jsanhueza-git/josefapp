@@ -249,14 +249,25 @@ iframe {
 /* --------------------------------------------------
    FILTROS TIPO CHIPS
 -------------------------------------------------- */
+/* --------------------------------------------------
+   FILTROS TIPO CHIPS (VERSIÓN ESTABLE)
+-------------------------------------------------- */
 
 .filters-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+/* Fila de chips */
+.filter-row {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin: 15px 0 25px 0;
 }
 
+/* Chips */
 .filter-chip {
     padding: 8px 14px;
     background: #e8eef7;
@@ -265,6 +276,7 @@ iframe {
     cursor: pointer;
     border: 1px solid #c7d4e8;
     transition: background 0.2s;
+    white-space: nowrap;
 }
 
 .filter-chip.active {
@@ -273,22 +285,42 @@ iframe {
     border-color: #4b86b4;
 }
 
+/* Buscador */
 .filter-search {
-    flex: 1;
-    min-width: 180px;
-    padding: 8px 12px;
+    width: 100%;
+    padding: 10px 14px;
     border-radius: 10px;
     border: 1px solid #c7d4e8;
-    font-size: 14px;
+    font-size: 15px;
 }
 
+/* Botón limpiar */
 .filter-clear {
-    padding: 8px 14px;
+    padding: 10px 14px;
     background: #e53935;
     color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
+    text-align: center;
+}
+
+/* En pantallas grandes, organizamos mejor */
+@media (min-width: 800px) {
+    .filters-container {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+
+    .filter-search {
+        grid-column: span 2;
+    }
+
+    .filter-clear {
+        grid-column: span 2;
+        max-width: 200px;
+        justify-self: end;
+    }
 }
 
 /* --------------------------------------------------

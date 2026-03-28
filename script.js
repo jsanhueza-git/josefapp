@@ -38,7 +38,7 @@ function generarHTML(data) {
                 </div>
             `;
         });
-        return html;
+        //return html;
     }
 
     if (data.games?.length) {
@@ -50,14 +50,14 @@ function generarHTML(data) {
                 </div>
             `;
         });
-        return html;
+        //return html;
     }
 
 
     if (data.important_dates?.length) {
-    let html = `<h3>${data.title}</h3><ul>`;
+        html += `<h3>${data.title}</h3><ul>`;
 
-    data.important_dates.forEach(d => {
+        data.important_dates.forEach(d => {
         html += `<li><strong>${d.date}</strong>: ${d.description}</li>`;
     });
 

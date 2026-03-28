@@ -1,38 +1,46 @@
 {
-    "title": "<h2>Calendario de Pruebas – Marzo y Abril</h2>",
+    "title": "Calendario de Pruebas – Marzo y Abril",
     "description": "Evaluaciones oficiales enviadas por el Colegio Santa María de Lo Cañas para 2°A.",
     "important_dates": [
         {
             "date": "2026-03-24",
-            "description": "English Language: Dictation (Vocabulary p.6)"
+            "subject": "EnglishLanguage",
+            "description": "Dictation (Vocabulary p.6)"
         },
         {
             "date": "2026-03-25",
-            "description": "English Language: Unit 0 Test – Vocabulary (p.6), There is/There are (p.5)"
+            "subject": "EnglishLanguage",
+            "description": "Unit 0 Test – Vocabulary (p.6), There is/There are (p.5)"
         },
         {
             "date": "2026-03-26",
-            "description": "STEM: Process Evaluation (Project 1) – Booklet (work in class)"
+            "subject": "STEM",
+            "description": "Process Evaluation (Project 1) – Booklet (work in class)"
         },
         {
             "date": "2026-03-31",
-            "description": "Art: Término proceso – Autorretrato al estilo egipcio"
+            "subject": "Art",
+            "description": "Término proceso – Autorretrato al estilo egipcio"
         },
         {
             "date": "2026-04-08",
-            "description": "Communicative Skills: Speaking – Parts of the house , furniture (vocabulary in the copy book) <br>and prepositions of place (on, in front of, next to, in, on the left, on the right)"
+            "subject": "CommunicativeSkills",
+            "description": "Speaking – Parts of the house, furniture (vocabulary in the copy book) y prepositions of place (on, in front of, next to, in, on the left, on the right)"
         },
         {
             "date": "2026-04-09",
-            "description": "Communicative Skills: Speaking (continuación)"
+            "subject": "CommunicativeSkills",
+            "description": "Speaking (continuación)"
         },
         {
             "date": "2026-04-09",
-            "description": "Spanish: Evaluación sumativa – Control de lectura complementaria '¡No funciona la tele!'"
+            "subject": "Spanish",
+            "description": "Evaluación sumativa – Control de lectura complementaria '¡No funciona la tele!'"
         },
         {
             "date": "2026-04-10",
-            "description": "Math: Unit 1 Test – Counting up to 50, skip counting, tens and ones, numbers in words"
+            "subject": "Math",
+            "description": "Unit 1 Test – Counting up to 50, skip counting, tens and ones, numbers in words"
         }
     ],
     "videos": [],

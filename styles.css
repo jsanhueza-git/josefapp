@@ -1,0 +1,213 @@
+    body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            padding-top: env(safe-area-inset-top);
+        }
+
+        /* Pantallas */
+        .screen {
+            display: none;
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Pantalla principal */
+        #home {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2a4d69;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* GRID DE TARJETAS */
+        .grid {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 20px 10px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* Pantalla de contenido */
+        #content {
+            padding: 20px;
+        }
+
+        #content h2 {
+            text-align: center;
+            color: #2a4d69;
+        }
+
+        .back-btn {
+            background: #4b86b4;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+/*HORARIO*/
+        /*.horario-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e8f0fe;
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #c5d3f6;
+            transition: transform 0.1s, background 0.2s;
+        }*/
+
+        /* Tamaño uniforme para todos los botones */
+        .horario-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 45px;
+            padding: 0;
+            margin: 2px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            overflow: hidden;
+            white-space: normal;
+            line-height: 1.1;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* COLORES DEFINIDOS POR TI */
+        .horario-Art { background: #F7A8D8; color: #000; }
+        .horario-CommunicativeSkills { background: #FF8C00; } /* NARANJO */
+        .horario-Drama { background: #CBA0FF; }
+        .horario-EducacionFisica { background: #8FE3A2; color: #000; }
+        .horario-EnglishLanguage { background: #7A3FFF; } /* MORADO */
+        .horario-FormacionCiudadana { background: #4EC9C0; }
+        .horario-FormacionIntegral { background: #FFBFA3; color: #000; }
+        .horario-Literacy { background: #7DDCFF; color: #000; } /* CELESTE */
+        .horario-Math { background: #007BFF; } /* AZUL */
+        .horario-Music { background: #4A90A4; }
+        .horario-NaturalScience { background: #4CAF50; } /* VERDE */
+        .horario-SocialStudies { background: #FFD700; color: #000; } /* AMARILLO */
+        .horario-Spanish { background: #E53935; } /* ROJO */
+        .horario-STEM { background: #A4E600; color: #000; }
+
+        .recreo, .almuerzo {
+           text-align: center;
+            font-weight: bold;
+            background: #f0f0f0;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .horario-btn:hover {
+            background: #d7e3fc;
+            transform: scale(1.03);
+        }
+
+        .horario-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .horario-table th {
+            background: #4b86b4;
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .horario-table td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .schedule-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;      /* ancho fijo */
+            height: 45px;      /* alto fijo */
+            padding: 0;
+            margin: 2px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            overflow: hidden;  /* evita que el texto se desborde */
+            white-space: normal;
+            line-height: 1.1;
+        }
+
+/*CALENDARIO*/
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .calendar-table th {
+            background: #f0f0f0;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .calendar-table td {
+            border: 1px solid #ddd;
+            height: 80px;
+            vertical-align: top;
+            padding: 5px;
+        }
+
+        .calendar-day {
+            position: relative;
+        }
+
+        .calendar-event {
+            margin-top: 5px;
+            background: #ffe9a8;
+            padding: 4px;
+            border-radius: 5px;
+            font-size: 12px;
+        }

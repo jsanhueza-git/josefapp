@@ -162,3 +162,32 @@ function generarCalendarioVisual(month, year, events) {
     html += "</tr></table>";
     return html;
 }
+
+
+function openFromSchedule(subjectName) {
+            const subjects = {
+                "MUSIC": "Music",
+                "ART": "Art",
+                "F. INTEGRAL": "FormacionIntegral",
+                "F. CIUDADANA": "FormacionCiudadana",
+                "ENG. LANGUAGE": "EnglishLanguage",
+                "SPANISH": "Spanish",
+                "MATH": "Math",
+                "LITERACY": "Literacy",
+                "DRAMA": "Drama",
+                "PHYSICAL EDUCATION": "PhysicalEducation",
+                "SOCIAL STUDIES": "SocialStudies",
+                "NATURAL SCIENCE": "NaturalScience",
+                "STEM": "STEM",
+                "COM. SKILLS": "CommunicativeSkills"
+               
+            };
+
+            const target = subjects[subjectName];
+
+            if (!target) return;
+
+            //openSubject(target, contenidos[target]);
+            loadSubjectData(target);
+
+}

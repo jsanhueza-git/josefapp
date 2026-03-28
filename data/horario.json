@@ -1,0 +1,93 @@
+{
+  "title": "Horario de Clases — 2°A",
+  "blocks": [
+    {
+      "block": 1,
+      "time": "8:15 - 8:55",
+      "lunes": "MUSIC",
+      "martes": "ART",
+      "miercoles": "F. INTEGRAL",
+      "jueves": "SPANISH",
+      "viernes": "F. CIUDADANA"
+    },
+    {
+      "block": 2,
+      "time": "8:55 - 9:35",
+      "lunes": "MUSIC",
+      "martes": "ART",
+      "miercoles": "F. INTEGRAL",
+      "jueves": "SPANISH",
+      "viernes": "SPANISH"
+    },
+    {
+      "type": "recreo",
+      "label": "Recreo (9:35 - 9:50)"
+    },
+    {
+      "block": 3,
+      "time": "9:50 - 10:30",
+      "lunes": "ENG. LANGUAGE",
+      "martes": "ENG. LANGUAGE",
+      "miercoles": "ENG. LANGUAGE",
+      "jueves": "LITERACY",
+      "viernes": "MATH"
+    },
+    {
+      "block": 4,
+      "time": "10:30 - 11:15",
+      "lunes": "MATH",
+      "martes": "SPANISH",
+      "miercoles": "ENG. LANGUAGE",
+      "jueves": "LITERACY",
+      "viernes": "DRAMA"
+    },
+    {
+      "type": "recreo",
+      "label": "Recreo (11:15 - 11:30)"
+    },
+    {
+      "block": 5,
+      "time": "11:30 - 12:15",
+      "lunes": "MATH",
+      "martes": "SPANISH",
+      "miercoles": "COM. SKILLS",
+      "jueves": "COM. SKILLS",
+      "viernes": "MATH"
+    },
+    {
+      "type": "almuerzo",
+      "label": "Almuerzo (12:15 - 13:00)"
+    },
+    {
+      "block": 6,
+      "time": "13:00 - 13:45",
+      "lunes": "PHYSICAL ED.",
+      "martes": "LITERACY",
+      "miercoles": "SPANISH",
+      "jueves": "SOCIAL STUDIES",
+      "viernes": "SOCIAL STUDIES"
+    },
+    {
+      "block": 7,
+      "time": "13:45 - 14:30",
+      "lunes": "PHYSICAL ED.",
+      "martes": "SOCIAL STUDIES",
+      "miercoles": "SPANISH",
+      "jueves": "SOCIAL STUDIES",
+      "viernes": "SOCIAL STUDIES"
+    },
+    {
+      "type": "recreo",
+      "label": "Recreo (14:30 - 14:40)"
+    },
+    {
+      "block": 8,
+      "time": "14:40 - 15:25",
+      "lunes": "NATURAL SCIENCE",
+      "martes": "",
+      "miercoles": "",
+      "jueves": "",
+      "viernes": "STEM"
+    }
+  ]
+}

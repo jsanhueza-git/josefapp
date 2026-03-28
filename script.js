@@ -21,7 +21,7 @@ function loadSubjectData(subjectKey) {
             openSubject(data.title, html);
         })
         .catch(err => {
-            openSubject("Error", "<p>No se pudo cargar el contenido :'( ).</p>");
+            openSubject("Error", "<p>No se pudo cargar el contenido.</p>");
         });
 }
 
@@ -38,6 +38,7 @@ function generarHTML(data) {
                 </div>
             `;
         });
+        return html;
     }
 
     if (data.games?.length) {
@@ -49,6 +50,7 @@ function generarHTML(data) {
                 </div>
             `;
         });
+        return html;
     }
 
 

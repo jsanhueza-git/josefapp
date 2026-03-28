@@ -63,7 +63,7 @@ function generarHTML(data) {
 
     html += "</ul>";
 
-    return html;
+    //return html;
     }
 
     if (data.extra) {

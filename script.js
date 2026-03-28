@@ -38,7 +38,14 @@ function openSubject(title, contentHTML) {
 function loadSubjectData(subjectKey) {
     fetch(`data/${subjectKey}.json`)
         .then(r => r.json())
-        .then(data => {
+        .then(async data => {
+
+            // Cargar pruebas desde CalendarioPruebas.json
+            const tests = await loadSubjectTests(subjectKey);
+
+            // Insertarlas en el JSON de la asignatura
+            data.subject_tests = tests;
+
             const html = generarHTML(data);
             openSubject(data.title, html);
         })
@@ -52,6 +59,25 @@ function loadSubjectData(subjectKey) {
 --------------------------------------------- */
 function generarHTML(data) {
     let html = `<p>${data.description || ""}</p>`;
+
+    /* PRUEBAS DE LA ASIGNATURA */
+    if (data.subject_tests?.length) {
+
+        html += `<h3>Pruebas de ${data.title}</h3>`;
+        html += `<div class="test-list">`;
+
+        data.subject_tests.forEach(t => {
+            html += `
+                <div class="test-card test-${t.subject}">
+                    <div class="test-date">${t.date}</div>
+                    <div class="test-title">${t.subject}</div>
+                    <div class="test-desc">${t.description}</div>
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+    }
 
     /* VIDEOS */
     if (data.videos?.length) {
@@ -333,4 +359,21 @@ function clearTestFilters() {
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(renderTestFilters, 300);
 });
+
+async function loadSubjectTests(subjectName) {
+    try {
+        const res = await fetch("data/CalendarioPruebas.json");
+        const calendar = await res.json();
+
+        if (!calendar.important_dates) return [];
+
+        return calendar.important_dates.filter(
+            t => t.subject === subjectName
+        );
+
+    } catch (e) {
+        console.error("Error cargando pruebas:", e);
+        return [];
+    }
+}
 

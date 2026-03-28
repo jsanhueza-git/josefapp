@@ -1,0 +1,35 @@
+{
+    "title": "English Languag",
+    "description": "Material de apoyo English Language.",
+    "videos": [
+        {
+            "title": "School Supplies | Talking Flashcards",
+            "url": "https://www.youtube.com/embed/g7kK989HiRQ"
+        },
+        {
+            "title": "There is - There are Quiz for Kids",
+            "url": "https://www.youtube.com/embed/DEO7Z4thvuM"
+        }
+    ],
+    "games": [
+        {
+            "title": "Describing school supplies",
+            "url": "https://wordwall.net/embed/e18252ebb14f461f961e936c8d18cbfe?themeId=21&templateId=69&fontStackId=0"
+        },
+        {
+            "title": "Classroom objects",
+            "url": "https://wordwall.net/embed/8f310edbc7d3457585ff4d2ddad1aa3c?themeId=21&templateId=69&fontStackId=0"
+        },
+        {
+            "title": "In the classroom (window-board-chair-bookcase-wall-floor)",
+            "url": "https://wordwall.net/embed/15b13c7d127a40f6a7cb98670b3a44a6?themeId=1&templateId=22&fontStackId=0"
+        }
+    ],
+    "important_dates": [
+        {
+            "date": "2026-04-10",
+            "description": "Prueba de suma y resta"
+        }
+    ],
+    "extra": "<p>Material adicional de Matemáticas.</p>"
+}

@@ -124,7 +124,9 @@ function generarHTML(data) {
             <div class="filters-container">
                 <div class="filter-row" id="filter-subjects"></div>
                 <div class="filter-row" id="filter-months"></div>
-                <div class="filter-row" id="filter-order"></div>
+                <div class="filter-row">
+                    <span class="filter-chip" id="filter-order-toggle" data-order="asc">Fecha ↕</span>
+                </div>
                 <input id="filter-search" class="filter-search" placeholder="Buscar..." />
                 <div id="filter-clear" class="filter-clear">Limpiar</div>
             </div>
@@ -154,25 +156,45 @@ function renderTestFilters() {
     const subjects = [...new Set(tests.map(t => t.subject))];
     const months = [...new Set(tests.map(t => t.date.slice(0, 7)))];
 
+    // Chips de asignaturas
     document.getElementById("filter-subjects").innerHTML =
         subjects.map(s => `<span class="filter-chip" data-subject="${s}">${s}</span>`).join("");
 
+    // Chips de meses
     document.getElementById("filter-months").innerHTML =
         months.map(m => `<span class="filter-chip" data-month="${m}">${m}</span>`).join("");
 
-    document.getElementById("filter-order").innerHTML = `
-        <span class="filter-chip" data-order="asc">Fecha ↑</span>
-        <span class="filter-chip" data-order="desc">Fecha ↓</span>
-    `;
+    // BOTÓN DE ORDENAR (solo uno)
+    const orderChip = document.getElementById("filter-order-toggle");
 
-    document.querySelectorAll(".filter-chip").forEach(chip => {
-        chip.addEventListener("click", () => {
-            chip.classList.toggle("active");
-            applyTestFilters();
-        });
+    orderChip.addEventListener("click", () => {
+        const current = orderChip.dataset.order;
+
+        // Alternar orden
+        const next = current === "asc" ? "desc" : "asc";
+        orderChip.dataset.order = next;
+
+        // Cambiar flecha visual
+        orderChip.textContent = next === "asc" ? "Fecha ↑" : "Fecha ↓";
+
+        orderChip.classList.add("active");
+        applyTestFilters();
     });
 
+    // Activar chips de filtros (EXCLUYENDO el botón de ordenar)
+    document.querySelectorAll(".filter-chip").forEach(chip => {
+        if (chip.id !== "filter-order-toggle") {
+            chip.addEventListener("click", () => {
+                chip.classList.toggle("active");
+                applyTestFilters();
+            });
+        }
+    });
+
+    // Buscador
     document.getElementById("filter-search").addEventListener("input", applyTestFilters);
+
+    // Botón limpiar
     document.getElementById("filter-clear").addEventListener("click", clearTestFilters);
 
     applyTestFilters();
@@ -193,16 +215,17 @@ function applyTestFilters() {
     if (activeMonths.length)
         filtered = filtered.filter(t => activeMonths.includes(t.date.slice(0, 7)));
 
-    const orderChip = document.querySelector("[data-order].active");
-    if (orderChip) {
-        const order = orderChip.dataset.order;
-        filtered.sort((a, b) =>
-            order === "asc"
-                ? new Date(a.date) - new Date(b.date)
-                : new Date(b.date) - new Date(a.date)
-        );
-    }
+    // ORDENAR SEGÚN EL BOTÓN
+    const orderChip = document.getElementById("filter-order-toggle");
+    const order = orderChip.dataset.order;
 
+    filtered.sort((a, b) =>
+        order === "asc"
+            ? new Date(a.date) - new Date(b.date)
+            : new Date(b.date) - new Date(a.date)
+    );
+
+    // BUSCADOR
     const search = document.getElementById("filter-search").value.toLowerCase();
     if (search) {
         filtered = filtered.filter(t =>

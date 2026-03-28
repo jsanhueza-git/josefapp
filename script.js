@@ -50,7 +50,6 @@ function loadSubjectData(subjectKey) {
 /* ---------------------------------------------
    GENERADOR DE HTML PARA ASIGNATURAS
 --------------------------------------------- */
-
 function generarHTML(data) {
     let html = `<p>${data.description || ""}</p>`;
 
@@ -79,46 +78,36 @@ function generarHTML(data) {
         });
     }
 
-    /* FECHAS IMPORTANTES (Calendario de Pruebas) */
-    /*if (data.important_dates?.length) {
-        html += `<h3>${data.title}</h3><ul>`;
-        data.important_dates.forEach(d => {
-            html += `<li><strong>${d.date}</strong>: ${d.description}</li>`;
-        });
-        html += "</ul>";
-    }*/
-
-    /* FILTROS + TARJETAS */
+    /* --------------------------------------------------
+       CALENDARIO DE PRUEBAS (NUEVO SISTEMA)
+    -------------------------------------------------- */
     if (data.important_dates?.length) {
 
-    // Contenedor de filtros
-    html += `
-        <h3>${data.title}</h3>
+        html += `<h3>${data.title}</h3>`;
 
-        <div class="filters-container">
+        html += `
+            <div class="filters-container">
 
-            <!-- Chips de asignaturas -->
-            <div id="filter-subjects"></div>
+                <div id="filter-subjects"></div>
+                <div id="filter-months"></div>
+                <div id="filter-order"></div>
 
-            <!-- Chips de meses -->
-            <div id="filter-months"></div>
+                <input id="filter-search" class="filter-search" placeholder="Buscar..." />
 
-            <!-- Orden -->
-            <div id="filter-order"></div>
+                <div id="filter-clear" class="filter-clear">Limpiar</div>
+            </div>
 
-            <!-- Buscador -->
-            <input id="filter-search" class="filter-search" placeholder="Buscar..." />
+            <div id="test-list" class="test-list"></div>
+        `;
 
-            <!-- Limpiar -->
-            <div id="filter-clear" class="filter-clear">Limpiar</div>
-        </div>
+        // Guardamos los datos para los filtros
+        window.currentTests = data.important_dates;
 
-        <div id="test-list" class="test-list"></div>
-    `;
-
-    // Guardamos los datos para JS
-    window.currentTests = data.important_dates;
-}
+        // ACTIVAMOS LOS FILTROS
+        setTimeout(() => {
+            renderTestFilters();
+        }, 50);
+    }
 
     /* EXTRA HTML */
     if (data.extra) {

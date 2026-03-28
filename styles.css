@@ -2,27 +2,27 @@
    colores GENERALES
 -------------------------------------------------- */
 :root {
-    --color-Math: #4CAF50;
-    --color-EnglishLanguage: #2196F3;
-    --color-NaturalScience: #9C27B0;
-    --color-SocialStudies: #FF9800;
-    --color-Spanish: #E91E63;
-    --color-Literacy: #3F51B5;
-    --color-STEM: #009688;
-    --color-Art: #FF5722;
-    --color-Music: #795548;
-    --color-Drama: #673AB7;
-    --color-PhysicalEducation: #8BC34A;
-    --color-FormacionCiudadana: #607D8B;
-    --color-FormacionIntegral: #FFC107;
-    --color-CommunicativeSkills: #00BCD4;
+    --color-Art: #F7A8D8;
+    --color-CommunicativeSkills: #FF8C00;
+    --color-Drama: #CBA0FF;
+    --color-PhysicalEducation: #8FE3A2;
+    --color-EnglishLanguage: #7A3FFF;
+    --color-FormacionCiudadana: #4EC9C0;
+    --color-FormacionIntegral: #FFBFA3;
+    --color-Literacy: #7DDCFF;
+    --color-Math: #007BFF;
+    --color-Music: #4A90A4;
+    --color-NaturalScience: #4CAF50;
+    --color-SocialStudies: #FFD700;
+    --color-Spanish: #E53935;
+    --color-STEM: #A4E600;
+
+    /* Para botones especiales */
+    --color-Horario: #607D8B;
+    --color-Calendario: #9E9E9E;
 }
 
-/* Estilo general */
-:root {
-    --color-Horario: #607D8B;      /* puedes cambiarlo */
-    --color-Calendario: #9E9E9E;   /* puedes cambiarlo */
-}
+
 
 /* Estilo general */
 .card {

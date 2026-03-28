@@ -1,9 +1,18 @@
+let lastScreen = "home";
+
 function goHome() {
     document.getElementById("content").classList.remove("active");
-    document.getElementById("home").classList.add("active");
+
+    if (lastScreen === "horario") {
+        loadHorario();
+    } else {
+        document.getElementById("home").classList.add("active");
+    }
 }
 
 function openSubject(title, contentHTML) {
+    lastScreen = document.querySelector(".screen.active").id;
+
     document.getElementById("home").classList.remove("active");
     document.getElementById("content").classList.add("active");
 
@@ -165,6 +174,7 @@ function openFromSchedule(subjectName) {
                 "LITERACY": "Literacy",
                 "DRAMA": "Drama",
                 "PHYSICAL EDUCATION": "PhysicalEducation",
+                "PHYSICAL ED.": "PhysicalEducation",
                 "SOCIAL STUDIES": "SocialStudies",
                 "NATURAL SCIENCE": "NaturalScience",
                 "STEM": "STEM",
@@ -182,6 +192,8 @@ function openFromSchedule(subjectName) {
 }
 
 function loadHorario() {
+    lastScreen = "horario";
+
     fetch("horario.html")
         .then(res => res.text())
         .then(html => {

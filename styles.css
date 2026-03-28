@@ -1,4 +1,62 @@
 /* --------------------------------------------------
+   colores GENERALES
+-------------------------------------------------- */
+:root {
+    --color-Math: #4CAF50;
+    --color-EnglishLanguage: #2196F3;
+    --color-NaturalScience: #9C27B0;
+    --color-SocialStudies: #FF9800;
+    --color-Spanish: #E91E63;
+    --color-Literacy: #3F51B5;
+    --color-STEM: #009688;
+    --color-Art: #FF5722;
+    --color-Music: #795548;
+    --color-Drama: #673AB7;
+    --color-PhysicalEducation: #8BC34A;
+    --color-FormacionCiudadana: #607D8B;
+    --color-FormacionIntegral: #FFC107;
+    --color-CommunicativeSkills: #00BCD4;
+}
+
+/* Estilo general */
+:root {
+    --color-Horario: #607D8B;      /* puedes cambiarlo */
+    --color-Calendario: #9E9E9E;   /* puedes cambiarlo */
+}
+
+/* Estilo general */
+.card {
+    border-left: 8px solid transparent;
+    transition: 0.2s ease;
+}
+
+/* Colores por asignatura */
+.subject-Math { border-left-color: var(--color-Math); }
+.subject-EnglishLanguage { border-left-color: var(--color-EnglishLanguage); }
+.subject-NaturalScience { border-left-color: var(--color-NaturalScience); }
+.subject-SocialStudies { border-left-color: var(--color-SocialStudies); }
+.subject-Spanish { border-left-color: var(--color-Spanish); }
+.subject-Literacy { border-left-color: var(--color-Literacy); }
+.subject-STEM { border-left-color: var(--color-STEM); }
+.subject-Art { border-left-color: var(--color-Art); }
+.subject-Music { border-left-color: var(--color-Music); }
+.subject-Drama { border-left-color: var(--color-Drama); }
+.subject-PhysicalEducation { border-left-color: var(--color-PhysicalEducation); }
+.subject-FormacionCiudadana { border-left-color: var(--color-FormacionCiudadana); }
+.subject-FormacionIntegral { border-left-color: var(--color-FormacionIntegral); }
+.subject-CommunicativeSkills { border-left-color: var(--color-CommunicativeSkills); }
+
+/* Horario y Calendario */
+.subject-Horario { border-left-color: var(--color-Horario); }
+.subject-Calendario { border-left-color: var(--color-Calendario); }
+
+/* Hover opcional */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* --------------------------------------------------
    ESTILOS GENERALES
 -------------------------------------------------- */
 

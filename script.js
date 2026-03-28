@@ -180,3 +180,15 @@ function openFromSchedule(subjectName) {
             loadSubjectData(target);
 
 }
+
+function loadHorario() {
+    fetch("horario.html")
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("home").classList.remove("active");
+            document.getElementById("content").classList.add("active");
+
+            document.getElementById("subject-title").innerText = "Horario de Clases";
+            document.getElementById("subject-body").innerHTML = html;
+        });
+}

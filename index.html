@@ -1,56 +1,600 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2°A – App Escolar</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.webmanifest">
+    <title>Material de Estudio - 2° Básico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            padding-top: env(safe-area-inset-top);
+        }
+
+        /* Pantallas */
+        .screen {
+            display: none;
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Pantalla principal */
+        #home {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2a4d69;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* GRID DE TARJETAS */
+        .grid {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 20px 10px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* Pantalla de contenido */
+        #content {
+            padding: 20px;
+        }
+
+        #content h2 {
+            text-align: center;
+            color: #2a4d69;
+        }
+
+        .back-btn {
+            background: #4b86b4;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+/*HORARIO*/
+        /*.horario-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e8f0fe;
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #c5d3f6;
+            transition: transform 0.1s, background 0.2s;
+        }*/
+
+        /* Tamaño uniforme para todos los botones */
+        .horario-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 45px;
+            padding: 0;
+            margin: 2px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            overflow: hidden;
+            white-space: normal;
+            line-height: 1.1;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* COLORES DEFINIDOS POR TI */
+        .horario-Art { background: #F7A8D8; color: #000; }
+        .horario-CommunicativeSkills { background: #FF8C00; } /* NARANJO */
+        .horario-Drama { background: #CBA0FF; }
+        .horario-EducacionFisica { background: #8FE3A2; color: #000; }
+        .horario-EnglishLanguage { background: #7A3FFF; } /* MORADO */
+        .horario-FormacionCiudadana { background: #4EC9C0; }
+        .horario-FormacionIntegral { background: #FFBFA3; color: #000; }
+        .horario-Literacy { background: #7DDCFF; color: #000; } /* CELESTE */
+        .horario-Math { background: #007BFF; } /* AZUL */
+        .horario-Music { background: #4A90A4; }
+        .horario-NaturalScience { background: #4CAF50; } /* VERDE */
+        .horario-SocialStudies { background: #FFD700; color: #000; } /* AMARILLO */
+        .horario-Spanish { background: #E53935; } /* ROJO */
+        .horario-STEM { background: #A4E600; color: #000; }
+
+        .recreo, .almuerzo {
+           text-align: center;
+            font-weight: bold;
+            background: #f0f0f0;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .horario-btn:hover {
+            background: #d7e3fc;
+            transform: scale(1.03);
+        }
+
+        .horario-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .horario-table th {
+            background: #4b86b4;
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .horario-table td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .schedule-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;      /* ancho fijo */
+            height: 45px;      /* alto fijo */
+            padding: 0;
+            margin: 2px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            overflow: hidden;  /* evita que el texto se desborde */
+            white-space: normal;
+            line-height: 1.1;
+        }
+
+/*CALENDARIO*/
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .calendar-table th {
+            background: #f0f0f0;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .calendar-table td {
+            border: 1px solid #ddd;
+            height: 80px;
+            vertical-align: top;
+            padding: 5px;
+        }
+
+        .calendar-day {
+            position: relative;
+        }
+
+        .calendar-event {
+            margin-top: 5px;
+            background: #ffe9a8;
+            padding: 4px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+    </style>
+
+    <script>
+     
+        function openFromSchedule(subjectName) {
+            const subjects = {
+                "MUSIC": "Music",
+                "ART": "Art",
+                "F. INTEGRAL": "FormacionIntegral",
+                "F. CIUDADANA": "FormacionCiudadana",
+                "ENG. LANGUAGE": "EnglishLanguage",
+                "SPANISH": "Spanish",
+                "MATH": "Math",
+                "LITERACY": "Literacy",
+                "DRAMA": "Drama",
+                "PHYSICAL EDUCATION": "PhysicalEducation",
+                "SOCIAL STUDIES": "SocialStudies",
+                "NATURAL SCIENCE": "NaturalScience",
+                "STEM": "STEM",
+                "COM. SKILLS": "CommunicativeSkills"
+               
+            };
+
+            const target = subjects[subjectName];
+
+            if (!target) return;
+
+            //openSubject(target, contenidos[target]);
+            loadSubjectData(target);
+
+        }
+
+        const contenidos = {
+    Math: `
+        <h2>Math</h2>
+        <p>Contenido de Matemáticas - PRUEBA - esto no se debe ver - eliminar.</p>
+                <h3>Juegos</h3>
+
+            <iframe style='max-width:100%' 
+                src='https://wordwall.net/embed/42a7916e3c0d45d085d929112e8fd79e?themeId=21&templateId=46&fontStackId=0' 
+                width='500'
+                height='380'
+                frameborder='0'
+                allowfullscreen>
+            </iframe>
+
+    `,
+    EnglishLanguage:`
+    <h2>English Language</h2>
+    <p>Contenido de la asignatura English Language.</p>
+          <h3>Videos</h3>
+
+            <iframe height='315'
+                src='https://www.youtube.com/embed/DEO7Z4thvuM'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='315'
+                src='https://www.youtube.com/embed/g7kK989HiRQ'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <h3>Juegos</h3>
+ 
+            <iframe height='380'
+                src='https://wordwall.net/embed/e3ec19f852584f38888c472319ab8d90?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/e18252ebb14f461f961e936c8d18cbfe?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/8f310edbc7d3457585ff4d2ddad1aa3c?themeId=21&templateId=69&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe>
+
+            <iframe height='380'
+                src='https://wordwall.net/embed/15b13c7d127a40f6a7cb98670b3a44a6?themeId=1&templateId=22&fontStackId=0'
+                frameborder='0' allowfullscreen>
+            </iframe> 
+            `,
+    NaturalScience: `
+        <h2>Natural Science</h2>
+        <p>Contenido de Ciencias Naturales - PRUEBA.</p>
+    `,
+    // ... y así con todas
+};
+
+
+        const horarioInteractivoHTML = `
+    <h3>Horario de Clases — 2°A</h3>
+
+  
+
+      <table class="horario-table">
+
+    <tr>
+        <th>Bloque</th>
+        <th>Hora</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+    </tr>
+
+    <!-- BLOQUE 1 -->
+    <tr>
+        <td>1</td><td>8:15 - 8:55</td>
+        <td><div class="horario-btn horario-Music" onclick="openFromSchedule('MUSIC')">🎵 MUSIC</div></td>
+        <td><div class="horario-btn horario-Art" onclick="openFromSchedule('ART')">🎨 ART</div></td>
+        <td><div class="horario-btn horario-FormacionIntegral" onclick="openFromSchedule('F. INTEGRAL')">💛 F. INTEGRAL</div></td>
+        <td><div class="horario-btn horario-Spanish" onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+        <td><div class="horario-btn horario-FormacionCiudadana" onclick="openFromSchedule('F. CIUDADANA')">🤝 F. CIUDADANA</div></td>
+    </tr>
+
+    <!-- BLOQUE 2 -->
+    <tr>
+        <td>2</td><td>8:55 - 9:35</td>
+        <td><div class="horario-btn horario-Music" onclick="openFromSchedule('MUSIC')">🎵 MUSIC</div></td>
+        <td><div class="horario-btn horario-Art" onclick="openFromSchedule('ART')">🎨 ART</div></td>
+        <td><div class="horario-btn horario-FormacionIntegral" onclick="openFromSchedule('F. INTEGRAL')">💛 F. INTEGRAL</div></td>
+        <td><div class="horario-btn horario-Spanish" onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+        <td><div class="horario-btn horario-Spanish" onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+    </tr>
+
+    <!-- RECREO -->
+    <tr><td colspan="7" class="recreo">Recreo (9:35 - 9:50)</td></tr>
+
+    <!-- BLOQUE 3 -->
+    <tr>
+        <td>3</td><td>9:50 - 10:30</td>
+        <td><div class="horario-btn horario-EnglishLanguage" onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+        <td><div class="horario-btn horario-EnglishLanguage" onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+        <td><div class="horario-btn horario-EnglishLanguage" onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+        <td><div class="horario-btn horario-Literacy" onclick="openFromSchedule('LITERACY')">📗 LITERACY</div></td>
+        <td><div class="horario-btn horario-Math" onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+    </tr>
+
+    <!-- BLOQUE 4 -->
+    <tr>
+        <td>4</td><td>10:30 - 11:15</td>
+        <td><div class="horario-btn horario-Math" onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+        <td><div class="horario-btn horario-Spanish" onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+        <td><div class="horario-btn horario-EnglishLanguage" onclick="openFromSchedule('ENG. LANGUAGE')">🇬🇧 ENG. LANGUAGE</div></td>
+        <td><div class="horario-btn horario-Literacy" onclick="openFromSchedule('LITERACY')">📗 LITERACY</div></td>
+        <td><div class="horario-btn horario-Drama" onclick="openFromSchedule('DRAMA')">🎭 DRAMA</div></td>
+    </tr>
+
+    <!-- RECREO -->
+    <tr><td colspan="7" class="recreo">Recreo (11:15 - 11:30)</td></tr>
+
+    <!-- BLOQUE 5 -->
+    <tr>
+        <td>5</td><td>11:30 - 12:15</td>
+        <td><div class="horario-btn horario-Math" onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+        <td><div class="horario-btn horario-Spanish" onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+        <td><div class="horario-btn horario-CommunicativeSkills" onclick="openFromSchedule('COM. SKILLS')">👥 COM. SKILLS</div></td>
+        <td><div class="horario-btn horario-CommunicativeSkills" onclick="openFromSchedule('COM. SKILLS')">👥 COM. SKILLS</div></td>
+        <td><div class="horario-btn horario-Math" onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+    </tr>
+
+    <!-- ALMUERZO -->
+    <tr>
+        <td colspan="6" class="almuerzo">Almuerzo (12:15 - 13:00)</td>
+        <td><div class="horario-btn horario-Math" onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+    </tr>
+
+    <!-- BLOQUE 6 -->
+    <tr>
+        <td>6</td><td>13:00 - 13:45</td>
+        <td><div class="horario-btn horario-EducacionFisica" onclick="openFromSchedule('PHYSICAL ED.')">🏃‍♂️ PHYSICAL ED.</div></td>
+        <td><div class="horario-btn horario-Literacy" onclick="openFromSchedule('LITERACY')">📗 LITERACY</div></td>
+        <td><div class="horario-btn horario-Spanish" onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+        <td><div class="horario-btn horario-SocialStudies" onclick="openFromSchedule('SOCIAL STUDIES')">🟡 SOCIAL STUDIES</div></td>
+        <td></td>
+    </tr>
+
+    <!-- BLOQUE 7 -->
+    <tr>
+        <td>7</td><td>13:45 - 14:30</td>
+        <td><div class="horario-btn horario-EducacionFisica" onclick="openFromSchedule('PHYSICAL ED.')">🏃‍♂️ PHYSICAL ED.</div></td>
+        <td><div class="horario-btn horario-SocialStudies" onclick="openFromSchedule('SOCIAL STUDIES')">🟡 SOCIAL STUDIES</div></td>
+        <td><div class="horario-btn horario-Spanish" onclick="openFromSchedule('SPANISH')">📘 SPANISH</div></td>
+        <td><div class="horario-btn horario-SocialStudies" onclick="openFromSchedule('SOCIAL STUDIES')">🟡 SOCIAL STUDIES</div></td>
+        <td></td>
+    </tr>
+
+    <!-- RECREO -->
+    <tr><td colspan="7" class="recreo">Recreo (14:30 - 14:40)</td></tr>
+
+    <!-- BLOQUE 8 -->
+    <tr>
+        <td>8</td><td>14:40 - 15:25</td>
+        <td><div class="horario-btn horario-NaturalScience" onclick="openFromSchedule('NATURAL SCIENCE')">🌿 NATURAL SCIENCE</div></td>
+        <td><div class="horario-btn horario-Math" onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+        <td><div class="horario-btn horario-EducacionFisica" onclick="openFromSchedule('PHYSICAL ED.')">🏃‍♂️ PHYSICAL ED.</div></td>
+        <td><div class="horario-btn horario-STEM" onclick="openFromSchedule('STEM')">✏️ STEM</div></td>
+        <td></td>
+    </tr>
+    <!-- BLOQUE 9 -->
+    <tr>
+        <td>8</td><td>15:25 - 16:10</td>
+        <td><div class="horario-btn horario-NaturalScience" onclick="openFromSchedule('NATURAL SCIENCE')">🌿 NATURAL SCIENCE</div></td>
+        <td><div class="horario-btn horario-Math" onclick="openFromSchedule('MATH')">🔢 MATH</div></td>
+        <td><div class="horario-btn horario-EducacionFisica" onclick="openFromSchedule('PHYSICAL ED.')">🏃‍♂️ PHYSICAL ED.</div></td>
+        <td><div class="horario-btn horario-STEM" onclick="openFromSchedule('STEM')">✏️ STEM</div></td>
+        <td></td>
+    </tr>
+
+</table>
+`;
+
+    </script>
 </head>
 
 <body>
 
     <!-- Pantalla principal -->
-    <div id="home" class="home-container">
-        <h1>2°A – Asignaturas</h1>
+    <div id="home" class="screen active">
+        <h1>Material de Estudio - 2° Básico</h1>
 
-        <div class="subjects-grid">
-            <button class="schedule-btn" onclick="loadSchedule()">📅 Ver Horario</button>
-            <button class="schedule-btn" onclick="loadSubject('CALENDARIO')">🗓️ Calendario de Pruebas</button>
-            <button class="subject-btn" onclick="loadSubject('SPANISH')">📘 Spanish</button>
-            <button class="subject-btn" onclick="loadSubject('MATH')">🔢 Math</button>
-            <button class="subject-btn" onclick="loadSubject('ENG. LANGUAGE')">🇬🇧 English</button>
-            <button class="subject-btn" onclick="loadSubject('LITERACY')">📗 Literacy</button>
-            <button class="subject-btn" onclick="loadSubject('NATURAL SCIENCE')">🌿 Natural Science</button>
-            <button class="subject-btn" onclick="loadSubject('SOCIAL STUDIES')">🟡 Social Studies</button>
-            <button class="subject-btn" onclick="loadSubject('COM. SKILLS')">👥 Communicative Skills</button>
-            <button class="subject-btn" onclick="loadSubject('ART')">🎨 Art</button>
-            <button class="subject-btn" onclick="loadSubject('MUSIC')">🎵 Music</button>
-            <button class="subject-btn" onclick="loadSubject('PHYSICAL ED.')">🏃‍♂️ Physical Ed.</button>
-            <button class="subject-btn" onclick="loadSubject('DRAMA')">🎭 Drama</button>
-            <button class="subject-btn" onclick="loadSubject('F. INTEGRAL')">💛 Formación Integral</button>
-            <button class="subject-btn" onclick="loadSubject('F. CIUDADANA')">🤝 Formación Ciudadana</button>
-            <button class="subject-btn" onclick="loadSubject('STEM')">✏️ STEM</button>
+        <div class="grid">
+
+            <!-- HORARIO -->
+            <div class="card" onclick="openSubject('Horario de Clases', horarioInteractivoHTML)">
+                <div class="icon">🗓️</div>
+                <h3>Horario</h3>
+            </div>
+
+            <!-- CALENDARIO DE PRUEBAS -->
+            <div class="card" onclick="loadSubjectData('CalendarioPruebas')">
+                <div class="icon">📝</div>
+                <h3>Calendario de Pruebas</h3>
+            </div>
+
+
+
+            <!-- ENGLISH -->
+            <div class="card" onclick="openSubject('EnglishLanguage', contenidos['EnglishLanguage'])">
+                 <div class="icon">🇬🇧</div>
+                <h3>English Language</h3>
+            </div>
+
+            <!-- MATH -->
+            <div class="card" onclick="loadSubjectData('Math')">
+                <div class="icon">🧮</div>
+                <h3>Math</h3>
+            </div>
+
+            <!-- OTRAS ASIGNATURAS (vacías por ahora) -->
+            <div class="card" onclick="openSubject('NaturalScience', `
+                <h2>Natural Science</h2>
+                <p>Contenido de la asignatura Natural Science.</p>
+                `)">
+                <div class="icon">🔬</div>
+                <h3>Natural Science</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('SocialStudies', `
+                <h2>Social Studies</h2>
+                <p>Contenido de la asignatura Social Studies.</p>
+                `)">
+                <div class="icon">🌎</div>
+                <h3>Social Studies</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('Spanish', `
+                <h2>Spanish</h2>
+                <p>Contenido de la asignatura Spanish.</p>
+                `)">
+                <div class="icon">🇪🇸</div>
+                <h3>Spanish</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('Literacy', `
+                <h2>Literacy</h2>
+                <p>Contenido de la asignatura Literacy.</p>
+                `)">
+                <div class="icon">📚</div>
+                <h3>Literacy</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('STEM', `
+                <h2>STEM</h2>
+                <p>Contenido de la asignatura STEM.</p>
+                `)">
+                <div class="icon">🧪</div>
+                <h3>STEM</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('Art', `
+                <h2>Art</h2>
+                <p>Contenido de la asignatura Art.</p>
+                `)">
+                <div class="icon">🎨</div>
+                <h3>Art</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('Music', `
+                <h2>Music</h2>
+                <p>Contenido de la asignatura Music.</p>
+                `)">
+                <div class="icon">🎵</div>
+                <h3>Music</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('Drama', `
+                <h2>Drama</h2>
+                <p>Contenido de la asignatura Drama.</p>
+`)">
+                <div class="icon">🎭</div>
+                <h3>Drama</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('PhysicalEducation', `
+    <h2>Physical Education</h2>
+    <p>Contenido de la asignatura Physical Education.</p>
+`)">
+                <div class="icon">🏃</div>
+                <h3>Physical Education</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('FormacionCiudadana', `
+    <h2>Formación Ciudadana</h2>
+    <p>Contenido de la asignatura Formación Ciudadana.</p>
+`)">
+                <div class="icon">🤝</div>
+                <h3>Formación Ciudadana</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('FormacionIntegral', `
+    <h2>Formación Integral</h2>
+    <p>Contenido de la asignatura Formación Integral.</p>
+`)">
+                <div class="icon">💛</div>
+                <h3>Formación Integral</h3>
+            </div>
+
+            <div class="card" onclick="openSubject('CommunicativeSkills', `
+    <h2>Communicative Skills</h2>
+    <p>Contenido de la asignatura Communicative Skills.</p>
+`)">
+                <div class="icon">🗣️</div>
+                <h3>Communicative Skills</h3>
+            </div>
+
         </div>
-
-        <button class="schedule-btn" onclick="loadSchedule()">📅 Ver Horario</button>
     </div>
 
-    <!-- Contenido dinámico -->
-    <div id="content" class="content"></div>
-
-    <button id="backBtn" class="back-btn" onclick="goHome()">← Volver</button>
+    <!-- Pantalla de contenido -->
+    <div id="content" class="screen">
+        <a class="back-btn" onclick="goHome()">← Volver</a>
+        <h2 id="subject-title"></h2>
+        <div id="subject-body"></div>
+    </div>
 
     <script src="script.js">
-
-
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
-                    .catch(err => console.log('SW error', err));
-            });
+            navigator.serviceWorker.register('service-worker.js');
         }
+        
+
 
     </script>
+
 </body>
 </html>

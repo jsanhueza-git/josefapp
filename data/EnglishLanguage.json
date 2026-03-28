@@ -25,11 +25,6 @@
             "url": "https://wordwall.net/embed/15b13c7d127a40f6a7cb98670b3a44a6?themeId=1&templateId=22&fontStackId=0"
         }
     ],
-    "important_dates": [
-        {
-            "date": "2026-04-10",
-            "description": "Prueba de suma y resta"
-        }
-    ],
+    "important_dates": [],
     "extra": "<p>Material adicional de Matemáticas.</p>"
 }

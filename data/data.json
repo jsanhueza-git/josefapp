@@ -1,0 +1,151 @@
+{
+  "subjects": [
+    {
+      "key": "Math",
+      "title": "Matemáticas",
+      "description": "Contenido de Matemáticas.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Matemáticas.</p>"
+    },
+    {
+      "key": "Spanish",
+      "title": "Lenguaje",
+      "description": "Contenido de Lenguaje.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Lenguaje.</p>"
+    },
+    {
+      "key": "EnglishLanguage",
+      "title": "English Language",
+      "description": "Contenido de Inglés.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Inglés.</p>"
+    },
+    {
+      "key": "Art",
+      "title": "Arte",
+      "description": "Contenido de Arte.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Arte.</p>"
+    },
+    {
+      "key": "CommunicativeSkills",
+      "title": "Communicative Skills",
+      "description": "Contenido de habilidades comunicativas.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Communicative Skills.</p>"
+    },
+    {
+      "key": "STEM",
+      "title": "STEM",
+      "description": "Contenido de STEM.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de STEM.</p>"
+    },
+    {
+      "key": "FormacionCiudadana",
+      "title": "Formación Ciudadana",
+      "description": "Contenido de Formación Ciudadana.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Formación Ciudadana.</p>"
+    },
+    {
+      "key": "FormacionIntegral",
+      "title": "Formación Integral",
+      "description": "Contenido de Formación Integral.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Formación Integral.</p>"
+    },
+    {
+      "key": "NaturalScience",
+      "title": "Ciencias Naturales",
+      "description": "Contenido de Ciencias Naturales.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Ciencias Naturales.</p>"
+    },
+    {
+      "key": "SocialStudies",
+      "title": "Historia y Ciencias Sociales",
+      "description": "Contenido de Historia.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Historia.</p>"
+    },
+    {
+      "key": "Literacy",
+      "title": "Literacy",
+      "description": "Contenido de Literacy.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Literacy.</p>"
+    },
+    {
+      "key": "Drama",
+      "title": "Drama",
+      "description": "Contenido de Drama.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Drama.</p>"
+    },
+    {
+      "key": "PhysicalEducation",
+      "title": "Educación Física",
+      "description": "Contenido de Educación Física.",
+      "videos": [],
+      "games": [],
+      "extra": "<p>Material adicional de Educación Física.</p>"
+    }
+  ],
+
+  "calendar": [
+    {
+      "date": "2026-03-24",
+      "subject": "EnglishLanguage",
+      "description": "Dictation (Vocabulary p.6)"
+    },
+    {
+      "date": "2026-03-25",
+      "subject": "EnglishLanguage",
+      "description": "Unit 0 Test – Vocabulary (p.6), There is/There are (p.5)"
+    },
+    {
+      "date": "2026-03-26",
+      "subject": "STEM",
+      "description": "Process Evaluation (Project 1) – Booklet (work in class)"
+    },
+    {
+      "date": "2026-03-31",
+      "subject": "Art",
+      "description": "Término proceso – Autorretrato al estilo egipcio"
+    },
+    {
+      "date": "2026-04-08",
+      "subject": "CommunicativeSkills",
+      "description": "Speaking – Parts of the house, furniture y prepositions of place"
+    },
+    {
+      "date": "2026-04-09",
+      "subject": "CommunicativeSkills",
+      "description": "Speaking (continuación)"
+    },
+    {
+      "date": "2026-04-09",
+      "subject": "Spanish",
+      "description": "Evaluación sumativa – Control de lectura complementaria '¡No funciona la tele!'"
+    },
+    {
+      "date": "2026-04-10",
+      "subject": "Math",
+      "description": "Unit 1 Test – Counting up to 50, skip counting, tens and ones, numbers in words"
+    }
+  ]
+}

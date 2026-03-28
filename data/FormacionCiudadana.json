@@ -3,11 +3,6 @@
     "description": "Material de apoyo para la asignatura de Formación Ciudadana.",
     "videos": [],
     "games": [],
-    "important_dates": [
-        {
-            "date": "2026-04-xx",
-            "description": "Prueba form ciu"
-        }
-    ],
+    "important_dates": [],
     "extra": "hola"
 }

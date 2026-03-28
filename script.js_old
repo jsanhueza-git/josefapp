@@ -118,7 +118,9 @@ function generarHTML(data) {
 
                 <div class="filter-row" id="filter-months"></div>
 
-                <div class="filter-row" id="filter-order"></div>
+                <div class="filter-row">
+                    <span class="filter-chip" id="filter-order-toggle" data-order="asc">Fecha ↕</span>
+                </div>
 
                 <input id="filter-search" class="filter-search" placeholder="Buscar..." />
 
@@ -278,11 +280,22 @@ function renderTestFilters() {
     document.getElementById("filter-months").innerHTML =
         months.map(m => `<span class="filter-chip" data-month="${m}">${m}</span>`).join("");
 
-    // Orden
-    document.getElementById("filter-order").innerHTML = `
-        <span class="filter-chip" data-order="asc">Fecha ↑</span>
-        <span class="filter-chip" data-order="desc">Fecha ↓</span>
-    `;
+    const orderChip = document.getElementById("filter-order-toggle");
+
+    orderChip.addEventListener("click", () => {
+        const current = orderChip.dataset.order;
+
+        // Alternar orden
+        const next = current === "asc" ? "desc" : "asc";
+        orderChip.dataset.order = next;
+
+        // Cambiar flecha visual
+        orderChip.textContent = next === "asc" ? "Fecha ↑" : "Fecha ↓";
+
+        orderChip.classList.add("active");
+        applyTestFilters();
+    });
+
 
     // Eventos
     document.querySelectorAll(".filter-chip").forEach(chip => {
@@ -316,15 +329,15 @@ function applyTestFilters() {
         filtered = filtered.filter(t => activeMonths.includes(t.date.slice(0, 7)));
 
     // Orden
-    const orderChip = document.querySelector("[data-order].active");
-    if (orderChip) {
-        const order = orderChip.dataset.order;
-        filtered.sort((a, b) =>
-            order === "asc"
-                ? new Date(a.date) - new Date(b.date)
-                : new Date(b.date) - new Date(a.date)
-        );
-    }
+    const orderChip = document.getElementById("filter-order-toggle");
+    const order = orderChip.dataset.order;
+
+    filtered.sort((a, b) =>
+        order === "asc"
+            ? new Date(a.date) - new Date(b.date)
+            : new Date(b.date) - new Date(a.date)
+    );
+
 
     // Búsqueda
     const search = document.getElementById("filter-search").value.toLowerCase();

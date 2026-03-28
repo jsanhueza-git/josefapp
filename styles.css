@@ -245,3 +245,94 @@ iframe {
     height: 100%;
     border: none;
 }
+
+/* --------------------------------------------------
+   FILTROS TIPO CHIPS
+-------------------------------------------------- */
+
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0 25px 0;
+}
+
+.filter-chip {
+    padding: 8px 14px;
+    background: #e8eef7;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #c7d4e8;
+    transition: background 0.2s;
+}
+
+.filter-chip.active {
+    background: #4b86b4;
+    color: white;
+    border-color: #4b86b4;
+}
+
+.filter-search {
+    flex: 1;
+    min-width: 180px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #c7d4e8;
+    font-size: 14px;
+}
+
+.filter-clear {
+    padding: 8px 14px;
+    background: #e53935;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* --------------------------------------------------
+   TARJETAS DE PRUEBAS
+-------------------------------------------------- */
+
+.test-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.test-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    border-left: 6px solid #4b86b4;
+}
+
+.test-date {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4b86b4;
+    margin-bottom: 6px;
+}
+
+.test-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.test-desc {
+    font-size: 14px;
+    color: #444;
+}
+
+/* Colores por asignatura */
+.test-EnglishLanguage { border-left-color: #7A3FFF; }
+.test-Math { border-left-color: #007BFF; }
+.test-Spanish { border-left-color: #E53935; }
+.test-Art { border-left-color: #F7A8D8; }
+.test-STEM { border-left-color: #A4E600; }
+.test-CommunicativeSkills { border-left-color: #FF8C00; }
+.test-FormacionCiudadana { border-left-color: #4EC9C0; }
+.test-FormacionIntegral { border-left-color: #FFBFA3; }

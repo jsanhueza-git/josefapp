@@ -160,22 +160,6 @@ iframe {
         border-radius: 6px;
     }
 
-    /* Colores por asignatura */
-    .subject-Art { border-left-color: var(--color-Art); }
-    .subject-CommunicativeSkills { border-left-color: var(--color-CommunicativeSkills); }
-    .subject-Drama { border-left-color: var(--color-Drama); }
-    .subject-PhysicalEducation { border-left-color: var(--color-PhysicalEducation); }
-    .subject-EnglishLanguage { border-left-color: var(--color-EnglishLanguage); }
-    .subject-FormacionCiudadana { border-left-color: var(--color-FormacionCiudadana); }
-    .subject-FormacionIntegral { border-left-color: var(--color-FormacionIntegral); }
-    .subject-Literacy { border-left-color: var(--color-Literacy); }
-    .subject-Math { border-left-color: var(--color-Math); }
-    .subject-Music { border-left-color: var(--color-Music); }
-    .subject-NaturalScience { border-left-color: var(--color-NaturalScience); }
-    .subject-SocialStudies { border-left-color: var(--color-SocialStudies); }
-    .subject-Spanish { border-left-color: var(--color-Spanish); }
-    .subject-STEM { border-left-color: var(--color-STEM); }
-
 /* Botones del horario */
 .horario-btn {
     display: flex;
@@ -193,6 +177,12 @@ iframe {
     line-height: 1.1;
     color: #fff;
     font-weight: 600;
+
+    /* NUEVO: borde de color por asignatura */
+    border-left: 8px solid transparent;
+
+    /* NUEVO: espacio entre icono y texto */
+    gap: 6px;
 }
 
 /* Botones más grandes en pantallas grandes */

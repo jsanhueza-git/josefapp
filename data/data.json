@@ -100,7 +100,12 @@
       "key": "NaturalScience",
       "title": "Ciencias Naturales",
       "description": "Contenido de Ciencias Naturales.",
-      "videos": [],
+      "videos": [
+        {
+              "title": "School Supplies | Talking Flashcards",
+              "url": "https://www.youtube.com/watch?v=XUMiPK6LZBI"
+        }
+      ],
       "games": [],
       "extra": "<p>Material adicional de Ciencias Naturales.</p>"
     },

@@ -1,5 +1,22 @@
 {
   "subjects": [
+        {
+      "key": "Music",
+      "title": "Music",
+      "description": "Contenido de Music.",
+      "videos": [
+          {
+              "title": "(The staff) El Pentagrama",
+              "url": "https://www.youtube.com/watch?v=xUvQVjdA_2s&authuser=0"
+          },
+          {
+              "title": "(Repertoire) Twinkle Twinkle Little Star • Nursery Rhymes Song with Lyrics • Animated Cartoon for Kids",
+              "url": "https://www.youtubeeducation.com/embed/1r0_TdqdMvA"
+          }
+      ],
+      "games": [      ],
+      "extra": "<p>Material adicional de Music.</p>"
+    },
     {
       "key": "Math",
       "title": "Matemáticas",
@@ -102,7 +119,7 @@
       "description": "Contenido de Ciencias Naturales.",
       "videos": [
         {
-              "title": "School Supplies | Talking Flashcards",
+              "title": "The Five Senses for Kids",
               "url": "https://www.youtube.com/watch?v=XUMiPK6LZBI"
         }
       ],

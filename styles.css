@@ -175,15 +175,15 @@ iframe {
     overflow: hidden;
     white-space: normal;
     line-height: 1.1;
-    color: #fff;
     font-weight: 600;
 
-    /* NUEVO: borde de color por asignatura */
+    /* NUEVO */
+    background: #fff;      /* Fondo blanco */
+    color: #000;           /* Texto negro */
     border-left: 8px solid transparent;
-
-    /* NUEVO: espacio entre icono y texto */
     gap: 6px;
 }
+
 
 /* Botones más grandes en pantallas grandes */
 @media (min-width: 900px) {
@@ -210,6 +210,13 @@ iframe {
 .horario-SocialStudies { background: #FFD700; color: #000; }
 .horario-Spanish { background: #E53935; }
 .horario-STEM { background: #A4E600; color: #000; }
+
+/* Anular fondo de las clases antiguas */
+[class^="horario-"] {
+    background: none !important;
+    color: inherit !important;
+}
+
 
 .recreo, .almuerzo {
     text-align: center;

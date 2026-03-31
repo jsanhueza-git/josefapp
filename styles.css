@@ -159,6 +159,7 @@ iframe {
         border-radius: 6px;
     }
 
+
 /* Botones del horario */
 .horario-btn {
     display: flex;
@@ -166,9 +167,10 @@ iframe {
     align-items: center;
     width: 120px;
     height: 45px;
-    padding: 0;
+    padding: 20px 10px;
     margin: 2px;
-    border-radius: 8px;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     font-size: 14px;
     text-align: center;
     overflow: hidden;
@@ -177,7 +179,7 @@ iframe {
     font-weight: 600;
 
     /* NUEVO: estilo unificado */
-    background: #fff;      /* Fondo blanco */
+    background: white;      /* Fondo blanco */
     color: #000;           /* Texto negro */
     border-left: 8px solid transparent;
     gap: 6px;

@@ -75,8 +75,8 @@
     },
     {
       "key": "Art",
-      "title": "Arte",
-      "description": "Contenido de Arte.",
+      "title": "Art",
+      "description": "Contenido de Art.",
       "videos": [
           {
             "title":"CUENTO DE CRONIÑON (HD) (Proyecto la Prehistoria en Infantil)",
@@ -85,8 +85,20 @@
           {
             "title":"EL ANTIGUO EGIPTO | Vídeos Educativos para Niños",
             "url":"https://www.youtubeeducation.com/embed/5qXgipbSuYY"
+          },
+          {
+            "title":"MITOLOGÍA EGIPCIA: El dios Anubis",
+            "url":"https://www.youtubeeducation.com/embed/wRM3cHzVZCQ"
+          },
+          {
+            "title":"MITOLOGÍA EGIPCIA: El dios Anubis",
+            "url":"https://www.youtube.com/embed/WdwojZkLpVg"
+          },
+          {
+            "title":"MITOLOGÍA EGIPCIA: El dios Horus",
+            "url":"https://www.youtube.com/embed/YgWjfpYwe5I"
           }
-         
+          
       ],
       "games": [],
       "extra": "<p>Material adicional de Arte.</p>"

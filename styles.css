@@ -194,31 +194,6 @@ iframe {
     }
 }
 
-/* Colores 
-
-.horario-Art { background: #F7A8D8; color: #000; }
-.horario-CommunicativeSkills { background: #FF8C00; }
-.horario-Drama { background: #CBA0FF; }
-.horario-EducacionFisica { background: #8FE3A2; color: #000; }
-.horario-EnglishLanguage { background: #7A3FFF; }
-.horario-FormacionCiudadana { background: #4EC9C0; }
-.horario-FormacionIntegral { background: #FFBFA3; color: #000; }
-.horario-Literacy { background: #7DDCFF; color: #000; }
-.horario-Math { background: #007BFF; }
-.horario-Music { background: #4A90A4; }
-.horario-NaturalScience { background: #4CAF50; }
-.horario-SocialStudies { background: #FFD700; color: #000; }
-.horario-Spanish { background: #E53935; }
-.horario-STEM { background: #A4E600; color: #000; }
-
-// Anular fondo de las clases antiguas del horario 
-.horario-btn[class*="horario-"] {
-    background: none !important;
-    color: inherit !important;
-}
-*/
-
-
 .recreo, .almuerzo {
     text-align: center;
     font-weight: bold;
@@ -246,7 +221,7 @@ iframe {
     padding: 10px;
     text-align: center;
     vertical-align: middle;
-    background: #fff;
+    /*background: #fff;*/
 }
 
 /* --------------------------------------------------

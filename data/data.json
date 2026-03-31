@@ -77,7 +77,17 @@
       "key": "Art",
       "title": "Arte",
       "description": "Contenido de Arte.",
-      "videos": [],
+      "videos": [
+          {
+            "title":"CUENTO DE CRONIÑON (HD) (Proyecto la Prehistoria en Infantil)",
+            "url":"https://www.youtubeeducation.com/embed/yJFxPzjqld0"
+          },
+          {
+            "title":"EL ANTIGUO EGIPTO | Vídeos Educativos para Niños",
+            "url":"https://www.youtubeeducation.com/embed/5qXgipbSuYY"
+          }
+         
+      ],
       "games": [],
       "extra": "<p>Material adicional de Arte.</p>"
     },

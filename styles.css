@@ -172,12 +172,13 @@ iframe {
     margin: 2px;
     border-radius: 15px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: bold;
     text-align: center;
     overflow: hidden;
     white-space: normal;
     line-height: 1.1;
-    font-weight: 600;
+    
     
     background: white;
     color: #000;
@@ -192,7 +193,7 @@ iframe {
     .horario-btn {
         width: 160px;
         height: 55px;
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -201,7 +202,7 @@ iframe {
     font-weight: bold;
     background: #f0f0f0;
     padding: 8px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* Tabla del horario */

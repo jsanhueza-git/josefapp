@@ -167,8 +167,8 @@ iframe {
     align-items: center;
     width: 120px;
     height: 45px;
-    padding: 6px 10px;
-    box-sizing: border-box;
+    padding: 4px 8px; /* Ajustado */
+    box-sizing: border-box; /* CLAVE */
     margin: 2px;
     border-radius: 15px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -179,9 +179,8 @@ iframe {
     line-height: 1.1;
     font-weight: 600;
 
-    /* NUEVO: estilo unificado */
-    background: white;      /* Fondo blanco */
-    color: #000;           /* Texto negro */
+    background: white;
+    color: #000;
     border-left: 8px solid transparent;
     gap: 6px;
 }

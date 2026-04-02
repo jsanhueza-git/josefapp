@@ -179,8 +179,6 @@ iframe {
     line-height: 1.1;
     font-weight: 600;
     
-    transition: 0.2s ease;
-
     background: white;
     color: #000;
     border-left: 8px solid transparent;
@@ -207,12 +205,30 @@ iframe {
 }
 
 /* Tabla del horario */
-.horario-table {
+/* .horario-table {
     width: 100%;
-    max-width: 1100px; /* evita que se estire demasiado */
+    max-width: 1100px; 
     margin: 10px auto;
     border-collapse: collapse;
+} */
+
+.horario-table .card {
+    height: 56px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    line-clamp: 2; /* estándar, para compatibilidad futura */
+
+    overflow: hidden;
 }
+
+
+
+.horario-table .card:hover {
+    transform: none;
+}
+
 
 .horario-table th {
     background: #4b86b4;

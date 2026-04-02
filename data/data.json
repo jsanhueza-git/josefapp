@@ -7,11 +7,12 @@
       "videos": [
           {
               "title": "(The staff) El Pentagrama",
-              "url": "https://www.youtube.com/watch?v=xUvQVjdA_2s&authuser=0"
+              "url": "https://www.youtube.com/embed/xUvQVjdA_2s"
           },
           {
               "title": "(Repertoire) Twinkle Twinkle Little Star • Nursery Rhymes Song with Lyrics • Animated Cartoon for Kids",
-              "url": "https://www.youtubeeducation.com/embed/1r0_TdqdMvA"
+              "url": "https://www.youtube.com/embed/1r0_TdqdMvA"
+
           }
       ],
       "games": [      ],
@@ -80,15 +81,15 @@
       "videos": [
           {
             "title":"CUENTO DE CRONIÑON (HD) (Proyecto la Prehistoria en Infantil)",
-            "url":"https://www.youtubeeducation.com/embed/yJFxPzjqld0"
+            "url":"https://www.youtube.com/embed/yJFxPzjqld0"
           },
           {
             "title":"EL ANTIGUO EGIPTO | Vídeos Educativos para Niños",
-            "url":"https://www.youtubeeducation.com/embed/5qXgipbSuYY"
+            "url":"https://www.youtube.com/embed/5qXgipbSuYY"
           },
           {
             "title":"MITOLOGÍA EGIPCIA: El dios Anubis",
-            "url":"https://www.youtubeeducation.com/embed/wRM3cHzVZCQ"
+            "url":"https://www.youtube.com/embed/wRM3cHzVZCQ"
           },
           {
             "title":"MITOLOGÍA EGIPCIA: El dios Anubis",
@@ -142,7 +143,7 @@
       "videos": [
         {
               "title": "The Five Senses for Kids",
-              "url": "https://www.youtube.com/watch?v=XUMiPK6LZBI"
+              "url": "https://www.youtube.com/embed/XUMiPK6LZBI"
         }
       ],
       "games": [],

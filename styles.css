@@ -205,12 +205,12 @@ iframe {
 }
 
 /* Tabla del horario */
-/* .horario-table {
+.horario-table {
     width: 100%;
     max-width: 1100px; 
     margin: 10px auto;
     border-collapse: collapse;
-} */
+} 
 
 .horario-table .card {
     height: 48px;

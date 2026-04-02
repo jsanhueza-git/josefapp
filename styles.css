@@ -213,7 +213,7 @@ iframe {
 } */
 
 .horario-table .card {
-    height: 56px;
+    height: 48px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -221,6 +221,9 @@ iframe {
     line-clamp: 2; /* estándar, para compatibilidad futura */
 
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 

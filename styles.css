@@ -167,7 +167,8 @@ iframe {
     align-items: center;
     width: 120px;
     height: 45px;
-    padding: 20px 10px;
+    padding: 6px 10px;
+    box-sizing: border-box;
     margin: 2px;
     border-radius: 15px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);

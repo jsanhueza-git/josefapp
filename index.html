@@ -12,7 +12,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
@@ -21,93 +20,20 @@
     <div id="home" class="screen active">
         <h1>Material de Estudio - 2° Básico</h1>
 
+        <!-- ASIGNATURAS DINÁMICAS DESDE data.json -->
         <div id="subjects-grid" class="grid"></div>
 
-            <div class="card subject-Horario" onclick="loadHorario()">
-                <div class="icon">🗓️</div>
-                <h3>Horario</h3>
-            </div>
-
-            <!-- CALENDARIO DE PRUEBAS -->
-            <div class="card subject-Calendario" onclick="loadCalendar()">
-                <div class="icon">📝</div>
-                <h3>Pruebas</h3>
-            </div>
-
-            <!-- ENGLISH -->
-            <div class="card subject-EnglishLanguage" onclick="loadSubjectData('EnglishLanguage')">
-                 <div class="icon">🇬🇧</div>
-                 <h3>English Language</h3>
-            </div>
-
-            <!-- MATH -->
-            <div class="card subject-Math" onclick="loadSubjectData('Math')">
-                <div class="icon">🧮</div>
-                <h3>Math</h3>
-            </div>
-
-            <!-- OTRAS ASIGNATURAS (vacías por ahora) -->
-            <div class="card subject-NaturalScience" onclick="loadSubjectData('NaturalScience')">
-                <div class="icon">🔬</div>
-                <h3>Natural Science</h3>
-            </div>
-
-            <div class="card subject-SocialStudies" onclick="loadSubjectData('SocialStudies')">
-                <div class="icon">🌎</div>
-                <h3>Social Studies</h3>
-            </div>
-
-            <div class="card subject-Spanish" onclick="loadSubjectData('Spanish')">
-                <div class="icon">🇪🇸</div>
-                <h3>Spanish</h3>
-            </div>
-
-            <div class="card subject-Literacy" onclick="loadSubjectData('Literacy')">
-                <div class="icon">📚</div>
-                <h3>Literacy</h3>
-            </div>
-
-            <div class="card subject-STEM" onclick="loadSubjectData('STEM')">
-                <div class="icon">🧪</div>
-                <h3>STEM</h3>
-            </div>
-
-            <div class="card subject-Art" onclick="loadSubjectData('Art')">
-                <div class="icon">🎨</div>
-                <h3>Art</h3>
-            </div>
-
-            <div class="card subject-Music" onclick="loadSubjectData('Music')">
-                <div class="icon">🎵</div>
-                <h3>Music</h3>
-            </div>
-
-            <div class="card subject-Drama" onclick="loadSubjectData('Drama')">
-                <div class="icon">🎭</div>
-                <h3>Drama</h3>
-            </div>
-
-            <div class="card subject-PhysicalEducation" onclick="loadSubjectData('PhysicalEducation')">
-                <div class="icon">🏃</div>
-                <h3>Physical Education</h3>
-            </div>
-
-            <div class="card subject-FormacionCiudadana" onclick="loadSubjectData('FormacionCiudadana')">
-                <div class="icon">🤝</div>
-                <h3>Formacion Ciudadana</h3>
-            </div>
-
-            <div class="card subject-FormacionIntegral" onclick="loadSubjectData('FormacionIntegral')">
-                <div class="icon">💛</div>
-                <h3>Formacion Integral</h3>
-            </div>
-
-            <div class="card subject-CommunicativeSkills" onclick="loadSubjectData('CommunicativeSkills')">
-                <div class="icon">🗣️</div>
-                <h3>Comm. Skills</h3>
-            </div>
-
+        <!-- ACCESOS FIJOS (NO DINÁMICOS) -->
+        <div class="card subject-Horario" onclick="loadHorario()">
+            <div class="icon">🗓️</div>
+            <h3>Horario</h3>
         </div>
+
+        <div class="card subject-Calendario" onclick="loadCalendar()">
+            <div class="icon">📝</div>
+            <h3>Pruebas</h3>
+        </div>
+
     </div>
 
     <!-- Pantalla de contenido -->
@@ -117,10 +43,7 @@
         <div id="subject-body"></div>
     </div>
 
-
     <script src="script.js"></script>
-
-
 
 </body>
 </html>

@@ -1,191 +1,6 @@
-/* ---------------------------------------------
-   CARGA DEL JSON MAESTRO
---------------------------------------------- */
-
-let DATA = null;
-
-async function loadMasterData() {
-    if (DATA) return DATA;
-    const res = await fetch("data/data.json");
-    DATA = await res.json();
-    return DATA;
-}
 
 /* ---------------------------------------------
-   NAVEGACIÓN
---------------------------------------------- */
-
-let lastScreen = "home";
-
-function goHome() {
-    document.getElementById("content").classList.remove("active");
-    document.getElementById("home").classList.add("active");
-}
-
-/* ---------------------------------------------
-   HOME DINÁMICO (OPCIÓN B)
---------------------------------------------- */
-
-async function loadHomeSubjects() {
-    const data = await loadMasterData();
-    const grid = document.getElementById("subjects-grid");
-
-    grid.innerHTML = "";
-
-    data.subjects.forEach(sub => {
-        const card = document.createElement("div");
-        card.className = `card subject-${sub.key}`;
-        card.onclick = () => loadSubjectData(sub.key);
-
-        card.innerHTML = `
-            <div class="icon">${getSubjectIcon(sub.key)}</div>
-            <h3>${sub.title}</h3>
-        `;
-
-        grid.appendChild(card);
-    });
-}
-
-function getSubjectIcon(key) {
-    const icons = {
-        EnglishLanguage: "🇬🇧",
-        Math: "🧮",
-        NaturalScience: "🔬",
-        SocialStudies: "🌎",
-        Spanish: "🇪🇸",
-        Literacy: "📚",
-        STEM: "🧪",
-        Art: "🎨",
-        Music: "🎵",
-        Drama: "🎭",
-        PhysicalEducation: "🏃",
-        FormacionCiudadana: "🤝",
-        FormacionIntegral: "💛",
-        CommunicativeSkills: "🗣️"
-    };
-
-    return icons[key] || "📘";
-}
-
-/* ---------------------------------------------
-   ABRIR ASIGNATURA (NUEVA ESTRUCTURA)
---------------------------------------------- */
-
-async function loadSubjectData(subjectKey) {
-    const data = await loadMasterData();
-
-    const subject = data.subjects.find(s => s.key === subjectKey);
-    if (!subject) return;
-
-    // Pruebas filtradas desde el calendario
-    const tests = data.calendar.filter(t => t.subject === subjectKey);
-
-    const html = generarHTMLAsignatura(subject, tests);
-    openSubject(subject.title, html);
-}
-
-function generarHTMLAsignatura(subject, tests) {
-    let html = "";
-
-    /* -------------------------
-       SECCIÓN DE PRUEBAS
-    ------------------------- */
-    if (tests.length > 0) {
-        html += `<h3>📌 Pruebas</h3>`;
-        html += `<ul class="test-list">`;
-
-        tests.forEach(t => {
-            html += `
-                <li>
-                    <strong>${t.date}</strong><br>
-                    ${t.description}
-                </li>
-            `;
-        });
-
-        html += `</ul><hr>`;
-    }
-
-    /* -------------------------
-       SECCIÓN DE UNIDADES
-    ------------------------- */
-    html += `<h3>📚 Unidades</h3>`;
-
-    subject.unidades.forEach((unidad, index) => {
-        const uid = `${subject.key}-${index}`;
-
-        html += `
-            <div class="unidad">
-                <button class="unidad-btn" onclick="toggleUnidad('${uid}')">
-                    ${unidad.titulo}
-                </button>
-
-                <div id="unidad-${uid}" class="unidad-content">
-                    ${generarContenidoUnidad(unidad)}
-                </div>
-            </div>
-        `;
-    });
-
-    return html;
-}
-
-function generarContenidoUnidad(unidad) {
-    let html = "";
-
-    // VIDEOS
-    if (unidad.videos && unidad.videos.length > 0) {
-        html += `<h4>🎬 Videos</h4>`;
-        unidad.videos.forEach(v => {
-            html += `
-                <div class="video-item">
-                    <p><strong>${v.title}</strong></p>
-                    <iframe src="${v.url}" frameborder="0" allowfullscreen></iframe>
-                </div>
-            `;
-        });
-    }
-
-    // JUEGOS
-    if (unidad.games && unidad.games.length > 0) {
-        html += `<h4>🎮 Juegos</h4>`;
-        unidad.games.forEach(g => {
-            html += `
-                <div class="game-item">
-                    <p><strong>${g.title}</strong></p>
-                    <iframe src="${g.url}" frameborder="0"></iframe>
-                </div>
-            `;
-        });
-    }
-
-    // EXTRA
-    if (unidad.extra) {
-        html += `<h4>📘 Material Extra</h4>`;
-        html += unidad.extra;
-    }
-
-    return html;
-}
-
-function toggleUnidad(uid) {
-    const el = document.getElementById(`unidad-${uid}`);
-    el.classList.toggle("open");
-}
-
-function openSubject(title, contentHTML) {
-    lastScreen = "home";
-    document.getElementById("home").classList.remove("active");
-    document.getElementById("content").classList.add("active");
-
-    document.getElementById("subject-title").innerText = title;
-    document.getElementById("subject-body").innerHTML = contentHTML;
-
-    window.scrollTo(0, 0);
-}
-
-/* ---------------------------------------------
-   CALENDARIO GENERAL (SE MANTIENE)
+   GENERAR HTML
 --------------------------------------------- */
 
 function generarHTML(data) {
@@ -234,7 +49,7 @@ function generarHTML(data) {
         html += `</div>`;
     }
 
-    /* CALENDARIO GENERAL */
+    /* CALENDARIO GENERAL CON FILTROS */
     if (data.is_calendar && data.important_dates?.length) {
 
         html += `
@@ -261,6 +76,7 @@ function generarHTML(data) {
     return html;
 }
 
+
 /* ---------------------------------------------
    SISTEMA DE FILTROS DEL CALENDARIO
 --------------------------------------------- */
@@ -273,23 +89,32 @@ function renderTestFilters() {
     const subjects = [...new Set(tests.map(t => t.subject))];
     const months = [...new Set(tests.map(t => t.date.slice(0, 7)))];
 
+    // Chips de asignaturas
     document.getElementById("filter-subjects").innerHTML =
         subjects.map(s => `<span class="filter-chip" data-subject="${s}">${s}</span>`).join("");
 
+    // Chips de meses
     document.getElementById("filter-months").innerHTML =
         months.map(m => `<span class="filter-chip" data-month="${m}">${m}</span>`).join("");
 
+    // BOTÓN DE ORDENAR (solo uno)
     const orderChip = document.getElementById("filter-order-toggle");
 
     orderChip.addEventListener("click", () => {
         const current = orderChip.dataset.order;
+
+        // Alternar orden
         const next = current === "asc" ? "desc" : "asc";
         orderChip.dataset.order = next;
+
+        // Cambiar flecha visual
         orderChip.textContent = next === "asc" ? "Fecha ↑" : "Fecha ↓";
+
         orderChip.classList.add("active");
         applyTestFilters();
     });
 
+    // Activar chips de filtros (EXCLUYENDO el botón de ordenar)
     document.querySelectorAll(".filter-chip").forEach(chip => {
         if (chip.id !== "filter-order-toggle") {
             chip.addEventListener("click", () => {
@@ -299,7 +124,10 @@ function renderTestFilters() {
         }
     });
 
+    // Buscador
     document.getElementById("filter-search").addEventListener("input", applyTestFilters);
+
+    // Botón limpiar
     document.getElementById("filter-clear").addEventListener("click", clearTestFilters);
 
     applyTestFilters();
@@ -320,6 +148,7 @@ function applyTestFilters() {
     if (activeMonths.length)
         filtered = filtered.filter(t => activeMonths.includes(t.date.slice(0, 7)));
 
+    // ORDENAR SEGÚN EL BOTÓN
     const orderChip = document.getElementById("filter-order-toggle");
     const order = orderChip.dataset.order;
 
@@ -329,6 +158,7 @@ function applyTestFilters() {
             : new Date(b.date) - new Date(a.date)
     );
 
+    // BUSCADOR
     const search = document.getElementById("filter-search").value.toLowerCase();
     if (search) {
         filtered = filtered.filter(t =>
@@ -357,12 +187,13 @@ function clearTestFilters() {
     applyTestFilters();
 }
 
+
 /* ---------------------------------------------
-   CARGAR HORARIO
+   CARGAR HORARIO DESDE ARCHIVO EXTERNO
 --------------------------------------------- */
 
 function loadHorario() {
-    lastScreen = "home";
+    lastScreen = "home"; // si vuelves desde horario → home
 
     fetch("horario.html")
         .then(res => res.text())
@@ -375,12 +206,10 @@ function loadHorario() {
         });
 }
 
-/* ---------------------------------------------
-   INICIO DE LA APP
---------------------------------------------- */
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }
 
+// Cargar asignaturas dinámicamente al iniciar
 loadHomeSubjects();

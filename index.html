@@ -21,12 +21,7 @@
     <div id="home" class="screen active">
         <h1>Material de Estudio - 2° Básico</h1>
 
-        <div class="grid">
-
-            <!-- HORARIO 
-            <div class="card" onclick="openSubject('Horario de Clases', horarioInteractivoHTML)">
-                <div class="icon">🗓️</div>
-            </div>-->
+        <div id="subjects-grid" class="grid"></div>
 
             <div class="card subject-Horario" onclick="loadHorario()">
                 <div class="icon">🗓️</div>
@@ -122,11 +117,10 @@
         <div id="subject-body"></div>
     </div>
 
-    <script src="script.js">
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js');
-        }
-    </script>
+
+    <script src="script.js"></script>
+
+
 
 </body>
 </html>

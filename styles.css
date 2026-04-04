@@ -150,6 +150,29 @@ iframe {
     margin: 15px 0;
 }
 
+
+.unidad-content {
+    display: none;
+    padding: 10px;
+}
+
+.unidad-content.open {
+    display: block;
+}
+
+.unidad-btn {
+    width: 100%;
+    padding: 12px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
 /* --------------------------------------------------
    HORARIO DE CLASES
 -------------------------------------------------- */

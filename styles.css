@@ -22,14 +22,12 @@
     --color-Calendario: #9E9E9E;
 }
 
-
-
-/* Estilo general */
+/* Estilo general 
 .card {
     border-left: 8px solid transparent;
     transition: 0.2s ease;
     cursor: pointer;
-}
+}*/
 
 /* Colores por asignatura */
 .subject-Math { border-left-color: var(--color-Math); }
@@ -51,11 +49,11 @@
 .subject-Horario { border-left-color: var(--color-Horario); }
 .subject-Calendario { border-left-color: var(--color-Calendario); }
 
-/* Hover opcional */
+/* Hover opcional 
 .card:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
+}*/
 
 
 /* --------------------------------------------------
@@ -113,7 +111,9 @@ h1 {
 }
 
 .card:hover {
-    transform: scale(1.03);
+    /*transform: scale(1.03);*/
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
 .icon {

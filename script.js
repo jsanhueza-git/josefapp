@@ -86,7 +86,8 @@ function generarHTMLAsignatura(subject, tests) {
     /* -------------------------
        SECCIÓN DE UNIDADES
     ------------------------- */
-    html += `<h3>📚 Unidades</h3>`;
+    html += `<div class="section-block">
+    <h3>📚 Unidades</h3>`;
 
     subject.unidades.forEach((unidad, index) => {
         const uid = `${subject.key}-${index}`;
@@ -102,8 +103,9 @@ function generarHTMLAsignatura(subject, tests) {
                 </div>
             </div>
         `;
-    });
 
+    });
+    html += `</div>`;
     return html;
 }
 

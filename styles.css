@@ -482,3 +482,21 @@ iframe {
     opacity: 0.8;
 }
 
+.section-block {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.unidad-btn {
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 14px;
+}
+
+.video-item iframe {
+    max-width: 360px;
+    border-radius: 12px;
+}

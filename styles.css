@@ -500,3 +500,18 @@ iframe {
     max-width: 360px;
     border-radius: 12px;
 }
+
+.classroom-link {
+    display: inline-block;
+    background: #4285F4;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.classroom-link:hover {
+    background: #3367D6;
+}

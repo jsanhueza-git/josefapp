@@ -63,6 +63,18 @@ async function loadSubjectData(subjectKey) {
 function generarHTMLAsignatura(subject, tests) {
     let html = "";
 
+    // LINK A CLASSROOM (si existe)
+    if (subject.classroom) {
+        html += `
+        <div class="section-block">
+            <h3>📘 Classroom</h3>
+            <a href="${subject.classroom}" target="_blank" class="classroom-link">
+                Ir a Classroom
+            </a>
+        </div>
+        `;
+    }
+
     /* -------------------------
        SECCIÓN DE PRUEBAS
     ------------------------- */

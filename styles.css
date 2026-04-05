@@ -28,6 +28,7 @@
 .card {
     border-left: 8px solid transparent;
     transition: 0.2s ease;
+    cursor: pointer;
 }
 
 /* Colores por asignatura */
@@ -52,8 +53,12 @@
 
 /* Hover opcional */
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
 }
 
 /* --------------------------------------------------

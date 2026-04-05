@@ -12,39 +12,63 @@ async function loadMasterData() {
 }
 
 /* ---------------------------------------------
-   HOME DINÁMICO (home_items)
+   NAVEGACIÓN
 --------------------------------------------- */
 
-async function loadHomeItems() {
+let lastScreen = "home";
+
+function goHome() {
+    document.getElementById("content").classList.remove("active");
+    document.getElementById("home").classList.add("active");
+}
+
+/* ---------------------------------------------
+   HOME DINÁMICO (OPCIÓN B)
+--------------------------------------------- */
+
+async function loadHomeSubjects() {
     const data = await loadMasterData();
     const grid = document.getElementById("subjects-grid");
 
     grid.innerHTML = "";
 
-    data.home_items.forEach(item => {
+    data.subjects.forEach(sub => {
         const card = document.createElement("div");
-        card.className = `card subject-${item.key}`;
-
-        // Acción según el tipo
-        if (item.type === "subject") {
-            card.onclick = () => loadSubjectData(item.key);
-        } else if (item.type === "schedule") {
-            card.onclick = () => loadHorario();
-        } else if (item.type === "calendar") {
-            card.onclick = () => loadCalendar();
-        }
+        card.className = `card subject-${sub.key}`;
+        card.onclick = () => loadSubjectData(sub.key);
 
         card.innerHTML = `
-            <div class="icon">${item.icon}</div>
-            <h3>${item.title}</h3>
+            <div class="icon">${getSubjectIcon(sub.key)}</div>
+            <h3>${sub.title}</h3>
         `;
 
         grid.appendChild(card);
     });
 }
 
+function getSubjectIcon(key) {
+    const icons = {
+        EnglishLanguage: "🇬🇧",
+        Math: "🧮",
+        NaturalScience: "🔬",
+        SocialStudies: "🌎",
+        Spanish: "🇪🇸",
+        Literacy: "📚",
+        STEM: "🧪",
+        Art: "🎨",
+        Music: "🎵",
+        Drama: "🎭",
+        PhysicalEducation: "🏃",
+        FormacionCiudadana: "🤝",
+        FormacionIntegral: "💛",
+        CommunicativeSkills: "🗣️"
+    };
+
+    return icons[key] || "📘";
+}
+
 /* ---------------------------------------------
-   ABRIR ASIGNATURA
+   ABRIR ASIGNATURA (NUEVA ESTRUCTURA)
 --------------------------------------------- */
 
 async function loadSubjectData(subjectKey) {
@@ -150,6 +174,7 @@ function toggleUnidad(uid) {
 }
 
 function openSubject(title, contentHTML) {
+    lastScreen = "home";
     document.getElementById("home").classList.remove("active");
     document.getElementById("content").classList.add("active");
 
@@ -160,24 +185,36 @@ function openSubject(title, contentHTML) {
 }
 
 /* ---------------------------------------------
-   CALENDARIO GENERAL
+   CALENDARIO GENERAL (SE MANTIENE)
 --------------------------------------------- */
-
-async function loadCalendar() {
-    const data = await loadMasterData();
-
-    const html = generarHTML({
-        title: "Calendario de Pruebas",
-        description: "Evaluaciones oficiales enviadas por el colegio.",
-        is_calendar: true,
-        important_dates: data.calendar
-    });
-
-    openSubject("Calendario de Pruebas", html);
-}
 
 function generarHTML(data) {
     let html = `<p>${data.description || ""}</p>`;
+
+    /* VIDEOS */
+    if (data.videos?.length) {
+        html += `<h3>Videos</h3>`;
+        data.videos.forEach(v => {
+            html += `
+                <div class="video-container">
+                    <iframe src="${v.url}" frameborder="0" allowfullscreen></iframe>
+                    <p>${v.title}</p>
+                </div>
+            `;
+        });
+    }
+
+    /* JUEGOS */
+    if (data.games?.length) {
+        html += `<h3>Juegos</h3>`;
+        data.games.forEach(g => {
+            html += `
+                <div class="game-container">
+                    <iframe src="${g.url}" frameborder="0" allowfullscreen></iframe>
+                </div>
+            `;
+        });
+    }
 
     /* PRUEBAS POR ASIGNATURA */
     if (data.tests?.length && !data.is_calendar) {
@@ -218,6 +255,8 @@ function generarHTML(data) {
 
         setTimeout(renderTestFilters, 50);
     }
+
+    if (data.extra) html += data.extra;
 
     return html;
 }
@@ -323,6 +362,8 @@ function clearTestFilters() {
 --------------------------------------------- */
 
 function loadHorario() {
+    lastScreen = "home";
+
     fetch("horario.html")
         .then(res => res.text())
         .then(html => {
@@ -342,4 +383,4 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }
 
-loadHomeItems();
+loadHomeSubjects();

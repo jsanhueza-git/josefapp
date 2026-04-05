@@ -1,34 +1,4 @@
 {
-  "home_items": [
-    {
-      "key": "Horario",
-      "title": "Horario",
-      "icon": "🗓️",
-      "type": "schedule"
-    },
-    {
-      "key": "Calendario",
-      "title": "Pruebas",
-      "icon": "📝",
-      "type": "calendar"
-    },
-
-    { "key": "Music", "title": "Music", "icon": "🎵", "type": "subject" },
-    { "key": "Math", "title": "Matemáticas", "icon": "🧮", "type": "subject" },
-    { "key": "Spanish", "title": "Lenguaje", "icon": "🇪🇸", "type": "subject" },
-    { "key": "EnglishLanguage", "title": "English Language", "icon": "🇬🇧", "type": "subject" },
-    { "key": "Art", "title": "Art", "icon": "🎨", "type": "subject" },
-    { "key": "CommunicativeSkills", "title": "Communicative Skills", "icon": "🗣️", "type": "subject" },
-    { "key": "STEM", "title": "STEM", "icon": "🧪", "type": "subject" },
-    { "key": "FormacionCiudadana", "title": "Formación Ciudadana", "icon": "🤝", "type": "subject" },
-    { "key": "FormacionIntegral", "title": "Formación Integral", "icon": "💛", "type": "subject" },
-    { "key": "NaturalScience", "title": "Ciencias Naturales", "icon": "🔬", "type": "subject" },
-    { "key": "SocialStudies", "title": "Historia y Ciencias Sociales", "icon": "🌎", "type": "subject" },
-    { "key": "Literacy", "title": "Literacy", "icon": "📚", "type": "subject" },
-    { "key": "Drama", "title": "Drama", "icon": "🎭", "type": "subject" },
-    { "key": "PhysicalEducation", "title": "Educación Física", "icon": "🏃", "type": "subject" }
-  ],
-
   "subjects": [
     {
       "key": "Music",

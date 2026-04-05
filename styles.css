@@ -472,3 +472,13 @@ iframe {
 .test-CommunicativeSkills { border-left-color: #FF8C00; }
 .test-FormacionCiudadana { border-left-color: #4EC9C0; }
 .test-FormacionIntegral { border-left-color: #FFBFA3; }
+
+.back-btn {
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+

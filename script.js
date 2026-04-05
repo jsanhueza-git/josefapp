@@ -67,6 +67,7 @@ function generarHTMLAsignatura(subject, tests) {
        SECCIÓN DE PRUEBAS
     ------------------------- */
     if (tests.length > 0) {
+        html += `<div class="section-block">`;
         html += `<h3>📌 Pruebas</h3>`;
         html += `<ul class="test-list">`;
 
@@ -79,7 +80,7 @@ function generarHTMLAsignatura(subject, tests) {
             `;
         });
 
-        html += `</ul><hr>`;
+        html += `</ul><hr></div>`;
     }
 
     /* -------------------------
@@ -111,6 +112,7 @@ function generarContenidoUnidad(unidad) {
 
     // VIDEOS
     if (unidad.videos && unidad.videos.length > 0) {
+        html += `<div class="section-block">`;
         html += `<h4>🎬 Videos</h4>`;
         unidad.videos.forEach(v => {
             html += `
@@ -120,6 +122,7 @@ function generarContenidoUnidad(unidad) {
                 </div>
             `;
         });
+        html += `</div>`;
     }
 
     // JUEGOS

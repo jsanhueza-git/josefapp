@@ -342,4 +342,10 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }
 
+function goHome() {
+    document.getElementById("content").classList.remove("active");
+    document.getElementById("home").classList.add("active");
+    window.scrollTo(0, 0);
+}
+
 loadHomeItems();

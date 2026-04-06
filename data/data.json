@@ -34,6 +34,7 @@
       "key": "Music",
       "title": "Music",
       "description": "Contenido de Music.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIxNTMwNTI0",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -52,11 +53,11 @@
         }
       ]
     },
-
     {
       "key": "Math",
       "title": "Matemáticas",
       "description": "Contenido de Matemáticas.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIyMzk4OTE1",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -76,11 +77,11 @@
         }
       ]
     },
-
     {
       "key": "Spanish",
       "title": "Lenguaje",
       "description": "Contenido de Lenguaje.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIyNzIxOTE1",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -90,7 +91,6 @@
         }
       ]
     },
-
     {
       "key": "EnglishLanguage",
       "title": "English Language",
@@ -98,7 +98,26 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIwNjA3ODQ3",
       "unidades": [
         {
-          "titulo": "Unidad 1",
+          "titulo": "Unidad 1 - dictado 2 (15/04/2026)",
+          "videos": [
+            {
+              "title": "xxxx",
+              "url": "http://www.youtube.com/embed/qD1pnquN_DM"
+            },
+            {
+              "title": "xx",
+              "url": "http://www.youtube.com/embed/m9-zVE6hAmY"
+            },
+            {
+              "title": "xx",
+              "url": "http://www.youtube.com/embed/U9Q7Y3t4m3g"
+            }
+          ],
+          "games": [],
+          "extra": "<p>Material adicional de Inglés.</p>"
+        },
+        {
+          "titulo": "Unidad 1 - Material prueba 1 y dictado 1",
           "videos": [
             {
               "title": "School Supplies | Talking Flashcards",
@@ -127,11 +146,11 @@
         }
       ]
     },
-
     {
       "key": "Art",
       "title": "Art",
       "description": "Contenido de Art.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIwNTYzNjEy",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -162,11 +181,11 @@
         }
       ]
     },
-
     {
       "key": "CommunicativeSkills",
       "title": "Communicative Skills",
       "description": "Contenido de habilidades comunicativas.",
+      "classroom": "https://classroom.google.com/c/ODUwMjE4ODM5ODIy",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -189,11 +208,11 @@
         }
       ]
     },
-
     {
       "key": "STEM",
       "title": "STEM",
       "description": "Contenido de STEM.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIzODAwNTU2",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -203,11 +222,11 @@
         }
       ]
     },
-
     {
       "key": "FormacionCiudadana",
       "title": "Formación Ciudadana",
       "description": "Contenido de Formación Ciudadana.",
+      "classroom": "https://classroom.google.com/c/ODUwMjE4ODM5ODYw",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -217,11 +236,11 @@
         }
       ]
     },
-
     {
       "key": "FormacionIntegral",
       "title": "Formación Integral",
       "description": "Contenido de Formación Integral.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIxODk2MDc4",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -231,11 +250,11 @@
         }
       ]
     },
-
     {
       "key": "NaturalScience",
       "title": "Ciencias Naturales",
       "description": "Contenido de Ciencias Naturales.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIyNDkwNjg3",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -250,11 +269,11 @@
         }
       ]
     },
-
     {
       "key": "SocialStudies",
       "title": "Historia y Ciencias Sociales",
       "description": "Contenido de Historia.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIxODI4OTMx",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -264,11 +283,11 @@
         }
       ]
     },
-
     {
       "key": "Literacy",
       "title": "Literacy",
       "description": "Contenido de Literacy.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIxMTY1OTE0",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -278,11 +297,11 @@
         }
       ]
     },
-
     {
       "key": "Drama",
       "title": "Drama",
       "description": "Contenido de Drama.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIxMTY1OTQ0",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -292,11 +311,11 @@
         }
       ]
     },
-
     {
       "key": "PhysicalEducation",
       "title": "Educación Física",
       "description": "Contenido de Educación Física.",
+      "classroom": "https://classroom.google.com/c/ODUwMjIyMjM2MzIx",
       "unidades": [
         {
           "titulo": "Unidad 1",
@@ -348,6 +367,31 @@
       "date": "2026-04-10",
       "subject": "Math",
       "description": "Unit 1 Test – Counting up to 50, skip counting, tens and ones, numbers in words"
+    },
+    {
+      "date": "2026-04-15",
+      "subject": "EnglishLanguage",
+      "description": "Hello everyone!
+    Remember!
+
+    Dictation: 15/04 📖
+
+    1) brush your teeth
+    2) Play in the park
+    3) have breakfast
+    4) get dressed
+    5) have dinner
+    6) go to bed
+    7) get up
+    8) have lunch
+    9) go to school
+
+
+    Las palabras seran dictadas en cualquier orden. Pueden estudiar de forma entretenida desde casa usando plasticina o arroz, etc para escribir las palabras. Además se recuerda que previo al dictado los alumnos se dictan y corrigen entre ellos como una forma entretenida de practicar, por lo que es importante que tengan en sala las pizarras individuales de forma permanente.
+
+    best,
+
+    Miss Fran 😎"
     }
   ]
 }

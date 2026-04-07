@@ -124,20 +124,26 @@ function generarHTMLAsignatura(subject, tests) {
 function generarContenidoUnidad(unidad) {
     let html = "";
 
-    // VIDEOS
+  // VIDEOS
     if (unidad.videos && unidad.videos.length > 0) {
         html += `<div class="section-block">`;
         html += `<h4>🎬 Videos</h4>`;
         unidad.videos.forEach(v => {
+            const videoID = extractYouTubeID(v.url);
             html += `
                 <div class="video-item">
                     <p><strong>${v.title}</strong></p>
-                    <iframe src="${v.url}" frameborder="0" allowfullscreen></iframe>
+
+                    <div class="video-thumb" onclick="openVideoModal('${v.url}')">
+                        <img src="https://img.youtube.com/vi/${videoID}/0.jpg" />
+                        <div class="play-button">▶</div>
+                    </div>
                 </div>
             `;
-        });
-        html += `</div>`;
-    }
+    });
+    html += `</div>`;
+}
+
 
     // JUEGOS
     if (unidad.games && unidad.games.length > 0) {
@@ -364,5 +370,26 @@ function goHome() {
     document.getElementById("home").classList.add("active");
     window.scrollTo(0, 0);
 }
+
+
+
+function extractYouTubeID(url) {
+    return url.split("/embed/")[1];
+}
+
+function openVideoModal(url) {
+    const modal = document.getElementById("video-modal");
+    const iframe = document.getElementById("modal-video");
+    iframe.src = url;
+    modal.style.display = "flex";
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById("video-modal");
+    const iframe = document.getElementById("modal-video");
+    iframe.src = "";
+    modal.style.display = "none";
+}
+
 
 loadHomeItems();

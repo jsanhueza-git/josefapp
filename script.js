@@ -202,6 +202,16 @@ async function loadCalendar() {
 function generarHTML(data) {
     let html = `<p>${data.description || ""}</p>`;
 
+    /* Selector de vista SOLO para el calendario general */
+    if (data.is_calendar) {
+        html += `
+            <div class="calendar-view-switch">
+                <button onclick="loadCalendar()">📋 Lista</button>
+                <button onclick="loadMonthlyCalendar()">📅 Calendario</button>
+            </div>
+        `;
+    }
+
     /* PRUEBAS POR ASIGNATURA */
     if (data.tests?.length && !data.is_calendar) {
         html += `<h3>Pruebas de ${data.title}</h3>`;
@@ -220,7 +230,7 @@ function generarHTML(data) {
         html += `</div>`;
     }
 
-    /* CALENDARIO GENERAL */
+    /* CALENDARIO GENERAL (vista clásica con filtros) */
     if (data.is_calendar && data.important_dates?.length) {
 
         html += `
@@ -244,6 +254,7 @@ function generarHTML(data) {
 
     return html;
 }
+
 
 /* ---------------------------------------------
    SISTEMA DE FILTROS DEL CALENDARIO
@@ -452,6 +463,26 @@ function openDayDetail(date) {
 
     document.getElementById("modal-content").innerHTML = html;
     document.getElementById("modal").style.display = "flex";
+}
+
+async function loadMonthlyCalendar() {
+    const data = await loadMasterData();
+    const tests = data.calendar;
+
+    const [year, month] = tests[0].date.split("-");
+
+    const html = `
+        <p>Vista mensual del calendario de pruebas.</p>
+
+        <div class="calendar-view-switch">
+            <button onclick="loadCalendar()">📋 Lista</button>
+            <button onclick="loadMonthlyCalendar()">📅 Calendario</button>
+        </div>
+
+        ${renderMonthlyCalendar(tests, parseInt(year), parseInt(month))}
+    `;
+
+    openSubject("Calendario de Pruebas", html);
 }
 
 

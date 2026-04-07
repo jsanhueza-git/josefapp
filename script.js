@@ -391,5 +391,68 @@ function closeVideoModal() {
     modal.style.display = "none";
 }
 
+function renderMonthlyCalendar(tests, year, month) {
+    const date = new Date(year, month - 1, 1);
+    const daysInMonth = new Date(year, month, 0).getDate();
+    const firstDay = (date.getDay() + 6) % 7; // Ajustar para que lunes sea 0
+
+    let html = `
+        <div class="calendar-grid">
+            <div class="cal-header">Lunes</div>
+            <div class="cal-header">Martes</div>
+            <div class="cal-header">Miércoles</div>
+            <div class="cal-header">Jueves</div>
+            <div class="cal-header">Viernes</div>
+        </div>
+        <div class="calendar-grid">
+    `;
+
+    // Espacios antes del primer día
+    for (let i = 0; i < firstDay; i++) {
+        html += `<div class="cal-day empty"></div>`;
+    }
+
+    // Días del mes
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayStr = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        const dayTests = tests.filter(t => t.date === dayStr);
+
+        html += `<div class="cal-day" onclick="openDayDetail('${dayStr}')">`;
+        html += `<div class="cal-date">${day}</div>`;
+
+        dayTests.forEach(t => {
+            html += `
+                <div class="cal-chip test-${t.subject}">
+                    <span class="cal-chip-icon">📘</span>
+                    ${t.subject}
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+    }
+
+    html += `</div>`;
+    return html;
+}
+
+function openDayDetail(date) {
+    const tests = window.currentTests.filter(t => t.date === date);
+
+    let html = `<h3>Pruebas del ${date}</h3>`;
+    tests.forEach(t => {
+        html += `
+            <div class="cal-chip test-${t.subject}">
+                <span class="cal-chip-icon">📘</span>
+                <strong>${t.subject}</strong><br>
+                ${t.description}
+            </div>
+        `;
+    });
+
+    document.getElementById("modal-content").innerHTML = html;
+    document.getElementById("modal").style.display = "flex";
+}
+
 
 loadHomeItems();

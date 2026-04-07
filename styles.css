@@ -275,7 +275,7 @@ iframe {
 
 /* --------------------------------------------------
    CALENDARIO DE PRUEBAS
--------------------------------------------------- */
+
 
 .calendar-table {
     width: 100%;
@@ -307,6 +307,7 @@ iframe {
     border-radius: 5px;
     font-size: 12px;
 }
+-------------------------------------------------- */
 
 /* --------------------------------------------------
    VIDEOS Y JUEGOS
@@ -582,3 +583,80 @@ iframe {
     padding: 10px 18px;
     border-radius: 50%;
 }
+
+
+/* GRID DEL CALENDARIO */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ENCABEZADOS (Lunes–Viernes) */
+.cal-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* CELDA DEL DÍA */
+.cal-day {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 8px;
+    min-height: 90px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+    cursor: pointer;
+}
+
+.cal-day:hover {
+    transform: scale(1.02);
+}
+
+/* NÚMERO DEL DÍA */
+.cal-date {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+/* CHIP DE PRUEBA */
+.cal-chip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 6px;
+    border-radius: 8px;
+    font-size: 11px;
+    color: white;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ICONO DENTRO DEL CHIP */
+.cal-chip-icon {
+    font-size: 12px;
+}
+
+/* COLORES POR ASIGNATURA (usa tus variables) */
+.test-Art { background: var(--color-Art); }
+.test-CommunicativeSkills { background: var(--color-CommunicativeSkills); }
+.test-Drama { background: var(--color-Drama); }
+.test-PhysicalEducation { background: var(--color-PhysicalEducation); }
+.test-EnglishLanguage { background: var(--color-EnglishLanguage); }
+.test-FormacionCiudadana { background: var(--color-FormacionCiudadana); }
+.test-FormacionIntegral { background: var(--color-FormacionIntegral); }
+.test-Literacy { background: var(--color-Literacy); }
+.test-Math { background: var(--color-Math); }
+.test-Music { background: var(--color-Music); }
+.test-NaturalScience { background: var(--color-NaturalScience); }
+.test-SocialStudies { background: var(--color-SocialStudies); }
+.test-Spanish { background: var(--color-Spanish); }
+.test-STEM { background: var(--color-STEM); }
+

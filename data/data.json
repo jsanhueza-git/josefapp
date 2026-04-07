@@ -390,6 +390,91 @@
       "date": "2026-04-15",
       "subject": "Spanish",
       "description": "Declamación poética"
-    }
+    },
+    {
+    "date": "2026-04-14",
+    "subject": "Spanish",
+    "description": "Declamación poética (instrucciones en Classroom)"
+  },
+  {
+    "date": "2026-04-15",
+    "subject": "EnglishLanguage",
+    "description": "Dictation – Classroom objects (Unit 0) y daily routines (Unit 1)"
+  },
+  {
+    "date": "2026-04-16",
+    "subject": "Literacy",
+    "description": "Reading comprehension test (sounds ai/ay, oi/oy, ee/ea)"
+  },
+  {
+    "date": "2026-04-16",
+    "subject": "Literacy",
+    "description": "Dictation (cumulative) – detalles en Classroom"
+  },
+  {
+    "date": "2026-04-20",
+    "subject": "EnglishLanguage",
+    "description": "Proyecto 'My routine' (sumativa) – materiales en Classroom"
+  },
+  {
+    "date": "2026-04-21",
+    "subject": "SocialStudies",
+    "description": "Evaluación sumativa – Cardinal points, planos, mapas y leyendas"
+  },
+  {
+    "date": "2026-04-21",
+    "subject": "EnglishLanguage",
+    "description": "Proyecto 'My routine' (continuación)"
+  },
+  {
+    "date": "2026-04-22",
+    "subject": "EnglishLanguage",
+    "description": "Día de la convivencia escolar (actividad)"
+  },
+  {
+    "date": "2026-04-22",
+    "subject": "PhysicalEducation",
+    "description": "Habilidades motrices básicas – evaluación práctica"
+  },
+  {
+    "date": "2026-04-23",
+    "subject": "Spanish",
+    "description": "Día del libro (actividad)"
+  },
+  {
+    "date": "2026-04-24",
+    "subject": "Drama",
+    "description": "Storyboard – preparación para puppet show"
+  },
+  {
+    "date": "2026-04-27",
+    "subject": "Math",
+    "description": "Unit 1 Test – Lesson 3: Addition and subtraction"
+  },
+  {
+    "date": "2026-04-27",
+    "subject": "NaturalScience",
+    "description": "Trabajo práctico – Lesson 1: Function of organs (instrucciones en Classroom)"
+  },
+  {
+    "date": "2026-04-28",
+    "subject": "Literacy",
+    "description": "Dictation"
+  },
+  {
+    "date": "2026-04-29",
+    "subject": "EnglishLanguage",
+    "description": "Unit 1 Test – Daily routines, telling the time, present simple (3rd person)"
+  },
+  {
+    "date": "2026-05-05",
+    "subject": "Art",
+    "description": "Término de proceso – marioneta"
+  },
+  {
+    "date": "2026-04-01",
+    "subject": "STEM",
+    "description": "Evaluación de proceso (durante el mes)"
+  }
   ]
 }

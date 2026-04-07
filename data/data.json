@@ -291,7 +291,20 @@
       "unidades": [
         {
           "titulo": "Unidad 1",
-          "videos": [],
+          "videos": [
+            {
+              "title": "Long Vowel Sounds | ai, ay | Phonics Songs and Stories | Learn to Read",
+              "url": "https://www.youtube.com/embed/Q-bo7epob6k"
+            },
+            {
+              "title": "🎵 The Oi Oy Song 🎵 | Learn when to use oi and oy",
+              "url": "https://www.youtube.com/embed/ToARPxst8y4"
+            },
+            {
+              "title": "Long Vowel Sounds | ee, ea | Phonics Songs and Stories | Learn to Read",
+              "url": "https://www.youtube.com/embed/LyUiP_0E_HA"
+            }
+          ],
           "games": [],
           "extra": "<p>Material adicional de Literacy.</p>"
         }
@@ -372,6 +385,11 @@
       "date": "2026-04-15",
       "subject": "EnglishLanguage",
       "description": "<span>Hello everyone!<br><br>Remember!<br><br>Dictation: <b>15/04 📖</b><br><br>1) brush your teeth<br>2) Play in the park<br>3) have breakfast<br>4) get dressed<br>5) have dinner<br>6) go to bed<br>7) get up<br>8) have lunch<br>9) go to school<br><br><br>Las palabras seran dictadas en cualquier orden. Pueden estudiar de forma entretenida desde casa usando plasticina o arroz, etc para escribir las palabras. Además se recuerda que previo al dictado los alumnos se dictan y corrigen entre ellos como una forma entretenida de practicar, por lo que es importante que tengan en sala las <b>pizarras individuales</b> de forma permanente.<br><br>best,<br><br>Miss Fran 😎</span>"
+    }
+    {
+      "date": "2026-04-15",
+      "subject": "Spanish",
+      "description": "Declamación poética"
     }
   ]
 }

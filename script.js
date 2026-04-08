@@ -212,7 +212,7 @@ function generarHTML(data) {
         `;
     }
 
-    /* PRUEBAS POR ASIGNATURA */
+    /* PRUEBAS POR ASIGNATURA (solo si NO es calendario) */
     if (data.tests?.length && !data.is_calendar) {
         html += `<h3>Pruebas de ${data.title}</h3>`;
         html += `<div class="test-list">`;
@@ -243,18 +243,20 @@ function generarHTML(data) {
                 <input id="filter-search" class="filter-search" placeholder="Buscar..." />
                 <div id="filter-clear" class="filter-clear">Limpiar</div>
             </div>
-
-            <div id="test-list" class="test-list"></div>
         `;
 
         window.currentTests = data.important_dates;
 
         setTimeout(renderTestFilters, 50);
+
+        /* SOLO si NO estamos en modo "solo filtros", dibujar la lista clásica */
+        if (!data.only_filters) {
+            html += `<div id="test-list" class="test-list"></div>`;
+        }
     }
 
     return html;
 }
-
 
 /* ---------------------------------------------
    SISTEMA DE FILTROS DEL CALENDARIO
@@ -471,7 +473,6 @@ function openDayDetail(date) {
 async function loadMonthlyCalendar() {
     const data = await loadMasterData();
 
-    // Usar la lista filtrada si existe
     const tests = (window.filteredTests && window.filteredTests.length)
         ? window.filteredTests
         : data.calendar;
@@ -483,25 +484,26 @@ async function loadMonthlyCalendar() {
 
     const [year, month] = tests[0].date.split("-");
 
-    const htmlCalendario = renderMonthlyCalendar(
+    // 1) Generar SOLO los filtros
+    const filtrosHTML = generarHTML({
+        title: "Calendario de Pruebas",
+        description: "Evaluaciones oficiales enviadas por el colegio.",
+        is_calendar: true,
+        important_dates: tests,
+        only_filters: true
+    });
+
+    // 2) Generar el calendario mensual
+    const calendarioHTML = renderMonthlyCalendar(
         tests,
         parseInt(year),
         parseInt(month)
     );
 
-    // Pasamos por generarHTML para que incluya los filtros
-    const html = generarHTML({
-        title: "Calendario de Pruebas",
-        description: "Evaluaciones oficiales enviadas por el colegio.",
-        is_calendar: true,
-        important_dates: tests
-    });
-
-    // Insertamos el calendario mensual debajo de los filtros
-    const finalHTML = html + htmlCalendario;
-
-    openSubject("Calendario de Pruebas", finalHTML);
+    // 3) Mostrar SOLO filtros + calendario
+    openSubject("Calendario de Pruebas", filtrosHTML + calendarioHTML);
 }
+
 
 
 

@@ -298,6 +298,8 @@ function renderTestFilters() {
     document.getElementById("filter-clear").addEventListener("click", clearTestFilters);
 
     applyTestFilters();
+    window.filteredTests = filtered; // ← lista filtrada actual
+
 }
 
 function applyTestFilters() {

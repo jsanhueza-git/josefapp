@@ -464,15 +464,7 @@ iframe {
     color: #444;
 }
 
-/* Colores por asignatura */
-.test-EnglishLanguage { border-left-color: #7A3FFF; }
-.test-Math { border-left-color: #007BFF; }
-.test-Spanish { border-left-color: #E53935; }
-.test-Art { border-left-color: #F7A8D8; }
-.test-STEM { border-left-color: #A4E600; }
-.test-CommunicativeSkills { border-left-color: #FF8C00; }
-.test-FormacionCiudadana { border-left-color: #4EC9C0; }
-.test-FormacionIntegral { border-left-color: #FFBFA3; }
+
 
 .back-btn {
     cursor: pointer;
@@ -645,18 +637,28 @@ iframe {
 }
 
 /* COLORES POR ASIGNATURA (usa tus variables) */
-.test-Art { background: var(--color-Art); }
-.test-CommunicativeSkills { background: var(--color-CommunicativeSkills); }
-.test-Drama { background: var(--color-Drama); }
-.test-PhysicalEducation { background: var(--color-PhysicalEducation); }
-.test-EnglishLanguage { background: var(--color-EnglishLanguage); }
-.test-FormacionCiudadana { background: var(--color-FormacionCiudadana); }
-.test-FormacionIntegral { background: var(--color-FormacionIntegral); }
-.test-Literacy { background: var(--color-Literacy); }
-.test-Math { background: var(--color-Math); }
-.test-Music { background: var(--color-Music); }
-.test-NaturalScience { background: var(--color-NaturalScience); }
-.test-SocialStudies { background: var(--color-SocialStudies); }
-.test-Spanish { background: var(--color-Spanish); }
-.test-STEM { background: var(--color-STEM); }
+.test-Art { border-left-color: var(--color-Art); }
+.test-CommunicativeSkills { border-left-color: var(--color-CommunicativeSkills); }
+.test-Drama { border-left-color: var(--color-Drama); }
+.test-PhysicalEducation { border-left-color: var(--color-PhysicalEducation); }
+.test-EnglishLanguage { border-left-color: var(--color-EnglishLanguage); }
+.test-FormacionCiudadana { border-left-color: var(--color-FormacionCiudadana); }
+.test-FormacionIntegral { border-left-color: var(--color-FormacionIntegral); }
+.test-Literacy { border-left-color: var(--color-Literacy); }
+.test-Math { border-left-color: var(--color-Math); }
+.test-Music { border-left-color: var(--color-Music); }
+.test-NaturalScience { border-left-color: var(--color-NaturalScience); }
+.test-SocialStudies { border-left-color: var(--color-SocialStudies); }
+.test-Spanish { border-left-color: var(--color-Spanish); }
+.test-STEM { border-left-color: var(--color-STEM); }
 
+/* Colores por asignatura 
+.test-EnglishLanguage { border-left-color: #7A3FFF; }
+.test-Math { border-left-color: #007BFF; }
+.test-Spanish { border-left-color: #E53935; }
+.test-Art { border-left-color: #F7A8D8; }
+.test-STEM { border-left-color: #A4E600; }
+.test-CommunicativeSkills { border-left-color: #FF8C00; }
+.test-FormacionCiudadana { border-left-color: #4EC9C0; }
+.test-FormacionIntegral { border-left-color: #FFBFA3; }
+*/

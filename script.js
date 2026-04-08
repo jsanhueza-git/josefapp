@@ -433,12 +433,13 @@ function renderMonthlyCalendar(tests, year, month) {
 
         dayTests.forEach(t => {
             html += `
-                <div class="cal-chip test-${t.subject}">
-                    <span class="cal-chip-icon">📘</span>
-                    ${t.subject}
+                <div class="cal-test-card test-${t.subject}">
+                    <div><strong>${t.subject}</strong></div>
+                    <div>${t.description}</div>
                 </div>
             `;
         });
+
 
         html += `</div>`;
     }
@@ -467,8 +468,16 @@ function openDayDetail(date) {
 
 async function loadMonthlyCalendar() {
     const data = await loadMasterData();
-    const tests = data.calendar;
 
+    // Usar la lista filtrada si existe
+    const tests = window.filteredTests?.length ? window.filteredTests : data.calendar;
+
+    if (!tests.length) {
+        openSubject("Calendario de Pruebas", "<p>No hay pruebas para mostrar.</p>");
+        return;
+    }
+
+    // Tomar el mes del primer elemento filtrado
     const [year, month] = tests[0].date.split("-");
 
     const html = `
@@ -484,6 +493,7 @@ async function loadMonthlyCalendar() {
 
     openSubject("Calendario de Pruebas", html);
 }
+
 
 
 loadHomeItems();

@@ -472,29 +472,37 @@ async function loadMonthlyCalendar() {
     const data = await loadMasterData();
 
     // Usar la lista filtrada si existe
-    const tests = window.filteredTests?.length ? window.filteredTests : data.calendar;
+    const tests = (window.filteredTests && window.filteredTests.length)
+        ? window.filteredTests
+        : data.calendar;
 
     if (!tests.length) {
         openSubject("Calendario de Pruebas", "<p>No hay pruebas para mostrar.</p>");
         return;
     }
 
-    // Tomar el mes del primer elemento filtrado
     const [year, month] = tests[0].date.split("-");
 
-    const html = `
-        <p>Vista mensual del calendario de pruebas.</p>
+    const htmlCalendario = renderMonthlyCalendar(
+        tests,
+        parseInt(year),
+        parseInt(month)
+    );
 
-        <div class="calendar-view-switch">
-            <button onclick="loadCalendar()">📋 Lista</button>
-            <button onclick="loadMonthlyCalendar()">📅 Calendario</button>
-        </div>
+    // Pasamos por generarHTML para que incluya los filtros
+    const html = generarHTML({
+        title: "Calendario de Pruebas",
+        description: "Evaluaciones oficiales enviadas por el colegio.",
+        is_calendar: true,
+        important_dates: tests
+    });
 
-        ${renderMonthlyCalendar(tests, parseInt(year), parseInt(month))}
-    `;
+    // Insertamos el calendario mensual debajo de los filtros
+    const finalHTML = html + htmlCalendario;
 
-    openSubject("Calendario de Pruebas", html);
+    openSubject("Calendario de Pruebas", finalHTML);
 }
+
 
 
 

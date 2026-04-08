@@ -302,6 +302,11 @@ function renderTestFilters() {
     applyTestFilters();
     window.filteredTests = filtered; // ← lista filtrada actual
 
+    if (window.currentView === "calendar") {
+    loadMonthlyCalendar();
+}
+
+
 }
 
 function applyTestFilters() {
@@ -473,6 +478,7 @@ function openDayDetail(date) {
 async function loadMonthlyCalendar() {
     const data = await loadMasterData();
 
+    // Usar la lista filtrada si existe
     const tests = (window.filteredTests && window.filteredTests.length)
         ? window.filteredTests
         : data.calendar;
@@ -482,7 +488,14 @@ async function loadMonthlyCalendar() {
         return;
     }
 
-    const [year, month] = tests[0].date.split("-");
+    // Determinar el mes a mostrar
+    let year, month;
+
+    if (window.selectedMonth) {
+        [year, month] = window.selectedMonth.split("-");
+    } else {
+        [year, month] = tests[0].date.split("-");
+    }
 
     // 1) Generar SOLO los filtros
     const filtrosHTML = generarHTML({
@@ -503,7 +516,6 @@ async function loadMonthlyCalendar() {
     // 3) Mostrar SOLO filtros + calendario
     openSubject("Calendario de Pruebas", filtrosHTML + calendarioHTML);
 }
-
 
 
 

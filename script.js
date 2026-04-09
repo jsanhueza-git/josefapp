@@ -286,7 +286,11 @@ function renderTestFilters() {
         orderChip.dataset.order = next;
         orderChip.textContent = next === "asc" ? "Fecha ↑" : "Fecha ↓";
         orderChip.classList.add("active");
-        applyTestFilters();
+
+        const filtered = applyTestFilters();
+        window.filteredTests = filtered;
+
+        if (window.currentView === "calendar") loadMonthlyCalendar();
     });
 
     document.querySelectorAll(".filter-chip").forEach(chip => {
@@ -299,25 +303,41 @@ function renderTestFilters() {
                 }
 
                 chip.classList.toggle("active");
-                applyTestFilters();
+
+                // 🔥 APLICAR FILTROS Y GUARDAR RESULTADO
+                const filtered = applyTestFilters();
+                window.filteredTests = filtered;
+
+                // 🔥 SI ESTOY EN CALENDARIO → ACTUALIZAR CALENDARIO
+                if (window.currentView === "calendar") {
+                    loadMonthlyCalendar();
+                }
             });
         }
     });
 
-    document.getElementById("filter-search").addEventListener("input", applyTestFilters);
-    document.getElementById("filter-clear").addEventListener("click", clearTestFilters);
+    document.getElementById("filter-search").addEventListener("input", () => {
+        const filtered = applyTestFilters();
+        window.filteredTests = filtered;
 
-    // Ejecutar filtros
+        if (window.currentView === "calendar") loadMonthlyCalendar();
+    });
+
+    document.getElementById("filter-clear").addEventListener("click", () => {
+        clearTestFilters();
+        const filtered = applyTestFilters();
+        window.filteredTests = filtered;
+
+        if (window.currentView === "calendar") loadMonthlyCalendar();
+    });
+
+    // Ejecutar filtros al cargar
     const filtered = applyTestFilters();
-
-    // 🔥 GUARDAR LISTA FILTRADA
     window.filteredTests = filtered;
 
-    // 🔥 SI ESTOY EN VISTA CALENDARIO → ACTUALIZAR CALENDARIO
-    if (window.currentView === "calendar") {
-        loadMonthlyCalendar();
-    }
+    if (window.currentView === "calendar") loadMonthlyCalendar();
 }
+
 
 
 function applyTestFilters() {
@@ -353,6 +373,7 @@ function applyTestFilters() {
     }
 
     renderTestCards(filtered);
+    return filtered;
 }
 
 function renderTestCards(list) {

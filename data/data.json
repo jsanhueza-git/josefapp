@@ -362,6 +362,11 @@
       "description": "Término proceso – Autorretrato al estilo egipcio"
     },
     {
+      "date": "2026-04-01",
+      "subject": "STEM",
+      "description": "Evaluación de proceso (durante el mes)"
+    },
+    {
       "date": "2026-04-08",
       "subject": "CommunicativeSkills",
       "description": "Speaking – Parts of the house, furniture y prepositions of place"
@@ -384,12 +389,12 @@
     {
       "date": "2026-04-15",
       "subject": "EnglishLanguage",
-      "description": "<span>Hello everyone!<br><br>Remember!<br><br>Dictation: <b>15/04 📖</b><br><br>1) brush your teeth<br>2) Play in the park<br>3) have breakfast<br>4) get dressed<br>5) have dinner<br>6) go to bed<br>7) get up<br>8) have lunch<br>9) go to school<br><br><br>Las palabras seran dictadas en cualquier orden. Pueden estudiar de forma entretenida desde casa usando plasticina o arroz, etc para escribir las palabras. Además se recuerda que previo al dictado los alumnos se dictan y corrigen entre ellos como una forma entretenida de practicar, por lo que es importante que tengan en sala las <b>pizarras individuales</b> de forma permanente.<br><br>best,<br><br>Miss Fran 😎</span>"
+      "description": "<span>Dictation – Classroom objects (Unit 0) y daily routines (Unit 1) <br><br>Hello everyone!<br><br>Remember!<br><br>Dictation: <b>15/04 📖</b><br><br>1) brush your teeth<br>2) Play in the park<br>3) have breakfast<br>4) get dressed<br>5) have dinner<br>6) go to bed<br>7) get up<br>8) have lunch<br>9) go to school<br><br><br>Las palabras seran dictadas en cualquier orden. Pueden estudiar de forma entretenida desde casa usando plasticina o arroz, etc para escribir las palabras. Además se recuerda que previo al dictado los alumnos se dictan y corrigen entre ellos como una forma entretenida de practicar, por lo que es importante que tengan en sala las <b>pizarras individuales</b> de forma permanente.<br><br>best,<br><br>Miss Fran 😎</span>"
     },
     {
       "date": "2026-04-15",
       "subject": "Spanish",
-      "description": "Declamación poética"
+      "description": "Declamación poética ((instrucciones en Classroom .... continuación)"
     },
     {
     "date": "2026-04-14",
@@ -397,20 +402,11 @@
     "description": "Declamación poética (instrucciones en Classroom)"
   },
   {
-    "date": "2026-04-15",
-    "subject": "EnglishLanguage",
-    "description": "Dictation – Classroom objects (Unit 0) y daily routines (Unit 1)"
-  },
-  {
     "date": "2026-04-16",
     "subject": "Literacy",
     "description": "Reading comprehension test (sounds ai/ay, oi/oy, ee/ea)"
   },
-  {
-    "date": "2026-04-16",
-    "subject": "Literacy",
-    "description": "Dictation (cumulative) – detalles en Classroom"
-  },
+
   {
     "date": "2026-04-20",
     "subject": "EnglishLanguage",
@@ -429,7 +425,7 @@
   {
     "date": "2026-04-22",
     "subject": "EnglishLanguage",
-    "description": "Día de la convivencia escolar (actividad)"
+    "description": "(todo el dia) Día de la convivencia escolar (actividad)"
   },
   {
     "date": "2026-04-22",
@@ -459,7 +455,7 @@
   {
     "date": "2026-04-28",
     "subject": "Literacy",
-    "description": "Dictation"
+    "description": "Dictation (cumulative) – detalles en Classroom"
   },
   {
     "date": "2026-04-29",
@@ -470,11 +466,6 @@
     "date": "2026-05-05",
     "subject": "Art",
     "description": "Término de proceso – marioneta"
-  },
-  {
-    "date": "2026-04-01",
-    "subject": "STEM",
-    "description": "Evaluación de proceso (durante el mes)"
   }
   ]
 }

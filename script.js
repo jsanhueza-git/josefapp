@@ -187,6 +187,8 @@ function openSubject(title, contentHTML) {
 --------------------------------------------- */
 
 async function loadCalendar() {
+    window.currentView = "list";
+
     const data = await loadMasterData();
 
     const html = generarHTML({
@@ -198,6 +200,7 @@ async function loadCalendar() {
 
     openSubject("Calendario de Pruebas", html);
 }
+
 
 function generarHTML(data) {
     let html = `<p>${data.description || ""}</p>`;
@@ -261,7 +264,6 @@ function generarHTML(data) {
 /* ---------------------------------------------
    SISTEMA DE FILTROS DEL CALENDARIO
 --------------------------------------------- */
-
 function renderTestFilters() {
     if (!window.currentTests) return;
 
@@ -290,6 +292,12 @@ function renderTestFilters() {
     document.querySelectorAll(".filter-chip").forEach(chip => {
         if (chip.id !== "filter-order-toggle") {
             chip.addEventListener("click", () => {
+
+                // 🔥 GUARDAR MES SELECCIONADO
+                if (chip.dataset.month) {
+                    window.selectedMonth = chip.dataset.month;
+                }
+
                 chip.classList.toggle("active");
                 applyTestFilters();
             });
@@ -299,15 +307,18 @@ function renderTestFilters() {
     document.getElementById("filter-search").addEventListener("input", applyTestFilters);
     document.getElementById("filter-clear").addEventListener("click", clearTestFilters);
 
-    applyTestFilters();
-    window.filteredTests = filtered; // ← lista filtrada actual
+    // Ejecutar filtros
+    const filtered = applyTestFilters();
 
+    // 🔥 GUARDAR LISTA FILTRADA
+    window.filteredTests = filtered;
+
+    // 🔥 SI ESTOY EN VISTA CALENDARIO → ACTUALIZAR CALENDARIO
     if (window.currentView === "calendar") {
-    loadMonthlyCalendar();
+        loadMonthlyCalendar();
+    }
 }
 
-
-}
 
 function applyTestFilters() {
     let filtered = [...window.currentTests];
@@ -476,9 +487,11 @@ function openDayDetail(date) {
 }
 
 async function loadMonthlyCalendar() {
+    window.currentView = "calendar";
+
     const data = await loadMasterData();
 
-    // Usar la lista filtrada si existe
+    // 🔥 USAR FILTROS SI EXISTEN
     const tests = (window.filteredTests && window.filteredTests.length)
         ? window.filteredTests
         : data.calendar;
@@ -488,7 +501,7 @@ async function loadMonthlyCalendar() {
         return;
     }
 
-    // Determinar el mes a mostrar
+    // 🔥 DETERMINAR MES A MOSTRAR
     let year, month;
 
     if (window.selectedMonth) {

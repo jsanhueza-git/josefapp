@@ -4,23 +4,23 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 PRODID:-//Josefapp//ES
 BEGIN:VEVENT
-DTSTART:20260324T095000
-DTEND:20260324T103000
+DTSTART;TZID=America/Santiago:20260324T095000
+DTEND;TZID=America/Santiago:20260324T103000
 SUMMARY:EnglishLanguage – Dictation (Vocabulary p.6)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260325T095000
-DTEND:20260325T103000
+DTSTART;TZID=America/Santiago:20260325T095000
+DTEND;TZID=America/Santiago:20260325T103000
 SUMMARY:EnglishLanguage – Unit 0 Test – Vocabulary (p.6), There is/There are (p.5)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260326T144000
-DTEND:20260326T152500
+DTSTART;TZID=America/Santiago:20260326T144000
+DTEND;TZID=America/Santiago:20260326T152500
 SUMMARY:STEM – Process Evaluation (Project 1) – Booklet (work in class)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260331T081500
-DTEND:20260331T085500
+DTSTART;TZID=America/Santiago:20260331T081500
+DTEND;TZID=America/Santiago:20260331T085500
 SUMMARY:Art – Término proceso – Autorretrato al estilo egipcio
 END:VEVENT
 BEGIN:VEVENT
@@ -28,103 +28,103 @@ DTSTART;VALUE=DATE:20260401
 SUMMARY:STEM – Evaluación de proceso (durante el mes)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260408T113000
-DTEND:20260408T121500
+DTSTART;TZID=America/Santiago:20260408T113000
+DTEND;TZID=America/Santiago:20260408T121500
 SUMMARY:CommunicativeSkills – Speaking – Parts of the house, furniture y prepositions of place
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260409T113000
-DTEND:20260409T121500
+DTSTART;TZID=America/Santiago:20260409T113000
+DTEND;TZID=America/Santiago:20260409T121500
 SUMMARY:CommunicativeSkills – Speaking (continuación)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260409T081500
-DTEND:20260409T085500
+DTSTART;TZID=America/Santiago:20260409T081500
+DTEND;TZID=America/Santiago:20260409T085500
 SUMMARY:Spanish – Evaluación sumativa – Control de lectura complementaria '¡No funciona la tele!'
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260410T095000
-DTEND:20260410T103000
+DTSTART;TZID=America/Santiago:20260410T095000
+DTEND;TZID=America/Santiago:20260410T103000
 SUMMARY:Math – Unit 1 Test – Counting up to 50, skip counting, tens and ones, numbers in words
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260415T095000
-DTEND:20260415T103000
+DTSTART;TZID=America/Santiago:20260415T095000
+DTEND;TZID=America/Santiago:20260415T103000
 SUMMARY:EnglishLanguage – Dictation – Classroom objects (Unit 0) y daily routines (Unit 1) Hello everyone! Remember! Dictation: 15/04 📖 1) brush your teeth 2) Play in the park 3) have breakfast 4) get dressed 5) have dinner 6) go to bed 7) get up 8) have lunch 9) go to school Las palabras seran dictadas en cualquier orden. Pueden estudiar de forma entretenida desde casa usando plasticina o arroz, etc para escribir las palabras. Además se recuerda que previo al dictado los alumnos se dictan y corrigen entre ellos como una forma entretenida de practicar, por lo que es importante que tengan en sala las pizarras individuales de forma permanente. best, Miss Fran 😎
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260415T130000
-DTEND:20260415T134500
+DTSTART;TZID=America/Santiago:20260415T130000
+DTEND;TZID=America/Santiago:20260415T134500
 SUMMARY:Spanish – Declamación poética ((instrucciones en Classroom .... continuación)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260414T103000
-DTEND:20260414T111500
+DTSTART;TZID=America/Santiago:20260414T103000
+DTEND;TZID=America/Santiago:20260414T111500
 SUMMARY:Spanish – Declamación poética (instrucciones en Classroom)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260416T095000
-DTEND:20260416T103000
+DTSTART;TZID=America/Santiago:20260416T095000
+DTEND;TZID=America/Santiago:20260416T103000
 SUMMARY:Literacy – Reading comprehension test (sounds ai/ay, oi/oy, ee/ea)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260420T095000
-DTEND:20260420T103000
+DTSTART;TZID=America/Santiago:20260420T095000
+DTEND;TZID=America/Santiago:20260420T103000
 SUMMARY:EnglishLanguage – Proyecto 'My routine' (sumativa) – materiales en Classroom
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260421T134500
-DTEND:20260421T143000
+DTSTART;TZID=America/Santiago:20260421T134500
+DTEND;TZID=America/Santiago:20260421T143000
 SUMMARY:SocialStudies – Evaluación sumativa – Cardinal points, planos, mapas y leyendas
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260421T095000
-DTEND:20260421T103000
+DTSTART;TZID=America/Santiago:20260421T095000
+DTEND;TZID=America/Santiago:20260421T103000
 SUMMARY:EnglishLanguage – Proyecto 'My routine' (continuación)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260422T095000
-DTEND:20260422T103000
+DTSTART;TZID=America/Santiago:20260422T095000
+DTEND;TZID=America/Santiago:20260422T103000
 SUMMARY:EnglishLanguage – (todo el dia) Día de la convivencia escolar (actividad)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260422T144000
-DTEND:20260422T152500
+DTSTART;TZID=America/Santiago:20260422T144000
+DTEND;TZID=America/Santiago:20260422T152500
 SUMMARY:PhysicalEducation – Habilidades motrices básicas – evaluación práctica
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260423T081500
-DTEND:20260423T085500
+DTSTART;TZID=America/Santiago:20260423T081500
+DTEND;TZID=America/Santiago:20260423T085500
 SUMMARY:Spanish – Día del libro (actividad)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260424T103000
-DTEND:20260424T111500
+DTSTART;TZID=America/Santiago:20260424T103000
+DTEND;TZID=America/Santiago:20260424T111500
 SUMMARY:Drama – Storyboard – preparación para puppet show
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260427T103000
-DTEND:20260427T111500
+DTSTART;TZID=America/Santiago:20260427T103000
+DTEND;TZID=America/Santiago:20260427T111500
 SUMMARY:Math – Unit 1 Test – Lesson 3: Addition and subtraction
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260427T144000
-DTEND:20260427T152500
+DTSTART;TZID=America/Santiago:20260427T144000
+DTEND;TZID=America/Santiago:20260427T152500
 SUMMARY:NaturalScience – Trabajo práctico – Lesson 1: Function of organs (instrucciones en Classroom)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260428T130000
-DTEND:20260428T134500
+DTSTART;TZID=America/Santiago:20260428T130000
+DTEND;TZID=America/Santiago:20260428T134500
 SUMMARY:Literacy – Dictation (cumulative) – detalles en Classroom
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260429T095000
-DTEND:20260429T103000
+DTSTART;TZID=America/Santiago:20260429T095000
+DTEND;TZID=America/Santiago:20260429T103000
 SUMMARY:EnglishLanguage – Unit 1 Test – Daily routines, telling the time, present simple (3rd person)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260505T081500
-DTEND:20260505T085500
+DTSTART;TZID=America/Santiago:20260505T081500
+DTEND;TZID=America/Santiago:20260505T085500
 SUMMARY:Art – Término de proceso – marioneta
 END:VEVENT
 END:VCALENDAR

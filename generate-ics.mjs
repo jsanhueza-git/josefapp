@@ -6,9 +6,10 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Importar tu data.js como módulo
-const dataModule = await import(path.join(__dirname, "data/data.js"));
-const events = dataModule.masterData.calendar;
+// Leer data.json desde la carpeta /data
+const raw = fs.readFileSync(path.join(__dirname, "data", "data.json"), "utf8");
+const json = JSON.parse(raw);
+const events = json.calendar;
 
 function generarICSDesdeJSON(events) {
     let ics = "BEGIN:VCALENDAR\n";
@@ -38,7 +39,7 @@ function generarICSDesdeJSON(events) {
 function main() {
     const icsContent = generarICSDesdeJSON(events);
     fs.writeFileSync("calendario.ics", icsContent, "utf8");
-    console.log("✅ calendario.ics generado");
+    console.log("✅ calendario.ics generado correctamente");
 }
 
 main();

@@ -25,7 +25,12 @@ function buscarBloque(fecha, subject) {
 }
 
 function generarICS() {
-    let ics = "BEGIN:VCALENDAR\nVERSION:2.0\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nPRODID:-//Josefapp//ES\n";
+    let ics = "";
+    ics += "BEGIN:VCALENDAR\n";
+    ics += "VERSION:2.0\n";
+    ics += "CALSCALE:GREGORIAN\n";
+    ics += "METHOD:PUBLISH\n";
+    ics += "PRODID:-//Josefapp//ES\n";
 
     calendar.forEach(ev => {
         const date = ev.date.replace(/-/g, "");
@@ -33,16 +38,21 @@ function generarICS() {
         ics += "BEGIN:VEVENT\n";
 
         if (ev.allDay) {
+            // Evento de día completo
             ics += `DTSTART;VALUE=DATE:${date}\n`;
         } else {
+            // Buscar bloque según horario
             const bloque = buscarBloque(ev.date, ev.subject);
 
             if (bloque) {
                 const start = bloque.start.replace(":", "") + "00";
                 const end = bloque.end.replace(":", "") + "00";
-                ics += `DTSTART:${date}T${start}\n`;
-                ics += `DTEND:${date}T${end}\n`;
+
+                // Zona horaria correcta para Chile
+                ics += `DTSTART;TZID=America/Santiago:${date}T${start}\n`;
+                ics += `DTEND;TZID=America/Santiago:${date}T${end}\n`;
             } else {
+                // Si no encuentra bloque, lo deja como all-day
                 ics += `DTSTART;VALUE=DATE:${date}\n`;
             }
         }
@@ -52,7 +62,8 @@ function generarICS() {
             .replace(/\s+/g, " ")
             .trim();
 
-        ics += `SUMMARY:${ev.subject} – ${cleanDescription}\nEND:VEVENT\n`;
+        ics += `SUMMARY:${ev.subject} – ${cleanDescription}\n`;
+        ics += "END:VEVENT\n";
     });
 
     ics += "END:VCALENDAR\n";
@@ -60,4 +71,4 @@ function generarICS() {
 }
 
 fs.writeFileSync("calendario.ics", generarICS(), "utf8");
-console.log("✅ calendario.ics generado con horario automático");
+console.log("✅ calendario.ics generado con horario automático y zona horaria correcta");

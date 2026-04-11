@@ -1,0 +1,53 @@
+{
+  "Lunes": [
+    { "start": "08:15", "end": "08:55", "subject": "Music" },
+    { "start": "08:55", "end": "09:35", "subject": "Music" },
+    { "start": "09:50", "end": "10:30", "subject": "EnglishLanguage" },
+    { "start": "10:30", "end": "11:15", "subject": "Math" },
+    { "start": "11:30", "end": "12:15", "subject": "Math" },
+    { "start": "13:00", "end": "13:45", "subject": "PhysicalEducation" },
+    { "start": "13:45", "end": "14:30", "subject": "PhysicalEducation" },
+    { "start": "14:40", "end": "15:25", "subject": "NaturalScience" },
+    { "start": "15:25", "end": "16:10", "subject": "NaturalScience" }
+  ],
+  "Martes": [
+    { "start": "08:15", "end": "08:55", "subject": "Art" },
+    { "start": "08:55", "end": "09:35", "subject": "Art" },
+    { "start": "09:50", "end": "10:30", "subject": "EnglishLanguage" },
+    { "start": "10:30", "end": "11:15", "subject": "Spanish" },
+    { "start": "11:30", "end": "12:15", "subject": "Spanish" },
+    { "start": "13:00", "end": "13:45", "subject": "Literacy" },
+    { "start": "13:45", "end": "14:30", "subject": "SocialStudies" },
+    { "start": "14:40", "end": "15:25", "subject": "Math" },
+    { "start": "15:25", "end": "16:10", "subject": "Math" }
+  ],
+  "Miércoles": [
+    { "start": "08:15", "end": "08:55", "subject": "FormacionIntegral" },
+    { "start": "08:55", "end": "09:35", "subject": "FormacionIntegral" },
+    { "start": "09:50", "end": "10:30", "subject": "EnglishLanguage" },
+    { "start": "10:30", "end": "11:15", "subject": "EnglishLanguage" },
+    { "start": "11:30", "end": "12:15", "subject": "CommunicativeSkills" },
+    { "start": "13:00", "end": "13:45", "subject": "Spanish" },
+    { "start": "13:45", "end": "14:30", "subject": "Spanish" },
+    { "start": "14:40", "end": "15:25", "subject": "PhysicalEducation" },
+    { "start": "15:25", "end": "16:10", "subject": "PhysicalEducation" }
+  ],
+  "Jueves": [
+    { "start": "08:15", "end": "08:55", "subject": "Spanish" },
+    { "start": "08:55", "end": "09:35", "subject": "Spanish" },
+    { "start": "09:50", "end": "10:30", "subject": "Literacy" },
+    { "start": "10:30", "end": "11:15", "subject": "Literacy" },
+    { "start": "11:30", "end": "12:15", "subject": "CommunicativeSkills" },
+    { "start": "13:00", "end": "13:45", "subject": "SocialStudies" },
+    { "start": "13:45", "end": "14:30", "subject": "SocialStudies" },
+    { "start": "14:40", "end": "15:25", "subject": "STEM" },
+    { "start": "15:25", "end": "16:10", "subject": "STEM" }
+  ],
+  "Viernes": [
+    { "start": "08:15", "end": "08:55", "subject": "FormacionCiudadana" },
+    { "start": "08:55", "end": "09:35", "subject": "Spanish" },
+    { "start": "09:50", "end": "10:30", "subject": "Math" },
+    { "start": "10:30", "end": "11:15", "subject": "Drama" },
+    { "start": "11:30", "end": "12:15", "subject": "Math" }
+  ]
+}

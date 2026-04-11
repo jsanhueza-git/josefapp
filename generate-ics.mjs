@@ -1,4 +1,14 @@
 import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Necesario para rutas relativas en ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Importar tu data.js como módulo
+const dataModule = await import(path.join(__dirname, "data/data.js"));
+const events = dataModule.masterData.calendar;
 
 function generarICSDesdeJSON(events) {
     let ics = "BEGIN:VCALENDAR\n";
@@ -8,7 +18,7 @@ function generarICSDesdeJSON(events) {
     ics += "PRODID:-//Josefapp//ES\n";
 
     events.forEach(ev => {
-        const date = ev.date.replace(/-/g, ""); // YYYYMMDD
+        const date = ev.date.replace(/-/g, "");
 
         const cleanDescription = String(ev.description || "")
             .replace(/<[^>]+>/g, " ")
@@ -26,10 +36,6 @@ function generarICSDesdeJSON(events) {
 }
 
 function main() {
-    const raw = fs.readFileSync("data.json", "utf8");
-    const json = JSON.parse(raw);
-    const events = json.calendar || [];
-
     const icsContent = generarICSDesdeJSON(events);
     fs.writeFileSync("calendario.ics", icsContent, "utf8");
     console.log("✅ calendario.ics generado");

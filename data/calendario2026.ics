@@ -1,0 +1,133 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//Josefapp//ES
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260324
+SUMMARY:EnglishLanguage – Dictation (Vocabulary p.6)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260325
+SUMMARY:EnglishLanguage – Unit 0 Test – Vocabulary (p.6), There is/There are (p.5)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260326
+SUMMARY:STEM – Process Evaluation (Project 1) – Booklet (work in class)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260331
+SUMMARY:Art – Término proceso – Autorretrato al estilo egipcio
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260401
+SUMMARY:STEM – Evaluación de proceso (durante el mes)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260408
+SUMMARY:CommunicativeSkills – Speaking – Parts of the house, furniture y prepositions of place
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260409
+SUMMARY:CommunicativeSkills – Speaking (continuación)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260409
+SUMMARY:Spanish – Evaluación sumativa – Control de lectura complementaria '¡No funciona la tele!'
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260410
+SUMMARY:Math – Unit 1 Test – Counting up to 50, skip counting, tens and ones, numbers in words
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260414
+SUMMARY:Spanish – Declamación poética (instrucciones en Classroom)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260415
+SUMMARY:EnglishLanguage – Dictation – Classroom objects y daily routines
+DESCRIPTION:Dictation 15/04. Palabras: brush your teeth, play in the park, have breakfast, get dressed, have dinner, go to bed, get up, have lunch, go to school.
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260415
+SUMMARY:Spanish – Declamación poética (continuación)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260416
+SUMMARY:Literacy – Reading comprehension test (sounds ai/ay, oi/oy, ee/ea)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260420
+SUMMARY:EnglishLanguage – Proyecto 'My routine' (sumativa)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260421
+SUMMARY:SocialStudies – Evaluación sumativa – Cardinal points, planos, mapas y leyendas
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260421
+SUMMARY:EnglishLanguage – Proyecto 'My routine' (continuación)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260422
+SUMMARY:EnglishLanguage – Día de la convivencia escolar (actividad)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260422
+SUMMARY:PhysicalEducation – Habilidades motrices básicas – evaluación práctica
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260423
+SUMMARY:Spanish – Día del libro (actividad)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260424
+SUMMARY:Drama – Storyboard – preparación para puppet show
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260427
+SUMMARY:Math – Unit 1 Test – Lesson 3: Addition and subtraction
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260427
+SUMMARY:NaturalScience – Trabajo práctico – Function of organs
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260428
+SUMMARY:Literacy – Dictation (cumulative)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260429
+SUMMARY:EnglishLanguage – Unit 1 Test – Daily routines, telling the time, present simple (3rd person)
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260505
+SUMMARY:Art – Término de proceso – marioneta
+END:VEVENT
+
+END:VCALENDAR

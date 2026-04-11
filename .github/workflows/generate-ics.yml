@@ -1,0 +1,36 @@
+name: Generar calendario ICS
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-ics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Instalar dependencias (si las hubiera)
+        run: npm install
+
+      - name: Generar calendario.ics
+        run: npm run generate-ics
+
+      - name: Commit calendario.ics actualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add calendario.ics
+          if git diff --cached --quiet; then
+            echo "Sin cambios en calendario.ics"
+          else
+            git commit -m "Actualizar calendario.ics"
+            git push
+          fi

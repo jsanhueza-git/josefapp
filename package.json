@@ -1,0 +1,8 @@
+{
+  "name": "josefapp",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate-ics": "node generate-ics.mjs"
+  }
+}

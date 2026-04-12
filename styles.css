@@ -312,6 +312,23 @@ iframe {
 /* --------------------------------------------------
    VIDEOS Y JUEGOS
 -------------------------------------------------- */
+
+.game-link {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #4a90e2;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.game-link:hover {
+    background: #357ac8;
+}
+
+/* 
 .game-item {
     width: 100%;
     max-width: 900px;
@@ -345,7 +362,7 @@ iframe {
     border: none;
     border-radius: 10px;
 }
-
+ */
 .video-container {
     position: relative;
     width: 100%;

@@ -149,12 +149,14 @@ function generarContenidoUnidad(unidad) {
     if (unidad.games && unidad.games.length > 0) {
         html += `<h4>🎮 Juegos</h4>`;
         unidad.games.forEach(g => {
-            html += `
-                <div class="game-item">
-                    <p><strong>${g.title}</strong></p>
-                    <iframe src="${g.url}" frameborder="0"></iframe>
-                </div>
-            `;
+        html += `
+            <div class="game-item">
+                <p><strong>${g.title}</strong></p>
+                <a href="${g.url}" target="_blank" rel="noopener noreferrer" class="game-link">
+                    👉 Abrir juego
+                </a>
+            </div>
+        `;
         });
     }
 

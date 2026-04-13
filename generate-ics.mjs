@@ -57,12 +57,19 @@ function generarICS() {
             }
         }
 
+        // Limpieza de descripción
         const cleanDescription = String(ev.description || "")
-            .replace(/<[^>]+>/g, " ")
-            .replace(/\s+/g, " ")
+            .replace(/<[^>]+>/g, " ")   // eliminar HTML
+            .replace(/\s+/g, " ")       // normalizar espacios
             .trim();
 
-        ics += `SUMMARY:${ev.subject} – ${cleanDescription}\n`;
+        // SUMMARY corto
+        ics += `SUMMARY:${ev.subject}\n`;
+
+        // DESCRIPTION largo
+        const desc = cleanDescription.replace(/\n/g, "\\n");
+        ics += `DESCRIPTION:${desc}\n`;
+
         ics += "END:VEVENT\n";
     });
 
@@ -71,4 +78,4 @@ function generarICS() {
 }
 
 fs.writeFileSync("calendario.ics", generarICS(), "utf8");
-console.log("✅ calendario.ics generado con horario automático y zona horaria correcta");
+console.log("✅ calendario.ics generado con SUMMARY corto y DESCRIPTION largo");

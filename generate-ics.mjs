@@ -24,6 +24,20 @@ function buscarBloque(fecha, subject) {
     return bloques.find(b => b.subject === subject) || null;
 }
 
+// Convertir hora local Chile → UTC en formato ICS
+function convertirAUTC(fecha, hora) {
+    const [h, m] = hora.split(":").map(Number);
+
+    const local = new Date(`${fecha}T${hora}:00-04:00`); // Chile abril 2026 = GMT-4
+    const utcYear = local.getUTCFullYear();
+    const utcMonth = String(local.getUTCMonth() + 1).padStart(2, "0");
+    const utcDay = String(local.getUTCDate()).padStart(2, "0");
+    const utcHour = String(local.getUTCHours()).padStart(2, "0");
+    const utcMin = String(local.getUTCMinutes()).padStart(2, "0");
+
+    return `${utcYear}${utcMonth}${utcDay}T${utcHour}${utcMin}00Z`;
+}
+
 function generarICS() {
     let ics = "";
     ics += "BEGIN:VCALENDAR\n";
@@ -33,42 +47,33 @@ function generarICS() {
     ics += "PRODID:-//Josefapp//ES\n";
 
     calendar.forEach(ev => {
-        const date = ev.date.replace(/-/g, "");
-
         ics += "BEGIN:VEVENT\n";
 
         if (ev.allDay) {
-            // Evento de día completo
+            const date = ev.date.replace(/-/g, "");
             ics += `DTSTART;VALUE=DATE:${date}\n`;
         } else {
-            // Buscar bloque según horario
             const bloque = buscarBloque(ev.date, ev.subject);
 
             if (bloque) {
-                const start = bloque.start.replace(":", "") + "00";
-                const end = bloque.end.replace(":", "") + "00";
+                const dtStartUTC = convertirAUTC(ev.date, bloque.start);
+                const dtEndUTC = convertirAUTC(ev.date, bloque.end);
 
-                // Zona horaria correcta para Chile
-                ics += `DTSTART;TZID=America/Santiago:${date}T${start}\n`;
-                ics += `DTEND;TZID=America/Santiago:${date}T${end}\n`;
+                ics += `DTSTART:${dtStartUTC}\n`;
+                ics += `DTEND:${dtEndUTC}\n`;
             } else {
-                // Si no encuentra bloque, lo deja como all-day
+                const date = ev.date.replace(/-/g, "");
                 ics += `DTSTART;VALUE=DATE:${date}\n`;
             }
         }
 
-        // Limpieza de descripción
         const cleanDescription = String(ev.description || "")
-            .replace(/<[^>]+>/g, " ")   // eliminar HTML
-            .replace(/\s+/g, " ")       // normalizar espacios
+            .replace(/<[^>]+>/g, " ")
+            .replace(/\s+/g, " ")
             .trim();
 
-        // SUMMARY corto
         ics += `SUMMARY:${ev.subject}\n`;
-
-        // DESCRIPTION largo
-        const desc = cleanDescription.replace(/\n/g, "\\n");
-        ics += `DESCRIPTION:${desc}\n`;
+        ics += `DESCRIPTION:${cleanDescription}\n`;
 
         ics += "END:VEVENT\n";
     });
@@ -78,4 +83,4 @@ function generarICS() {
 }
 
 fs.writeFileSync("calendario.ics", generarICS(), "utf8");
-console.log("✅ calendario.ics generado con SUMMARY corto y DESCRIPTION largo");
+console.log("✅ calendario.ics generado en UTC (compatible con Google Calendar Web)");

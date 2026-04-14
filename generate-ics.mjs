@@ -82,5 +82,6 @@ function generarICS() {
     return ics;
 }
 
-fs.writeFileSync("calendario.ics", generarICS(), "utf8");
-console.log("✅ calendario.ics generado en UTC (compatible con Google Calendar Web)");
+const icsContent = generarICS().replace(/\n/g, "\r\n");
+fs.writeFileSync("calendario.ics", icsContent, "utf8");
+console.log("✅ calendario.ics generado en UTC con CRLF (compatible con Google Calendar Web)");

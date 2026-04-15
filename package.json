@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "generate-ics": "node generate-ics.mjs"
+    "generate-ics": "node generate-ics.mjs",
+    "generate-ics-horario": "node generate-ics-horario.mjs"
   }
 }

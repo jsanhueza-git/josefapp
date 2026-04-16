@@ -58,7 +58,7 @@ function generarICS() {
       ics += `DTSTART:${dtStartUTC}\n`;
       ics += `DTEND:${dtEndUTC}\n`;
       ics += `SUMMARY:${b.subject}\n`;
-      ics += `RRULE:FREQ=WEEKLY;BYDAY=${dayCode}\n`;
+      ics += `RRULE:FREQ=WEEKLY;BYDAY=${dayCode};UNTIL=20261211T235959Z\n`;
 
       // 🔕 Desactivar alertas
       ics += "BEGIN:VALARM\n";

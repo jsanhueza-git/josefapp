@@ -59,6 +59,12 @@ function generarICS() {
       ics += `DTEND:${dtEndUTC}\n`;
       ics += `SUMMARY:${b.subject}\n`;
       ics += `RRULE:FREQ=WEEKLY;BYDAY=${dayCode}\n`;
+
+      // 🔕 Desactivar alertas
+      ics += "BEGIN:VALARM\n";
+      ics += "ACTION:NONE\n";
+      ics += "END:VALARM\n";
+
       ics += "END:VEVENT\n";
     });
   }

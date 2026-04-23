@@ -16,12 +16,14 @@ SUMMARY:EnglishLanguage
 DESCRIPTION:Unit 0 Test – Vocabulary (p.6), There is/There are (p.5)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260326
+DTSTART:20260326T184000Z
+DTEND:20260326T192500Z
 SUMMARY:STEM
 DESCRIPTION:Process Evaluation (Project 1) – Booklet (work in class)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260331
+DTSTART:20260331T121500Z
+DTEND:20260331T125500Z
 SUMMARY:Art
 DESCRIPTION:Término proceso – Autorretrato al estilo egipcio
 END:VEVENT
@@ -31,7 +33,8 @@ SUMMARY:STEM
 DESCRIPTION:Evaluación de proceso (durante el mes)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260408
+DTSTART:20260408T153000Z
+DTEND:20260408T161500Z
 SUMMARY:CommunicativeSkills
 DESCRIPTION:Speaking – Parts of the house, furniture y prepositions of place
 END:VEVENT
@@ -42,13 +45,14 @@ SUMMARY:CommunicativeSkills
 DESCRIPTION:Speaking (continuación)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260409T170000Z
-DTEND:20260409T174500Z
+DTSTART:20260409T121500Z
+DTEND:20260409T125500Z
 SUMMARY:Spanish
 DESCRIPTION:Evaluación sumativa – Control de lectura complementaria '¡No funciona la tele!'
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260410
+DTSTART:20260410T135000Z
+DTEND:20260410T143000Z
 SUMMARY:Math
 DESCRIPTION:Unit 1 Test – Counting up to 50, skip counting, tens and ones, numbers in words
 END:VEVENT
@@ -59,28 +63,32 @@ SUMMARY:EnglishLanguage
 DESCRIPTION:Dictation – Classroom objects (Unit 0) y daily routines (Unit 1) Hello everyone! Remember! Dictation: 15/04 📖 1) brush your teeth 2) Play in the park 3) have breakfast 4) get dressed 5) have dinner 6) go to bed 7) get up 8) have lunch 9) go to school Las palabras seran dictadas en cualquier orden. Pueden estudiar de forma entretenida desde casa usando plasticina o arroz, etc para escribir las palabras. Además se recuerda que previo al dictado los alumnos se dictan y corrigen entre ellos como una forma entretenida de practicar, por lo que es importante que tengan en sala las pizarras individuales de forma permanente. best, Miss Fran 😎
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260415T143000Z
-DTEND:20260415T151500Z
+DTSTART:20260415T170000Z
+DTEND:20260415T174500Z
 SUMMARY:Spanish
 DESCRIPTION:Declamación poética ((instrucciones en Classroom .... continuación)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260414
+DTSTART:20260414T143000Z
+DTEND:20260414T151500Z
 SUMMARY:Spanish
 DESCRIPTION:Declamación poética (instrucciones en Classroom)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260416
+DTSTART:20260416T135000Z
+DTEND:20260416T143000Z
 SUMMARY:Literacy
 DESCRIPTION:Dear parents,&nbsp; Junto con saludar, les recuerdo que la próxima semana tendremos nuestra prueba de Literacy, el día jueves 16 de abril. La evaluación incluirá los siguientes tipos de ejercicios: Sonidos (alternative spellings): AI / AY, OI / OY, EE / EA, IE / IGH Identificación de sonidos en un texto Comprensión lectora Escritura de palabras con los sonidos trabajados También les dejo videos de apoyo para reforzar los sonidos y el vocabulario trabajado en clases. Además, les recomiendo revisar canales de YouTube que son muy buenos para practicar, como Miss Phonics, Smile and Learn y Little Fox, similares a los videos que compartiré. Si los estudiantes han asistido a clases y participado activamente, no deberían tener dificultad con la evaluación. Muchas gracias por el apoyo en casa⭐ Cualquier duda, no duden en escribirme. Best, Miss Pauli
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260420
+DTSTART:20260420T135000Z
+DTEND:20260420T143000Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Proyecto 'My routine' (sumativa) – materiales en Classroom
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260421
+DTSTART:20260421T174500Z
+DTEND:20260421T183000Z
 SUMMARY:SocialStudies
 DESCRIPTION:Evaluación sumativa – Cardinal points, planos, mapas y leyendas
 END:VEVENT
@@ -97,23 +105,26 @@ SUMMARY:EnglishLanguage
 DESCRIPTION:(todo el dia) Día de la convivencia escolar (actividad)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260422
+DTSTART:20260422T184000Z
+DTEND:20260422T192500Z
 SUMMARY:PhysicalEducation
 DESCRIPTION:Habilidades motrices básicas – evaluación práctica
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260423T170000Z
-DTEND:20260423T174500Z
+DTSTART:20260423T121500Z
+DTEND:20260423T125500Z
 SUMMARY:Spanish
 DESCRIPTION:Día del libro (actividad)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260424
+DTSTART:20260424T143000Z
+DTEND:20260424T151500Z
 SUMMARY:Drama
 DESCRIPTION:Storyboard – preparación para puppet show
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260427
+DTSTART:20260427T143000Z
+DTEND:20260427T151500Z
 SUMMARY:Math
 DESCRIPTION:Unit 1 Test – Lesson 3: Addition and subtraction
 END:VEVENT
@@ -124,7 +135,8 @@ SUMMARY:NaturalScience
 DESCRIPTION:Trabajo práctico – Lesson 1: Function of organs (instrucciones en Classroom)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260428
+DTSTART:20260428T170000Z
+DTEND:20260428T174500Z
 SUMMARY:Literacy
 DESCRIPTION:Dictation (cumulative) – detalles en Classroom
 END:VEVENT
@@ -135,7 +147,8 @@ SUMMARY:EnglishLanguage
 DESCRIPTION:Unit 1 Test – Daily routines, telling the time, present simple (3rd person)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260505
+DTSTART:20260505T121500Z
+DTEND:20260505T125500Z
 SUMMARY:Art
 DESCRIPTION:Término de proceso – marioneta
 END:VEVENT

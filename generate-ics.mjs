@@ -37,7 +37,6 @@ function convertirAUTC(fecha, hora) {
 
     return `${utcYear}${utcMonth}${utcDay}T${utcHour}${utcMin}00Z`;
 }
-
 function generarICS() {
     let ics = "";
     ics += "BEGIN:VCALENDAR\n";
@@ -49,10 +48,18 @@ function generarICS() {
     calendar.forEach(ev => {
         ics += "BEGIN:VEVENT\n";
 
-        if (ev.allDay) {
-            const date = ev.date.replace(/-/g, "");
-            ics += `DTSTART;VALUE=DATE:${date}\n`;
+        const isAllDay = ev.allDay === true || ev.allday === true;
+
+        if (isAllDay) {
+            // Evento de día completo
+            const start = ev.date.replace(/-/g, "");
+            const end = calcularDiaSiguiente(ev.date).replace(/-/g, "");
+
+            ics += `DTSTART;VALUE=DATE:${start}\n`;
+            ics += `DTEND;VALUE=DATE:${end}\n`;
+
         } else {
+            // Evento con horario
             const bloque = buscarBloque(ev.date, ev.subject);
 
             if (bloque) {
@@ -62,8 +69,12 @@ function generarICS() {
                 ics += `DTSTART:${dtStartUTC}\n`;
                 ics += `DTEND:${dtEndUTC}\n`;
             } else {
-                const date = ev.date.replace(/-/g, "");
-                ics += `DTSTART;VALUE=DATE:${date}\n`;
+                // Evento sin bloque → tratar como allDay
+                const start = ev.date.replace(/-/g, "");
+                const end = calcularDiaSiguiente(ev.date).replace(/-/g, "");
+
+                ics += `DTSTART;VALUE=DATE:${start}\n`;
+                ics += `DTEND;VALUE=DATE:${end}\n`;
             }
         }
 
@@ -72,7 +83,9 @@ function generarICS() {
             .replace(/\s+/g, " ")
             .trim();
 
-        ics += `SUMMARY:${ev.subject}\n`;
+        const summary = ev.subject || ev.title || "Evento";
+
+        ics += `SUMMARY:${summary}\n`;
         ics += `DESCRIPTION:${cleanDescription}\n`;
 
         ics += "END:VEVENT\n";
@@ -81,6 +94,14 @@ function generarICS() {
     ics += "END:VCALENDAR\n";
     return ics;
 }
+
+function calcularDiaSiguiente(fecha) {
+    const d = new Date(fecha);
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().slice(0, 10);
+}
+
+
 
 const icsContent = generarICS().replace(/\n/g, "\r\n");
 fs.writeFileSync("calendario.ics", icsContent, "utf8");

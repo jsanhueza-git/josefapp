@@ -46,6 +46,18 @@
             {
               "title": "(Repertoire) Twinkle Twinkle Little Star • Nursery Rhymes Song with Lyrics • Animated Cartoon for Kids",
               "url": "https://www.youtube.com/embed/1r0_TdqdMvA"
+            },
+            {
+              "title": "Las Notas Musicales 🌈CANCIOGRAMA (Aprende Cantando)",
+              "url": "https://www.youtube.com/embed/WplI0O5n7ag"
+            },
+            {
+              "title": "Twinkle, Twinkle Little Star - XYLOPHONE &amp; GLOCKENSPIEL",
+              "url": "https://www.youtube.com/embed/oZMqg-2JQJQ"
+            },
+            {
+              "title": "EL PENTAGRAMA Y LA CLAVE DE SOL",
+              "url": "https://www.youtube.com/embed/V3toXEMMMLo"
             }
           ],
           "games": [],
@@ -502,9 +514,44 @@
     "description": "Unit 1 Test – Daily routines, telling the time, present simple (3rd person)"
   },
   {
+    "date": "2026-04-30",
+    "subject": "STEM",
+    "description": "Llevar Caja o bolsa para el domiones game"
+  },
+  {
+    "date": "2026-04-30",
+    "subject": "Spanish",
+    "description": "Texto Informativo impreso"
+  },
+  {
     "date": "2026-05-05",
     "subject": "Art",
     "description": "Término de proceso – marioneta"
+  },
+  {
+    "date": "2026-05-04",
+    "subject": "NaturalScience",
+    "description": "Evaluación Trabajo de Science - Ver Classroom para instrucciones"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "Aniversario",
+    "allday": true
+  },
+  {
+    "date": "2026-05-07",
+    "title": "Aniversario",
+    "allday": true
+  },
+  {
+    "date": "2026-05-08",
+    "title": "Aniversario",
+    "allday": true
+  },
+  {
+    "date": "2026-05-11",
+    "subject": "Music",
+    "description": "Evaluación práctica pentagrama - revisar classroom"
   }
   ]
 }

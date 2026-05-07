@@ -227,7 +227,7 @@
             }
           ],
           "games": [],
-          "extra": "<p>Material adicional de Communicative Skills.</p>"
+          "extra": "<p>Evaluated worksheet “Clothes”<br>  Writing and speaking skills: He/she is wearing a + (colour) + garment<br>  What is he/she wearing?<br>  What colour is/are it/they?<br>  It’s ________<br>  They’re _______</p>"
         }
       ]
     },
@@ -551,13 +551,12 @@
   {
     "date": "2026-05-11",
     "subject": "Music",
-    "description": "Evaluación práctica pentagrama - revisar classroom"
+    "description": "The staff and treble clef — trabajo manual en clases (Creación manual del pentagrama, llave de sol y notas musicales)"
   },
-
   {
     "date": "2026-05-11",
-    "subject": "Music",
-    "description": "The staff and treble clef — trabajo manual en clases"
+    "subject": "NaturalScience",
+    "description": "Trabajo práctico – Lesson 1: Function of organs (instrucciones en Classroom) ... [Continuación del 27/04]"
   },
   {
     "date": "2026-05-13",
@@ -567,7 +566,7 @@
   {
     "date": "2026-05-14",
     "subject": "Spanish",
-    "description": "Libro Social: worksheet"
+    "description": "Libro: Caperucita roja y abuelita: detectives privados de Paz Corral"
   },
   {
     "date": "2026-05-14",
@@ -577,12 +576,23 @@
   {
     "date": "2026-05-18",
     "subject": "Music",
-    "description": "The staff and treble clef — trabajo manual en clases"
+    "description": "The staff and treble clef — trabajo manual en clases (Creación manual del pentagrama, llave de sol y notas musicales) .. Continuación"
   },
+  {
+    "date": "2026-05-21",
+    "title": "Día de las Glorias Navales",
+    "allday": true
+  },
+    {
+    "date": "2026-05-22",
+    "title": "Interferiado :)",
+    "allday": true
+  },
+
   {
     "date": "2026-05-25",
     "subject": "NaturalScience",
-    "description": "Worksheet evaluada — How to take care of my body"
+    "description": "Worksheet evaluada — How to take care of my body (Worksheet evaluada, trabajo en clases (instrucciones por classroom))"
   },
   {
     "date": "2026-05-26",
@@ -592,27 +602,58 @@
   {
     "date": "2026-05-27",
     "subject": "Spanish",
-    "description": "Prueba contenidos — comprensión lectora, cuento, poema, texto informativo"
+    "description": "Prueba contenidos — comprensión lectora, cuento, poema, texto informativo (estructura y función)"
   },
   {
     "date": "2026-05-27",
     "subject": "CommunicativeSkills",
-    "description": "Evaluated worksheet — Clothes (writing and speaking)"
+    "description": "Evaluated worksheet — Clothes (writing and speaking) - revisar material en josefa app y classroom"
   },
   {
     "date": "2026-05-28",
     "subject": "CommunicativeSkills",
-    "description": "Evaluated worksheet — Clothes (writing and speaking)"
+    "description": "Evaluated worksheet — Clothes (writing and speaking) - revisar material en josefa app y classroom (Continuación)"
   },
   {
     "date": "2026-05-29",
     "subject": "Drama",
-    "description": "Puppet show — formative evaluation"
+    "description": "Puppet show — formative evaluation (Students made their own puppets and presented their dialogues. More details will be shared through)"
   },
   {
     "date": "2026-05-29",
     "subject": "Math",
     "description": "Math Test — Addition and subtraction with/without regrouping"
+  },
+  {
+    "date": "2026-06-02",
+    "subject": "Literacy",
+    "description": "Phonics Project: Students will create their own phonics book using the sound studied in class. This project will be carried out during all Literacy classes throughout the week. More details will be shared through Classroom."
+  },
+  {
+    "date": "2026-06-03",
+    "subject": "Spanish",
+    "description": "Fábula: Análisis de una fábula y su estructura. (instrucciones por classroom)"
+  },
+  {
+    "date": "2026-06-03",
+    "subject": "EnglishLanguage",
+    "description": "<p>Unit 2: the zoo<br>  ● Vocabulary (page 22)<br>  ● Use of like/ doesn’t like (page 23)<br>  ● Answers: does/ doesn’t (page 25)<br>  ● Animals habitat (page 30-31)</p>"
+  },
+  {
+    "date": "2026-06-04",
+    "subject": "STEM",
+    "description": "Project 2: Process Evaluation - Booklet (work in class)"
+  },
+  {
+    "date": "2026-06-05",
+    "subject": "Drama",
+    "description": "Self-assessment: students evaluate their own work on a worksheet."
+  },
+  {
+    "date": "2026-06-05",
+    "subject": "Math",
+    "description": "Evaluated worksheet_Lesson 4: Temporal location."
   }
+
   ]
 }

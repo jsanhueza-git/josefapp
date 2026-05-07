@@ -193,13 +193,13 @@ BEGIN:VEVENT
 DTSTART:20260511T121500Z
 DTEND:20260511T125500Z
 SUMMARY:Music
-DESCRIPTION:Evaluación práctica pentagrama - revisar classroom
+DESCRIPTION:The staff and treble clef — trabajo manual en clases (Creación manual del pentagrama, llave de sol y notas musicales)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260511T121500Z
-DTEND:20260511T125500Z
-SUMMARY:Music
-DESCRIPTION:The staff and treble clef — trabajo manual en clases
+DTSTART:20260511T184000Z
+DTEND:20260511T192500Z
+SUMMARY:NaturalScience
+DESCRIPTION:Trabajo práctico – Lesson 1: Function of organs (instrucciones en Classroom) ... [Continuación del 27/04]
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260513T135000Z
@@ -211,7 +211,7 @@ BEGIN:VEVENT
 DTSTART:20260514T121500Z
 DTEND:20260514T125500Z
 SUMMARY:Spanish
-DESCRIPTION:Libro Social: worksheet
+DESCRIPTION:Libro: Caperucita roja y abuelita: detectives privados de Paz Corral
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260514T170000Z
@@ -223,13 +223,25 @@ BEGIN:VEVENT
 DTSTART:20260518T121500Z
 DTEND:20260518T125500Z
 SUMMARY:Music
-DESCRIPTION:The staff and treble clef — trabajo manual en clases
+DESCRIPTION:The staff and treble clef — trabajo manual en clases (Creación manual del pentagrama, llave de sol y notas musicales) .. Continuación
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260521
+DTEND;VALUE=DATE:20260522
+SUMMARY:Día de las Glorias Navales
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260522
+DTEND;VALUE=DATE:20260523
+SUMMARY:Interferiado :)
+DESCRIPTION:
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260525T184000Z
 DTEND:20260525T192500Z
 SUMMARY:NaturalScience
-DESCRIPTION:Worksheet evaluada — How to take care of my body
+DESCRIPTION:Worksheet evaluada — How to take care of my body (Worksheet evaluada, trabajo en clases (instrucciones por classroom))
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260526T121500Z
@@ -241,30 +253,66 @@ BEGIN:VEVENT
 DTSTART:20260527T170000Z
 DTEND:20260527T174500Z
 SUMMARY:Spanish
-DESCRIPTION:Prueba contenidos — comprensión lectora, cuento, poema, texto informativo
+DESCRIPTION:Prueba contenidos — comprensión lectora, cuento, poema, texto informativo (estructura y función)
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260527T153000Z
 DTEND:20260527T161500Z
 SUMMARY:CommunicativeSkills
-DESCRIPTION:Evaluated worksheet — Clothes (writing and speaking)
+DESCRIPTION:Evaluated worksheet — Clothes (writing and speaking) - revisar material en josefa app y classroom
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260528T153000Z
 DTEND:20260528T161500Z
 SUMMARY:CommunicativeSkills
-DESCRIPTION:Evaluated worksheet — Clothes (writing and speaking)
+DESCRIPTION:Evaluated worksheet — Clothes (writing and speaking) - revisar material en josefa app y classroom (Continuación)
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260529T143000Z
 DTEND:20260529T151500Z
 SUMMARY:Drama
-DESCRIPTION:Puppet show — formative evaluation
+DESCRIPTION:Puppet show — formative evaluation (Students made their own puppets and presented their dialogues. More details will be shared through)
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260529T135000Z
 DTEND:20260529T143000Z
 SUMMARY:Math
 DESCRIPTION:Math Test — Addition and subtraction with/without regrouping
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260602T170000Z
+DTEND:20260602T174500Z
+SUMMARY:Literacy
+DESCRIPTION:Phonics Project: Students will create their own phonics book using the sound studied in class. This project will be carried out during all Literacy classes throughout the week. More details will be shared through Classroom.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260603T170000Z
+DTEND:20260603T174500Z
+SUMMARY:Spanish
+DESCRIPTION:Fábula: Análisis de una fábula y su estructura. (instrucciones por classroom)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260603T135000Z
+DTEND:20260603T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Unit 2: the zoo ● Vocabulary (page 22) ● Use of like/ doesn’t like (page 23) ● Answers: does/ doesn’t (page 25) ● Animals habitat (page 30-31)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260604T184000Z
+DTEND:20260604T192500Z
+SUMMARY:STEM
+DESCRIPTION:Project 2: Process Evaluation - Booklet (work in class)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260605T143000Z
+DTEND:20260605T151500Z
+SUMMARY:Drama
+DESCRIPTION:Self-assessment: students evaluate their own work on a worksheet.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260605T135000Z
+DTEND:20260605T143000Z
+SUMMARY:Math
+DESCRIPTION:Evaluated worksheet_Lesson 4: Temporal location.
 END:VEVENT
 END:VCALENDAR

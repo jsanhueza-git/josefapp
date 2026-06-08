@@ -653,6 +653,101 @@
     "date": "2026-06-05",
     "subject": "Math",
     "description": "Evaluated worksheet_Lesson 4: Temporal location."
+  },
+  {
+    "date": "2026-06-04",
+    "subject": "SocialStudies",
+    "description": "Trabajo grupal: Zonas de Chile con mapa (instrucciones serán enviadas por classroom)"
+  },
+  {
+    "date": "2026-06-08",
+    "subject": "Music",
+    "description": "Musical performance of 'Twinkle Twinkle Little Star'. Sing and play the metallophone."
+  },
+  {
+    "date": "2026-06-08",
+    "subject": "NaturalScience",
+    "description": "Unit 2: What are the animals around me like? Worksheet evaluada, trabajo en clases (instrucciones por classroom)"
+  },
+  {
+    "date": "2026-06-09",
+    "subject": "Art",
+    "description": "Autoevaluación proceso semestre"
+  },
+  {
+    "date": "2026-06-10",
+    "subject": "CommunicativeSkills",
+    "description": "Writing Worksheet: What is he/she wearing? He/she is wearing a/an (colour)(clothes). A/an or (no article if plural). What are they wearing? They are wearing a/an (colour)(clothes)."
+  },
+  {
+    "date": "2026-06-11",
+    "subject": "STEM",
+    "description": "Process evaluation: 'My ideal park'. Work in class."
+  },
+  {
+    "date": "2026-06-18",
+    "title": "Último día de clases",
+    "allday": true
+  },
+  {
+    "date": "2026-06-22",
+    "title": "Inicio Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-06-23",
+    "title": "Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-06-24",
+    "title": "Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-06-25",
+    "title": "Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-06-26",
+    "title": "Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-06-29",
+    "title": "Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-06-30",
+    "title": "Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-07-01",
+    "title": "Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-07-02",
+    "title": "Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-07-03",
+    "title": "Vacaciones de Invierno",
+    "allday": true
+  },
+  {
+    "date": "2026-07-06",
+    "title": "Inicio II Semestre",
+    "allday": true
+  },
+  {
+    "date": "2026-07-08",
+    "subject": "Spanish",
+    "description": "Lectura complementaria: ¡Ay, cuánto me quiero!, de Mauricio Paredes, editorial Alfaguara"
   }
 
   ]

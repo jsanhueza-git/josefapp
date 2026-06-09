@@ -1,0 +1,438 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//Josefapp//ES
+BEGIN:VEVENT
+DTSTART:20260324T135000Z
+DTEND:20260324T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Dictation (Vocabulary p.6)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260325T135000Z
+DTEND:20260325T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Unit 0 Test – Vocabulary (p.6), There is/There are (p.5)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260326T184000Z
+DTEND:20260326T192500Z
+SUMMARY:STEM
+DESCRIPTION:Process Evaluation (Project 1) – Booklet (work in class)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260331T121500Z
+DTEND:20260331T125500Z
+SUMMARY:Art
+DESCRIPTION:Término proceso – Autorretrato al estilo egipcio
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260401
+DTEND;VALUE=DATE:20260402
+SUMMARY:STEM
+DESCRIPTION:Evaluación de proceso (durante el mes)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260408T153000Z
+DTEND:20260408T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:Speaking – Parts of the house, furniture y prepositions of place
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260409T153000Z
+DTEND:20260409T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:Speaking (continuación)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260409T121500Z
+DTEND:20260409T125500Z
+SUMMARY:Spanish
+DESCRIPTION:Evaluación sumativa – Control de lectura complementaria '¡No funciona la tele!'
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260410T135000Z
+DTEND:20260410T143000Z
+SUMMARY:Math
+DESCRIPTION:Unit 1 Test – Counting up to 50, skip counting, tens and ones, numbers in words
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260415T135000Z
+DTEND:20260415T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Dictation – Classroom objects (Unit 0) y daily routines (Unit 1) Hello everyone! Remember! Dictation: 15/04 📖 1) brush your teeth 2) Play in the park 3) have breakfast 4) get dressed 5) have dinner 6) go to bed 7) get up 8) have lunch 9) go to school Las palabras seran dictadas en cualquier orden. Pueden estudiar de forma entretenida desde casa usando plasticina o arroz, etc para escribir las palabras. Además se recuerda que previo al dictado los alumnos se dictan y corrigen entre ellos como una forma entretenida de practicar, por lo que es importante que tengan en sala las pizarras individuales de forma permanente. best, Miss Fran 😎
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260415T170000Z
+DTEND:20260415T174500Z
+SUMMARY:Spanish
+DESCRIPTION:Declamación poética ((instrucciones en Classroom .... continuación)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260414T143000Z
+DTEND:20260414T151500Z
+SUMMARY:Spanish
+DESCRIPTION:Declamación poética (instrucciones en Classroom)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260416T135000Z
+DTEND:20260416T143000Z
+SUMMARY:Literacy
+DESCRIPTION:Dear parents,&nbsp; Junto con saludar, les recuerdo que la próxima semana tendremos nuestra prueba de Literacy, el día jueves 16 de abril. La evaluación incluirá los siguientes tipos de ejercicios: Sonidos (alternative spellings): AI / AY, OI / OY, EE / EA, IE / IGH Identificación de sonidos en un texto Comprensión lectora Escritura de palabras con los sonidos trabajados También les dejo videos de apoyo para reforzar los sonidos y el vocabulario trabajado en clases. Además, les recomiendo revisar canales de YouTube que son muy buenos para practicar, como Miss Phonics, Smile and Learn y Little Fox, similares a los videos que compartiré. Si los estudiantes han asistido a clases y participado activamente, no deberían tener dificultad con la evaluación. Muchas gracias por el apoyo en casa⭐ Cualquier duda, no duden en escribirme. Best, Miss Pauli
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260420T135000Z
+DTEND:20260420T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Proyecto 'My routine' (sumativa) – materiales en Classroom
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260421T174500Z
+DTEND:20260421T183000Z
+SUMMARY:SocialStudies
+DESCRIPTION:Evaluación sumativa – Cardinal points, planos, mapas y leyendas
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260421T135000Z
+DTEND:20260421T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Proyecto 'My routine' (continuación)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260422T135000Z
+DTEND:20260422T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:(todo el dia) Día de la convivencia escolar (actividad)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260422T184000Z
+DTEND:20260422T192500Z
+SUMMARY:PhysicalEducation
+DESCRIPTION:Habilidades motrices básicas – evaluación práctica
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260423T121500Z
+DTEND:20260423T125500Z
+SUMMARY:Spanish
+DESCRIPTION:Día del libro (actividad)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260424T143000Z
+DTEND:20260424T151500Z
+SUMMARY:Drama
+DESCRIPTION:Storyboard – preparación para puppet show
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260504T143000Z
+DTEND:20260504T151500Z
+SUMMARY:Math
+DESCRIPTION:Unit 1 Test – Lesson 3: Addition and subtraction
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260427T184000Z
+DTEND:20260427T192500Z
+SUMMARY:NaturalScience
+DESCRIPTION:Trabajo práctico – Lesson 1: Function of organs (instrucciones en Classroom)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260428T170000Z
+DTEND:20260428T174500Z
+SUMMARY:Literacy
+DESCRIPTION:Dictation (cumulative) – detalles en Classroom
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260429T135000Z
+DTEND:20260429T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Unit 1 Test – Daily routines, telling the time, present simple (3rd person)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260430T184000Z
+DTEND:20260430T192500Z
+SUMMARY:STEM
+DESCRIPTION:Llevar Caja o bolsa para el domiones game
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260430T121500Z
+DTEND:20260430T125500Z
+SUMMARY:Spanish
+DESCRIPTION:Texto Informativo impreso
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260505T121500Z
+DTEND:20260505T125500Z
+SUMMARY:Art
+DESCRIPTION:Término de proceso – marioneta
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260504T184000Z
+DTEND:20260504T192500Z
+SUMMARY:NaturalScience
+DESCRIPTION:Evaluación Trabajo de Science - Ver Classroom para instrucciones
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:Aniversario
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260507
+DTEND;VALUE=DATE:20260508
+SUMMARY:Aniversario
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260508
+DTEND;VALUE=DATE:20260509
+SUMMARY:Aniversario
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260511T121500Z
+DTEND:20260511T125500Z
+SUMMARY:Music
+DESCRIPTION:The staff and treble clef — trabajo manual en clases (Creación manual del pentagrama, llave de sol y notas musicales)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260511T184000Z
+DTEND:20260511T192500Z
+SUMMARY:NaturalScience
+DESCRIPTION:Trabajo práctico – Lesson 1: Function of organs (instrucciones en Classroom) ... [Continuación del 27/04]
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260513T135000Z
+DTEND:20260513T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Dictation — Unit 2 vocabulary (page 22)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260514T121500Z
+DTEND:20260514T125500Z
+SUMMARY:Spanish
+DESCRIPTION:Libro: Caperucita roja y abuelita: detectives privados de Paz Corral
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260514T170000Z
+DTEND:20260514T174500Z
+SUMMARY:SocialStudies
+DESCRIPTION:Evaluated worksheet: landforms y landscapes (p.32–35)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260518T121500Z
+DTEND:20260518T125500Z
+SUMMARY:Music
+DESCRIPTION:The staff and treble clef — trabajo manual en clases (Creación manual del pentagrama, llave de sol y notas musicales) .. Continuación
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260521
+DTEND;VALUE=DATE:20260522
+SUMMARY:Día de las Glorias Navales
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260522
+DTEND;VALUE=DATE:20260523
+SUMMARY:Interferiado :)
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260525T184000Z
+DTEND:20260525T192500Z
+SUMMARY:NaturalScience
+DESCRIPTION:Worksheet evaluada — How to take care of my body (Worksheet evaluada, trabajo en clases (instrucciones por classroom))
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260526T121500Z
+DTEND:20260526T125500Z
+SUMMARY:Art
+DESCRIPTION:Término de proceso marionetas
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260527T170000Z
+DTEND:20260527T174500Z
+SUMMARY:Spanish
+DESCRIPTION:Prueba contenidos — comprensión lectora, cuento, poema, texto informativo (estructura y función)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260527T153000Z
+DTEND:20260527T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:Evaluated worksheet — Clothes (writing and speaking) - revisar material en josefa app y classroom
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260528T153000Z
+DTEND:20260528T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:Evaluated worksheet — Clothes (writing and speaking) - revisar material en josefa app y classroom (Continuación)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260529T143000Z
+DTEND:20260529T151500Z
+SUMMARY:Drama
+DESCRIPTION:Puppet show — formative evaluation (Students made their own puppets and presented their dialogues. More details will be shared through)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260529T135000Z
+DTEND:20260529T143000Z
+SUMMARY:Math
+DESCRIPTION:Math Test — Addition and subtraction with/without regrouping
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260602T170000Z
+DTEND:20260602T174500Z
+SUMMARY:Literacy
+DESCRIPTION:Phonics Project: Students will create their own phonics book using the sound studied in class. This project will be carried out during all Literacy classes throughout the week. More details will be shared through Classroom.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260603T170000Z
+DTEND:20260603T174500Z
+SUMMARY:Spanish
+DESCRIPTION:Fábula: Análisis de una fábula y su estructura. (instrucciones por classroom)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260603T135000Z
+DTEND:20260603T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Unit 2: the zoo ● Vocabulary (page 22) ● Use of like/ doesn’t like (page 23) ● Answers: does/ doesn’t (page 25) ● Animals habitat (page 30-31)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260604T184000Z
+DTEND:20260604T192500Z
+SUMMARY:STEM
+DESCRIPTION:Project 2: Process Evaluation - Booklet (work in class)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260605T143000Z
+DTEND:20260605T151500Z
+SUMMARY:Drama
+DESCRIPTION:Self-assessment: students evaluate their own work on a worksheet.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260605T135000Z
+DTEND:20260605T143000Z
+SUMMARY:Math
+DESCRIPTION:Evaluated worksheet_Lesson 4: Temporal location.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260609T174500Z
+DTEND:20260609T183000Z
+SUMMARY:SocialStudies
+DESCRIPTION:Trabajo grupal (parte 1): Dibujos de diferentes paisajes de Chile
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260611T170000Z
+DTEND:20260611T174500Z
+SUMMARY:SocialStudies
+DESCRIPTION:Trabajo grupal (parte 2): Zonas de Chile con mapa — evaluación en clases
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260608T121500Z
+DTEND:20260608T125500Z
+SUMMARY:Music
+DESCRIPTION:Musical performance of 'Twinkle Twinkle Little Star'. Sing and play the metallophone.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260608T184000Z
+DTEND:20260608T192500Z
+SUMMARY:NaturalScience
+DESCRIPTION:Unit 2: What are the animals around me like? Worksheet evaluada, trabajo en clases (instrucciones por classroom)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260609T121500Z
+DTEND:20260609T125500Z
+SUMMARY:Art
+DESCRIPTION:Autoevaluación proceso semestre
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260610T153000Z
+DTEND:20260610T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:Writing Worksheet: What is he/she wearing? He/she is wearing a/an (colour)(clothes). A/an or (no article if plural). What are they wearing? They are wearing a/an (colour)(clothes).
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260611T184000Z
+DTEND:20260611T192500Z
+SUMMARY:STEM
+DESCRIPTION:Process evaluation: 'My ideal park'. Work in class.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260618
+DTEND;VALUE=DATE:20260619
+SUMMARY:Último día de clases
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260622
+DTEND;VALUE=DATE:20260623
+SUMMARY:Inicio Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260623
+DTEND;VALUE=DATE:20260624
+SUMMARY:Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260624
+DTEND;VALUE=DATE:20260625
+SUMMARY:Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260625
+DTEND;VALUE=DATE:20260626
+SUMMARY:Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260626
+DTEND;VALUE=DATE:20260627
+SUMMARY:Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260629
+DTEND;VALUE=DATE:20260630
+SUMMARY:Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260630
+DTEND;VALUE=DATE:20260701
+SUMMARY:Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20260702
+SUMMARY:Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260702
+DTEND;VALUE=DATE:20260703
+SUMMARY:Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260703
+DTEND;VALUE=DATE:20260704
+SUMMARY:Vacaciones de Invierno
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:Inicio II Semestre
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260708T170000Z
+DTEND:20260708T174500Z
+SUMMARY:Spanish
+DESCRIPTION:Lectura complementaria: ¡Ay, cuánto me quiero!, de Mauricio Paredes, editorial Alfaguara
+END:VEVENT
+END:VCALENDAR

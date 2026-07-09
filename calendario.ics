@@ -435,4 +435,82 @@ DTEND:20260708T174500Z
 SUMMARY:Spanish
 DESCRIPTION:Lectura complementaria: ¡Ay, cuánto me quiero!, de Mauricio Paredes, editorial Alfaguara
 END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260715T135000Z
+DTEND:20260715T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Dictation: Vocabulary Unit 3 (page 34)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260716
+DTEND;VALUE=DATE:20260717
+SUMMARY:Feriado
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260717
+DTEND;VALUE=DATE:20260718
+SUMMARY:Interferiado
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260720T184000Z
+DTEND:20260720T192500Z
+SUMMARY:NaturalScience
+DESCRIPTION:Unit 2: What are the animals around me like? Lesson 2 — Invertebrates (more details in Classroom)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260722T135000Z
+DTEND:20260722T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Unit 3 Test: Where we live — Vocabulary (p.34 y 42), Has...got...? (p.35-36), Prepositions: in front of, between, next to, behind (p.37)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260722T153000Z
+DTEND:20260722T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:Evaluated worksheet: At the supermarket — Vocabulary and complete sentences in a dialogue (parte 1)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260723T184000Z
+DTEND:20260723T192500Z
+SUMMARY:STEM
+DESCRIPTION:Process Evaluation (work in class)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260723T153000Z
+DTEND:20260723T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:Evaluated worksheet: At the supermarket — Vocabulary and complete sentences in a dialogue (continuación)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260724T135000Z
+DTEND:20260724T143000Z
+SUMMARY:Math
+DESCRIPTION:Evaluated worksheet: Counting up to 1000, estimating, decimal numbers
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260729T170000Z
+DTEND:20260729T174500Z
+SUMMARY:Spanish
+DESCRIPTION:Prueba de Contenidos: Uso de mayúsculas, artículos indefinidos y definidos, sustantivos propios y comunes
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260730T135000Z
+DTEND:20260730T143000Z
+SUMMARY:Literacy
+DESCRIPTION:Dictation (more details in Classroom)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260805T135000Z
+DTEND:20260805T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Dictation: Vocabulary Unit 4 (page 46)
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260806T170000Z
+DTEND:20260806T174500Z
+SUMMARY:SocialStudies
+DESCRIPTION:Social Test Unit 2: Northern indigenous people — Location, characteristics, economy, fauna and flora, costumes and food
+END:VEVENT
 END:VCALENDAR

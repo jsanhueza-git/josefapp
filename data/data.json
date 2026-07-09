@@ -753,6 +753,71 @@
     "date": "2026-07-08",
     "subject": "Spanish",
     "description": "Lectura complementaria: ¡Ay, cuánto me quiero!, de Mauricio Paredes, editorial Alfaguara"
+  },
+  {
+    "date": "2026-07-15",
+    "subject": "EnglishLanguage",
+    "description": "Dictation: Vocabulary Unit 3 (page 34)"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "Feriado",
+    "allday": true
+  },
+  {
+    "date": "2026-07-17",
+    "title": "Interferiado",
+    "allday": true
+  },
+  {
+    "date": "2026-07-20",
+    "subject": "NaturalScience",
+    "description": "Unit 2: What are the animals around me like? Lesson 2 — Invertebrates (more details in Classroom)"
+  },
+  {
+    "date": "2026-07-22",
+    "subject": "EnglishLanguage",
+    "description": "Unit 3 Test: Where we live — Vocabulary (p.34 y 42), Has...got...? (p.35-36), Prepositions: in front of, between, next to, behind (p.37)"
+  },
+  {
+    "date": "2026-07-22",
+    "subject": "CommunicativeSkills",
+    "description": "Evaluated worksheet: At the supermarket — Vocabulary and complete sentences in a dialogue (parte 1)"
+  },
+  {
+    "date": "2026-07-23",
+    "subject": "STEM",
+    "description": "Process Evaluation (work in class)"
+  },
+  {
+    "date": "2026-07-23",
+    "subject": "CommunicativeSkills",
+    "description": "Evaluated worksheet: At the supermarket — Vocabulary and complete sentences in a dialogue (continuación)"
+  },
+  {
+    "date": "2026-07-24",
+    "subject": "Math",
+    "description": "Evaluated worksheet: Counting up to 1000, estimating, decimal numbers"
+  },
+  {
+    "date": "2026-07-29",
+    "subject": "Spanish",
+    "description": "Prueba de Contenidos: Uso de mayúsculas, artículos indefinidos y definidos, sustantivos propios y comunes"
+  },
+  {
+    "date": "2026-07-30",
+    "subject": "Literacy",
+    "description": "Dictation (more details in Classroom)"
+  },
+  {
+    "date": "2026-08-05",
+    "subject": "EnglishLanguage",
+    "description": "Dictation: Vocabulary Unit 4 (page 46)"
+  },
+  {
+    "date": "2026-08-06",
+    "subject": "SocialStudies",
+    "description": "Social Test Unit 2: Northern indigenous people — Location, characteristics, economy, fauna and flora, costumes and food"
   }
 
   ]

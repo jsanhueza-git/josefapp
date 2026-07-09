@@ -380,13 +380,33 @@ function applyTestFilters() {
 
 function renderTestCards(list) {
     const container = document.getElementById("test-list");
-    container.innerHTML = list.map(t => `
-        <div class="test-card test-${t.subject}">
+    const today = new Date().toISOString().slice(0, 10);
+
+    const upcoming = list.filter(t => t.date >= today);
+    const past     = list.filter(t => t.date <  today);
+
+    const cardHTML = items => items.map(t => `
+        <div class="test-card test-${t.subject || ''}">
             <div class="test-date">${t.date}</div>
-            <div class="test-title">${t.subject}</div>
-            <div class="test-desc">${t.description}</div>
+            <div class="test-title">${t.subject || t.title || ''}</div>
+            <div class="test-desc">${t.description || ''}</div>
         </div>
     `).join("");
+
+    let html = upcoming.length
+        ? cardHTML(upcoming)
+        : `<p class="no-upcoming">No hay evaluaciones próximas.</p>`;
+
+    if (past.length) {
+        html += `
+            <details class="past-events">
+                <summary>Anteriores (${past.length})</summary>
+                ${cardHTML(past.slice().reverse())}
+            </details>
+        `;
+    }
+
+    container.innerHTML = html;
 }
 
 function clearTestFilters() {

@@ -479,6 +479,29 @@ iframe {
     border-left: 6px solid #4b86b4;
 }
 
+.past-events {
+    margin-top: 24px;
+}
+
+.past-events summary {
+    cursor: pointer;
+    font-size: 14px;
+    color: #888;
+    padding: 8px 0;
+    user-select: none;
+}
+
+.past-events .test-card {
+    opacity: 0.55;
+}
+
+.no-upcoming {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
 .test-date {
     font-size: 14px;
     font-weight: bold;

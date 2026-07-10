@@ -79,20 +79,35 @@ function generarHTMLAsignatura(subject, tests) {
        SECCIÓN DE PRUEBAS
     ------------------------- */
     if (tests.length > 0) {
-        html += `<div class="section-block">`;
-        html += `<h3>📌 Pruebas</h3>`;
-        html += `<ul class="test-list">`;
+        const today = new Date().toISOString().slice(0, 10);
+        const upcoming = tests.filter(t => t.date >= today);
+        const past     = tests.filter(t => t.date <  today);
 
-        tests.forEach(t => {
-            html += `
-                <li>
-                    <strong>${t.date}</strong><br>
-                    ${t.description}
-                </li>
-            `;
-        });
+        const liHTML = items => items.map(t => `
+            <li>
+                <strong>${t.date}</strong><br>
+                ${t.description}
+            </li>
+        `).join("");
 
-        html += `</ul><hr></div>`;
+        html += `<div class="section-block"><h3>📌 Pruebas</h3><ul class="test-list">`;
+
+        if (upcoming.length) {
+            html += liHTML(upcoming);
+        } else {
+            html += `<li style="color:#888;font-style:italic">Sin pruebas próximas.</li>`;
+        }
+
+        if (past.length) {
+            html += `</ul>
+                <details class="past-events">
+                    <summary>Anteriores (${past.length})</summary>
+                    <ul class="test-list">${liHTML(past.slice().reverse())}</ul>
+                </details>
+            <hr></div>`;
+        } else {
+            html += `</ul><hr></div>`;
+        }
     }
 
     /* -------------------------

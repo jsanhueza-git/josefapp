@@ -111,7 +111,20 @@
       "unidades": [
         {
           "titulo": "Prueba 22 de Julio",
-          "videos": [],
+          "videos": [
+            {
+              "title": "SM2ed Animated song video L2 U3",
+              "url": "https://www.youtube.com/embed/g6fXv8m_0SQ"
+            },
+            {
+              "title": "SM2ed Animated story video L2 U3",
+              "url": "https://www.youtube.com/embed/75dGMbuD2WE"
+            },
+            {
+              "title": "SM2ed Animated Language focus video L2 U3 2",
+              "url": "https://www.youtube.com/embed/zgkpYNY_w74"
+            }
+          ],
           "games": [
             {
               "title": "Where we live",

@@ -75,6 +75,17 @@ function generarHTMLAsignatura(subject, tests) {
         `;
     }
 
+    // LINK AL LIBRO (si existe)
+    if (subject.libro) {
+        html += `
+        <div class="section-block libro-block">
+            <a href="${subject.libro}" target="_blank" class="libro-link">
+                📖 Abrir libro de clases
+            </a>
+        </div>
+        `;
+    }
+
     /* -------------------------
        SECCIÓN DE PRUEBAS
     ------------------------- */

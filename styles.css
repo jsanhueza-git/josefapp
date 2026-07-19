@@ -479,6 +479,26 @@ iframe {
     border-left: 6px solid #4b86b4;
 }
 
+.libro-block {
+    text-align: center;
+}
+
+.libro-link {
+    display: block;
+    background: #7A3FFF;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 14px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.libro-link:active {
+    opacity: 0.85;
+}
+
 .past-events {
     margin-top: 24px;
 }

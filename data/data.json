@@ -58,14 +58,6 @@
             {
               "title": "EL PENTAGRAMA Y LA CLAVE DE SOL",
               "url": "https://www.youtube.com/embed/V3toXEMMMLo"
-            },
-            {
-              "title": "Do azul - Música en colores",
-              "url": "https://www.youtube.com/embed/RSuNOVAZsX0"
-            },
-            {
-              "title": "Patrones Rítmicos. Nivel 1 | MusiLandia",
-              "url": "https://www.youtube.com/embed/XuaRNUKX-t4"
             }
           ],
           "games": [],
@@ -118,6 +110,25 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIwNjA3ODQ3",
       "unidades": [
         {
+          "titulo": "Prueba 22 de Julio",
+          "videos": [],
+          "games": [
+            {
+              "title": "Where we live",
+              "url": "https://wordwall.net/resource/16353999/where-we-live"
+            },
+            {
+              "title": "Unit 3 - Prepositions (in front of, between, next to, behind)",
+              "url": "https://wordwall.net/resource/113979437/unit-3-where-we-live-prepositions-superminds-2"
+            },
+            {
+              "title": "Unit 3 - Vocabulary (Superminds 2)",
+              "url": "https://wordwall.net/resource/113640012/unit-3-where-we-live-vocabulary-2-superminds-2"
+            }
+          ],
+          "extra": "<p><strong>Contenido evaluado:</strong></p><ul><li>Vocabulary (page 34 and 42)</li><li>Use of <strong>Has…got…?</strong> (yes, it has / no, it hasn't) — page 35–36</li><li>Prepositions: <strong>in front of, between, next to, behind</strong> — page 37</li></ul>"
+        },
+        {
           "titulo": "Unidad 1 - dictado 2 (15/04/2026)",
           "videos": [
             {
@@ -148,7 +159,7 @@
           "extra": "<a href='https://content.cambridgeone.org/cup1/products/sm2edpp2/9/assets/online/1674003421640/webapp/index.html?rootPath=/cup1/products/sm2edpp2/9/assets/online/1674003421640/webapp/#/preview/556077' target='_blank' rel='noopener noreferrer'>Abrir actividad Cambridge One</a>"
         },
         {
-          "titulo": "Unit 3 - Where we live",
+          "titulo": "Unidad 3 - Where we live",
           "videos": [],
           "games": [
             {

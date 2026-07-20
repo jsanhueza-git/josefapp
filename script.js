@@ -80,7 +80,7 @@ function generarHTMLAsignatura(subject, tests) {
         html += `
         <div class="section-block libro-block">
             <a href="${subject.libro}" target="_blank" class="libro-link">
-                📖 Abrir libro de clases
+                📚 Libro de clases
             </a>
         </div>
         `;

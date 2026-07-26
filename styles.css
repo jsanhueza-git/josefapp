@@ -109,6 +109,7 @@ h1 {
     cursor: pointer;
     transition: transform 0.15s;
     position: relative;
+    border-left: 6px solid transparent;
 }
 
 .card:hover {

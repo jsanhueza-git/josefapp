@@ -21,11 +21,27 @@ async function loadHomeItems() {
 
     grid.innerHTML = "";
 
+    // Rango de esta semana (lunes → domingo)
+    const today = new Date();
+    const dow = today.getDay();
+    const monday = new Date(today);
+    monday.setDate(today.getDate() - (dow === 0 ? 6 : dow - 1));
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    const todayStr  = today.toISOString().slice(0, 10);
+    const sundayStr = sunday.toISOString().slice(0, 10);
+
+    // Asignaturas con prueba esta semana (desde hoy hasta el domingo)
+    const thisWeek = new Set(
+        data.calendar
+            .filter(t => t.subject && t.date >= todayStr && t.date <= sundayStr)
+            .map(t => t.subject)
+    );
+
     data.home_items.forEach(item => {
         const card = document.createElement("div");
         card.className = `card subject-${item.key}`;
 
-        // Acción según el tipo
         if (item.type === "subject") {
             card.onclick = () => loadSubjectData(item.key);
         } else if (item.type === "schedule") {
@@ -34,7 +50,12 @@ async function loadHomeItems() {
             card.onclick = () => loadCalendar();
         }
 
+        const badge = thisWeek.has(item.key)
+            ? `<span class="week-badge">📝 Esta semana</span>`
+            : "";
+
         card.innerHTML = `
+            ${badge}
             <div class="icon">${item.icon}</div>
             <h3>${item.title}</h3>
         `;

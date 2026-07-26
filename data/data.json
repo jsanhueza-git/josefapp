@@ -15,7 +15,7 @@
 
     { "key": "Music", "title": "Music", "icon": "🎵", "type": "subject" },
     { "key": "Math", "title": "Matemáticas", "icon": "🧮", "type": "subject" },
-    { "key": "Spanish", "title": "Lenguaje", "icon": "🇪🇸", "type": "subject" },
+    { "key": "Spanish", "title": "Spanish", "icon": "🇪🇸", "type": "subject" },
     { "key": "EnglishLanguage", "title": "English Language", "icon": "🇬🇧", "type": "subject" },
     { "key": "Art", "title": "Art", "icon": "🎨", "type": "subject" },
     { "key": "CommunicativeSkills", "title": "Communicative Skills", "icon": "🗣️", "type": "subject" },
@@ -91,8 +91,8 @@
     },
     {
       "key": "Spanish",
-      "title": "Lenguaje",
-      "description": "Contenido de Lenguaje.",
+      "title": "Spanish",
+      "description": "Contenido de Spanish.",
       "classroom": "https://classroom.google.com/c/ODUwMjIyNzIxOTE1",
       "unidades": [
         {

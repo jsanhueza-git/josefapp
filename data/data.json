@@ -96,10 +96,28 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIyNzIxOTE1",
       "unidades": [
         {
-          "titulo": "Unidad 1",
-          "videos": [],
-          "games": [],
-          "extra": "<p>Material adicional de Lenguaje.</p>"
+          "titulo": "Prueba 29 de Julio — Sustantivos propios y comunes",
+          "videos": [
+            {
+              "title": "Sustantivos propios y comunes, para niños",
+              "url": "https://www.youtube.com/embed/NT07rpnoSdw"
+            },
+            {
+              "title": "Aprende los Sustantivos Comunes o Propios Divirtiéndote 🎉📚 | Quiz Interactivo",
+              "url": "https://www.youtube.com/embed/cSoSmHu0x_k"
+            }
+          ],
+          "games": [
+            {
+              "title": "Sustantivos comunes y propios",
+              "url": "https://wordwall.net/es/resource/3758475/sustantivos-comunes-y-propios"
+            },
+            {
+              "title": "Sustantivos comunes y propios (2)",
+              "url": "https://wordwall.net/es/resource/18246464/sustantivos-comunes-y-propios"
+            }
+          ],
+          "extra": "<p>Contenido evaluado: Uso de mayúsculas, artículos indefinidos y definidos, sustantivos propios y comunes.</p>"
         }
       ]
     },

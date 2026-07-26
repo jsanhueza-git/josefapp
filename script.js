@@ -21,20 +21,16 @@ async function loadHomeItems() {
 
     grid.innerHTML = "";
 
-    // Rango de esta semana (lunes → domingo)
+    // Asignaturas con prueba en los próximos 7 días
     const today = new Date();
-    const dow = today.getDay();
-    const monday = new Date(today);
-    monday.setDate(today.getDate() - (dow === 0 ? 6 : dow - 1));
-    const sunday = new Date(monday);
-    sunday.setDate(monday.getDate() + 6);
-    const todayStr  = today.toISOString().slice(0, 10);
-    const sundayStr = sunday.toISOString().slice(0, 10);
+    const todayStr   = today.toISOString().slice(0, 10);
+    const in7days    = new Date(today);
+    in7days.setDate(today.getDate() + 7);
+    const in7daysStr = in7days.toISOString().slice(0, 10);
 
-    // Asignaturas con prueba esta semana (desde hoy hasta el domingo)
     const thisWeek = new Set(
         data.calendar
-            .filter(t => t.subject && t.date >= todayStr && t.date <= sundayStr)
+            .filter(t => t.subject && t.date >= todayStr && t.date <= in7daysStr)
             .map(t => t.subject)
     );
 

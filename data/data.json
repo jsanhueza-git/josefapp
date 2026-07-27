@@ -379,6 +379,17 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIxMTY1OTE0",
       "unidades": [
         {
+          "titulo": "Dictation 30 julio — Sonidos AR / OR",
+          "videos": [
+            {
+              "title": "R-controlled Vowels | ar, or | Bossy r | Phonics Songs and Stories | Learn to Read",
+              "url": "https://www.youtube.com/embed/poRGpvdKT84"
+            }
+          ],
+          "games": [],
+          "extra": "<p><strong>Sonidos a evaluar:</strong> AR y OR</p><p>Para practicar en casa: di una palabra en voz alta, Josefa escucha, identifica el sonido y la escribe. ¡Puedes usar una pizarra o una hoja de papel!</p>"
+        },
+        {
           "titulo": "Material primera prueba 16/04/2026",
           "videos": [
             {
@@ -873,7 +884,7 @@
   {
     "date": "2026-07-30",
     "subject": "Literacy",
-    "description": "Dictation (more details in Classroom)"
+    "description": "Dictation — Sonidos AR y OR (r-controlled vowels)"
   },
   {
     "date": "2026-08-05",

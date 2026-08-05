@@ -513,4 +513,100 @@ DTEND:20260806T174500Z
 SUMMARY:SocialStudies
 DESCRIPTION:Social Test Unit 2: Northern indigenous people — Location, characteristics, economy, fauna and flora, costumes and food
 END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260810T121500Z
+DTEND:20260810T125500Z
+SUMMARY:Music
+DESCRIPTION:Evaluación sumativa: 'The Little Sheep is Cold' (página 4 del libro Music Book Level 4). Interpretación vocal (cantar la canción) y ejecución en el metalófono.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260811T121500Z
+DTEND:20260811T125500Z
+SUMMARY:Art
+DESCRIPTION:Paisaje — estampillas de Venezuela, término de proceso.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260813T135000Z
+DTEND:20260813T143000Z
+SUMMARY:Literacy
+DESCRIPTION:Sound Jars — detalles en Google Classroom.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260813
+DTEND;VALUE=DATE:20260814
+SUMMARY:EnglishLanguage
+DESCRIPTION:Test Unit 4: 'The market'. Contenido: Food vocabulary (p.46), Would you like...? (p.47), a, an, some, any (p.47), Are there / Is there any...? (p.49), listening exercises.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260814
+DTEND;VALUE=DATE:20260815
+SUMMARY:Día de la Niñez
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260817T184000Z
+DTEND:20260817T192500Z
+SUMMARY:NaturalScience
+DESCRIPTION:Evaluated worksheet (trabajo en clases): Lesson 3: What's the life cycle of animals like? Detalles en Google Classroom.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260818T184000Z
+DTEND:20260818T192500Z
+SUMMARY:Math
+DESCRIPTION:Unit 2 Test: Decomposing numbers, Fact families (lesson 3), Spatial location (lesson 4).
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260819T135000Z
+DTEND:20260819T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Dictation: unit 4 vocabulary (page 46).
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260820T121500Z
+DTEND:20260820T125500Z
+SUMMARY:Spanish
+DESCRIPTION:Libro: Lectura complementaria — Sapo y Sepo, inseparables de Arnold Lobel, editorial Alfaguara.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260821T143000Z
+DTEND:20260821T151500Z
+SUMMARY:Drama
+DESCRIPTION:Play Preparation Progress — evaluación acumulativa (cumulative).
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260824T121500Z
+DTEND:20260824T125500Z
+SUMMARY:Music
+DESCRIPTION:Creamos nuestras percusiones: inicio período de evaluación (24–31 agosto). Los estudiantes confeccionan su propio pandero y lo presentan terminado. Instrucciones y materiales en Google Classroom.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260826T153000Z
+DTEND:20260826T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:Oral evaluation: 'At the beach' — use of vocabulary in dialogue. Detalles en Google Classroom.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260826T170000Z
+DTEND:20260826T174500Z
+SUMMARY:Spanish
+DESCRIPTION:Leyenda: Presentación — trabajo en clases, instrucciones en Classroom.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260827T170000Z
+DTEND:20260827T174500Z
+SUMMARY:SocialStudies
+DESCRIPTION:Evaluated worksheet: Central and Southern Chilean Indigenous peoples — Huilliches, Picunches, Pehuenches, Mapuches, Chonos, Yaganes, Kawésqar, Selk'nam.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260827T184000Z
+DTEND:20260827T192500Z
+SUMMARY:STEM
+DESCRIPTION:Group oral presentation: Name the areas of the park and clearly explain how it helps the community and why each element is important.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260831T121500Z
+DTEND:20260831T125500Z
+SUMMARY:Music
+DESCRIPTION:Creamos nuestras percusiones: último día del período de evaluación — cada estudiante presenta su pandero terminado.
+END:VEVENT
 END:VCALENDAR

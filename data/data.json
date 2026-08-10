@@ -398,6 +398,25 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIxMTY1OTE0",
       "unidades": [
         {
+          "titulo": "Sound Jars 13 agosto — Sonidos UR / IR / ER",
+          "videos": [
+            {
+              "title": "UR sound (r-controlled vowel)",
+              "url": "https://www.youtube.com/embed/Fs2LQjamFqg"
+            },
+            {
+              "title": "IR sound (r-controlled vowel)",
+              "url": "https://www.youtube.com/embed/m80-EARttw8"
+            },
+            {
+              "title": "ER sound (r-controlled vowel)",
+              "url": "https://www.youtube.com/embed/1AfPhHnODUA"
+            }
+          ],
+          "games": [],
+          "extra": "<p><strong>Sonidos a evaluar:</strong> UR, IR, ER</p>"
+        },
+        {
           "titulo": "Dictation 30 julio — Sonidos AR / OR",
           "videos": [
             {

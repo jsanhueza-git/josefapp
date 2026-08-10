@@ -532,8 +532,8 @@ SUMMARY:Literacy
 DESCRIPTION:Sound Jars — detalles en Google Classroom.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260813
-DTEND;VALUE=DATE:20260814
+DTSTART:20260812T135000Z
+DTEND:20260812T143000Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Test Unit 4: 'The market'. Contenido: Food vocabulary (p.46), Would you like...? (p.47), a, an, some, any (p.47), Are there / Is there any...? (p.49), listening exercises.
 END:VEVENT

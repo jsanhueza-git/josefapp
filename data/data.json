@@ -129,6 +129,21 @@
       "libro": "https://content.cambridgeone.org/cup1/products/sm2edpp2/9/assets/online/1674003421640/webapp/index.html?rootPath=/cup1/products/sm2edpp2/9/assets/online/1674003421640/webapp/#/preview/556530?page=1",
       "unidades": [
         {
+          "titulo": "Dictado 19 de Agosto — Unit 5 (p.58)",
+          "videos": [],
+          "games": [
+            {
+              "title": "My bedroom (1)",
+              "url": "https://wordwall.net/resource/18318761/my-bedroom"
+            },
+            {
+              "title": "My bedroom (2)",
+              "url": "https://wordwall.net/resource/56085020/my-bedroom"
+            }
+          ],
+          "extra": ""
+        },
+        {
           "titulo": "Dictado 5 de Agosto",
           "videos": [],
           "games": [

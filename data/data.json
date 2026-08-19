@@ -96,6 +96,25 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIyNzIxOTE1",
       "unidades": [
         {
+          "titulo": "Libro 20 de Agosto — Sapo y Sepo inseparables",
+          "videos": [],
+          "games": [
+            {
+              "title": "Sapo y Sepo inseparables (1)",
+              "url": "https://wordwall.net/es/resource/91082423/idioma-y-comunicaci%C3%B3n/sapo-y-sepo-inseparables"
+            },
+            {
+              "title": "Sapo y Sepo inseparables (2)",
+              "url": "https://wordwall.net/es/resource/34802670/sapo-y-sepo-inseparables"
+            },
+            {
+              "title": "Cuestionario Sapo y Sepo inseparables",
+              "url": "https://wordwall.net/es/resource/17431584/cuestionario-sapo-y-sepo-inseparables"
+            }
+          ],
+          "extra": "<p><strong>Lectura complementaria:</strong> Sapo y Sepo, inseparables de Arnold Lobel, editorial Alfaguara.</p>"
+        },
+        {
           "titulo": "Prueba 29 de Julio — Sustantivos propios y comunes",
           "videos": [
             {

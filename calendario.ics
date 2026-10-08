@@ -699,4 +699,106 @@ DTEND:20261009T143000Z
 SUMMARY:Math
 DESCRIPTION:Evaluated Activity Unit 3, lessons 3 y 4: Length. Plane and solid shapes. Instrucciones en Classroom.
 END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:Feriado
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261013T174500Z
+DTEND:20261013T183000Z
+SUMMARY:SocialStudies
+DESCRIPTION:Feria de Pueblos Originarios y Civilizaciones Antiguas.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:Celebración Día del Profesor (Retiro a las 12:30)
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:Día del Profesor — No hay clases
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261019T135000Z
+DTEND:20261019T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:English Mock Tests.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261020T121500Z
+DTEND:20261020T125500Z
+SUMMARY:Art
+DESCRIPTION:Bodegón — término de proceso actividad bodegón de mi comida favorita.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:Feria Científica
+DESCRIPTION:
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:STEM
+DESCRIPTION:Feria Científica — Science fair, Project: Water wheel.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261021T135000Z
+DTEND:20261021T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Unit 6 test: People. Vocabulary (page 70), Emotions vocabulary (page 71), possessive pronouns (my, our, its, their, her, his), months of the year vocabulary.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261022T135000Z
+DTEND:20261022T143000Z
+SUMMARY:Literacy
+DESCRIPTION:Reading Comprehension Lapbook — más detalles en Google Classroom.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261026T121500Z
+DTEND:20261026T125500Z
+SUMMARY:Music
+DESCRIPTION:Evaluación sumativa canción 'The Elephant' (página 7, Music Book Level 4): interpretación vocal (cantar la canción) y ejecución en el metalófono.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261028
+SUMMARY:Drama
+DESCRIPTION:Play Presentation: 'The Three Billy Goats Gruff'.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261028T135000Z
+DTEND:20261028T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Birthday card making (Page 80): materiales decorativos para crear tarjeta de cumpleaños. Traer marcadores (cartulina está en sala; evitar escarcha, escarcha líquida o lentejuelas pequeñas).
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261029T121500Z
+DTEND:20261029T125500Z
+SUMMARY:Spanish
+DESCRIPTION:Lectura complementaria: 'Paz Guerra Cruells Acusada de Bullying', Daniela Viviani, Editorial Planeta.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261102T184000Z
+DTEND:20261102T192500Z
+SUMMARY:NaturalScience
+DESCRIPTION:Unit 4: lesson 1 — What are the characteristics of water? lesson 2 — What's water like in its different states? lesson 3 — How does water circulate in nature and why is it important to take care of it? Más detalles en Google Classroom.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261104T153000Z
+DTEND:20261104T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:My Favourite Food: Vocabulary (nouns and adjectives), expressions: Which is your favourite food? / What would you like to eat? / Do you like…? / Why don't you like …?
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261105T153000Z
+DTEND:20261105T161500Z
+SUMMARY:CommunicativeSkills
+DESCRIPTION:My Favourite Food (continuación): Vocabulary (nouns and adjectives), expressions: Which is your favourite food? / What would you like to eat? / Do you like…? / Why don't you like …?
+END:VEVENT
 END:VCALENDAR

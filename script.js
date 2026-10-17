@@ -1,4 +1,16 @@
 /* ---------------------------------------------
+   UTILIDADES
+--------------------------------------------- */
+
+function formatFecha(dateStr) {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const date = new Date(y, m - 1, d);
+    const dias  = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+    const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+    return `${dias[date.getDay()]} ${d} de ${meses[m - 1]}`;
+}
+
+/* ---------------------------------------------
    CARGA DEL JSON MAESTRO
 --------------------------------------------- */
 
@@ -44,6 +56,8 @@ async function loadHomeItems() {
             card.onclick = () => loadHorario();
         } else if (item.type === "calendar") {
             card.onclick = () => loadCalendar();
+        } else if (item.type === "monthly-calendar") {
+            card.onclick = () => loadMonthlyView();
         }
 
         const badge = thisWeek.has(item.key)
@@ -113,7 +127,7 @@ function generarHTMLAsignatura(subject, tests) {
 
         const liHTML = items => items.map(t => `
             <li>
-                <strong>${t.date}</strong><br>
+                <strong>${formatFecha(t.date)}</strong><br>
                 ${t.description}
             </li>
         `).join("");
@@ -268,7 +282,7 @@ function generarHTML(data) {
         data.tests.forEach(t => {
             html += `
                 <div class="test-card test-${t.subject}">
-                    <div class="test-date">${t.date}</div>
+                    <div class="test-date">${formatFecha(t.date)}</div>
                     <div class="test-title">${t.subject}</div>
                     <div class="test-desc">${t.description}</div>
                 </div>
@@ -430,7 +444,7 @@ function renderTestCards(list) {
 
     const cardHTML = items => items.map(t => `
         <div class="test-card test-${t.subject || ''}">
-            <div class="test-date">${t.date}</div>
+            <div class="test-date">${formatFecha(t.date)}</div>
             <div class="test-title">${t.subject || t.title || ''}</div>
             <div class="test-desc">${t.description || ''}</div>
         </div>
@@ -557,7 +571,7 @@ function renderMonthlyCalendar(tests, year, month) {
 function openDayDetail(date) {
     const tests = window.currentTests.filter(t => t.date === date);
 
-    let html = `<h3>Pruebas del ${date}</h3>`;
+    let html = `<h3>Pruebas del ${formatFecha(date)}</h3>`;
     tests.forEach(t => {
         html += `
             <div class="cal-chip test-${t.subject}">
@@ -618,5 +632,101 @@ async function loadMonthlyCalendar() {
 
 
 
+
+/* ---------------------------------------------
+   CALENDARIO MENSUAL
+--------------------------------------------- */
+
+async function loadMonthlyView(year, month) {
+    const data = await loadMasterData();
+    const today = new Date();
+    const todayStr = today.toISOString().slice(0, 10);
+
+    if (year === undefined || month === undefined) {
+        year = today.getFullYear();
+        month = today.getMonth() + 1;
+    }
+    year = parseInt(year);
+    month = parseInt(month);
+
+    const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio",
+                   "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+    const prevY = month === 1 ? year - 1 : year;
+    const prevM = month === 1 ? 12 : month - 1;
+    const nextY = month === 12 ? year + 1 : year;
+    const nextM = month === 12 ? 1 : month + 1;
+
+    const firstDate  = new Date(year, month - 1, 1);
+    const daysInMonth = new Date(year, month, 0).getDate();
+    const firstDay   = (firstDate.getDay() + 6) % 7; // Lun=0 … Dom=6
+
+    let html = `
+        <div class="mcal-wrapper">
+            <div class="mcal-nav">
+                <button class="mcal-nav-btn" onclick="loadMonthlyView(${prevY},${prevM})">◀</button>
+                <span class="mcal-nav-title">${meses[month - 1]} ${year}</span>
+                <button class="mcal-nav-btn" onclick="loadMonthlyView(${nextY},${nextM})">▶</button>
+            </div>
+            <div class="mcal-grid">
+                <div class="mcal-header">Lun</div>
+                <div class="mcal-header">Mar</div>
+                <div class="mcal-header">Mié</div>
+                <div class="mcal-header">Jue</div>
+                <div class="mcal-header">Vie</div>
+                <div class="mcal-header">Sáb</div>
+                <div class="mcal-header">Dom</div>
+    `;
+
+    for (let i = 0; i < firstDay; i++) {
+        html += `<div class="mcal-cell mcal-empty"></div>`;
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayStr = `${year}-${String(month).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+        const dayTests = data.calendar.filter(t => t.date === dayStr);
+        const dow = (new Date(year, month - 1, day).getDay() + 6) % 7;
+
+        const classes = [
+            "mcal-cell",
+            dow >= 5           ? "mcal-weekend"   : "",
+            dayStr === todayStr ? "mcal-today"     : "",
+            dayTests.length    ? "mcal-has-tests"  : ""
+        ].filter(Boolean).join(" ");
+
+        const click = dayTests.length ? `onclick="openMcalDay('${dayStr}')"` : "";
+
+        html += `<div class="${classes}" ${click}>`;
+        html += `<div class="mcal-num">${day}</div>`;
+        dayTests.forEach(t => {
+            html += `<div class="mcal-chip mcal-${t.subject || ''}">${t.subject || t.title || ""}</div>`;
+        });
+        html += `</div>`;
+    }
+
+    html += `</div></div>`;
+
+    openSubject("Calendario", html);
+}
+
+function openMcalDay(dateStr) {
+    if (!DATA) return;
+    const tests = DATA.calendar.filter(t => t.date === dateStr);
+    if (!tests.length) return;
+
+    let html = `<h3>${formatFecha(dateStr)}</h3>`;
+    tests.forEach(t => {
+        html += `
+            <div class="test-card test-${t.subject || ""}">
+                <div class="test-title">${t.subject || t.title || ""}</div>
+                <div class="test-desc">${t.description || ""}</div>
+            </div>
+        `;
+    });
+    html += `<p class="mcal-close-hint">Toca fuera para cerrar</p>`;
+
+    document.getElementById("modal-content").innerHTML = html;
+    document.getElementById("modal").style.display = "flex";
+}
 
 loadHomeItems();

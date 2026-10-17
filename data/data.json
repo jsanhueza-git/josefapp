@@ -12,6 +12,12 @@
       "icon": "📝",
       "type": "calendar"
     },
+    {
+      "key": "CalendarioMensual",
+      "title": "Calendario",
+      "icon": "📅",
+      "type": "monthly-calendar"
+    },
 
     { "key": "Music", "title": "Music", "icon": "🎵", "type": "subject" },
     { "key": "Math", "title": "Matemáticas", "icon": "🧮", "type": "subject" },

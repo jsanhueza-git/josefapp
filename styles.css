@@ -20,6 +20,7 @@
     /* Para botones especiales */
     --color-Horario: #607D8B;
     --color-Calendario: #9E9E9E;
+    --color-CalendarioMensual: #1976D2;
 }
 
 /* Estilo general 
@@ -48,6 +49,7 @@
 /* Horario y Calendario */
 .subject-Horario { border-left-color: var(--color-Horario); }
 .subject-Calendario { border-left-color: var(--color-Calendario); }
+.subject-CalendarioMensual { border-left-color: var(--color-CalendarioMensual); }
 
 /* Hover opcional 
 .card:hover {
@@ -764,8 +766,152 @@ iframe {
     padding: 6px 8px;
     margin-bottom: 6px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.12);
-    border-left: 5px solid #4b86b4; /* color por defecto, será sobrescrito */
+    border-left: 5px solid #4b86b4;
     font-size: 11px;
     line-height: 1.2;
 }
 
+/* --------------------------------------------------
+   CALENDARIO MENSUAL (mcal)
+-------------------------------------------------- */
+
+.mcal-wrapper {
+    padding: 0 2px;
+}
+
+.mcal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.mcal-nav-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2a4d69;
+}
+
+.mcal-nav-btn {
+    background: #e8eef7;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #2a4d69;
+}
+
+.mcal-nav-btn:active {
+    background: #c7d4e8;
+}
+
+.mcal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+}
+
+.mcal-header {
+    text-align: center;
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: #666;
+    padding: 5px 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+.mcal-cell {
+    background: #ffffff;
+    border-radius: 6px;
+    min-height: 52px;
+    padding: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.mcal-cell.mcal-has-tests {
+    cursor: pointer;
+}
+
+.mcal-cell.mcal-has-tests:active {
+    opacity: 0.75;
+}
+
+.mcal-empty {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.mcal-weekend {
+    background: #f7f7f7;
+}
+
+.mcal-today {
+    border: 2px solid #1976D2;
+}
+
+.mcal-num {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.mcal-today .mcal-num {
+    color: #1976D2;
+}
+
+/* Chip de asignatura dentro de la celda */
+.mcal-chip {
+    display: block;
+    font-size: 0.55rem;
+    border-radius: 3px;
+    padding: 1px 3px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    background: #888;
+}
+
+.mcal-chip.mcal-Art                 { background: var(--color-Art);                 color: #333; }
+.mcal-chip.mcal-CommunicativeSkills { background: var(--color-CommunicativeSkills); }
+.mcal-chip.mcal-Drama               { background: var(--color-Drama); }
+.mcal-chip.mcal-PhysicalEducation   { background: var(--color-PhysicalEducation);   color: #333; }
+.mcal-chip.mcal-EnglishLanguage     { background: var(--color-EnglishLanguage); }
+.mcal-chip.mcal-FormacionCiudadana  { background: var(--color-FormacionCiudadana); }
+.mcal-chip.mcal-FormacionIntegral   { background: var(--color-FormacionIntegral);   color: #333; }
+.mcal-chip.mcal-Literacy            { background: var(--color-Literacy);            color: #333; }
+.mcal-chip.mcal-Math                { background: var(--color-Math); }
+.mcal-chip.mcal-Music               { background: var(--color-Music); }
+.mcal-chip.mcal-NaturalScience      { background: var(--color-NaturalScience); }
+.mcal-chip.mcal-SocialStudies       { background: var(--color-SocialStudies);       color: #333; }
+.mcal-chip.mcal-Spanish             { background: var(--color-Spanish); }
+.mcal-chip.mcal-STEM                { background: var(--color-STEM);                color: #333; }
+
+/* Modal de detalle de día */
+.modal-inner {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    max-width: 90%;
+    width: 340px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-inner h3 {
+    margin: 0 0 14px;
+    font-size: 1rem;
+    color: #2a4d69;
+}
+
+.mcal-close-hint {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-top: 12px;
+}

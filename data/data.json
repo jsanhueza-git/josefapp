@@ -154,6 +154,21 @@
       "libro": "https://content.cambridgeone.org/cup1/products/sm2edpp2/9/assets/online/1674003421640/webapp/index.html?rootPath=/cup1/products/sm2edpp2/9/assets/online/1674003421640/webapp/#/preview/556530?page=1",
       "unidades": [
         {
+          "titulo": "Mock Tests — 19 de Octubre",
+          "videos": [],
+          "games": [
+            {
+              "title": "Unit 6 – People: Describing people (Baamboozle)",
+              "url": "https://www.baamboozle.com/classic/2157480"
+            },
+            {
+              "title": "Unit 6 – People: Describing people (Wordwall)",
+              "url": "https://wordwall.net/resource/117866751/unit-6-people-describing-people-super-minds-2"
+            }
+          ],
+          "extra": ""
+        },
+        {
           "titulo": "Dictado 19 de Agosto — Unit 5 (p.58)",
           "videos": [],
           "games": [

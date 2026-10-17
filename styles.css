@@ -877,20 +877,34 @@ iframe {
     background: #888;
 }
 
-.mcal-chip.mcal-Art                 { background: var(--color-Art);                 color: #333; }
-.mcal-chip.mcal-CommunicativeSkills { background: var(--color-CommunicativeSkills); }
-.mcal-chip.mcal-Drama               { background: var(--color-Drama); }
-.mcal-chip.mcal-PhysicalEducation   { background: var(--color-PhysicalEducation);   color: #333; }
-.mcal-chip.mcal-EnglishLanguage     { background: var(--color-EnglishLanguage); }
-.mcal-chip.mcal-FormacionCiudadana  { background: var(--color-FormacionCiudadana); }
-.mcal-chip.mcal-FormacionIntegral   { background: var(--color-FormacionIntegral);   color: #333; }
-.mcal-chip.mcal-Literacy            { background: var(--color-Literacy);            color: #333; }
-.mcal-chip.mcal-Math                { background: var(--color-Math); }
-.mcal-chip.mcal-Music               { background: var(--color-Music); }
-.mcal-chip.mcal-NaturalScience      { background: var(--color-NaturalScience); }
-.mcal-chip.mcal-SocialStudies       { background: var(--color-SocialStudies);       color: #333; }
-.mcal-chip.mcal-Spanish             { background: var(--color-Spanish); }
-.mcal-chip.mcal-STEM                { background: var(--color-STEM);                color: #333; }
+.mcal-chip.mcal-Art,
+.mcal-wchip.mcal-Art                 { background: var(--color-Art);                 color: #333; }
+.mcal-chip.mcal-CommunicativeSkills,
+.mcal-wchip.mcal-CommunicativeSkills { background: var(--color-CommunicativeSkills); }
+.mcal-chip.mcal-Drama,
+.mcal-wchip.mcal-Drama               { background: var(--color-Drama); }
+.mcal-chip.mcal-PhysicalEducation,
+.mcal-wchip.mcal-PhysicalEducation   { background: var(--color-PhysicalEducation);   color: #333; }
+.mcal-chip.mcal-EnglishLanguage,
+.mcal-wchip.mcal-EnglishLanguage     { background: var(--color-EnglishLanguage); }
+.mcal-chip.mcal-FormacionCiudadana,
+.mcal-wchip.mcal-FormacionCiudadana  { background: var(--color-FormacionCiudadana); }
+.mcal-chip.mcal-FormacionIntegral,
+.mcal-wchip.mcal-FormacionIntegral   { background: var(--color-FormacionIntegral);   color: #333; }
+.mcal-chip.mcal-Literacy,
+.mcal-wchip.mcal-Literacy            { background: var(--color-Literacy);            color: #333; }
+.mcal-chip.mcal-Math,
+.mcal-wchip.mcal-Math                { background: var(--color-Math); }
+.mcal-chip.mcal-Music,
+.mcal-wchip.mcal-Music               { background: var(--color-Music); }
+.mcal-chip.mcal-NaturalScience,
+.mcal-wchip.mcal-NaturalScience      { background: var(--color-NaturalScience); }
+.mcal-chip.mcal-SocialStudies,
+.mcal-wchip.mcal-SocialStudies       { background: var(--color-SocialStudies);       color: #333; }
+.mcal-chip.mcal-Spanish,
+.mcal-wchip.mcal-Spanish             { background: var(--color-Spanish); }
+.mcal-chip.mcal-STEM,
+.mcal-wchip.mcal-STEM                { background: var(--color-STEM);                color: #333; }
 
 /* Modal de detalle de día */
 .modal-inner {
@@ -914,4 +928,99 @@ iframe {
     font-size: 0.75rem;
     color: #aaa;
     margin-top: 12px;
+}
+
+/* Toggle de vistas */
+.mcal-view-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.mcal-vbtn {
+    flex: 1;
+    padding: 9px 4px;
+    border: 1px solid #c7d4e8;
+    border-radius: 10px;
+    background: #e8eef7;
+    color: #2a4d69;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.mcal-vbtn.active {
+    background: #1976D2;
+    color: white;
+    border-color: #1976D2;
+    font-weight: bold;
+}
+
+/* Vista semana: 5 columnas */
+.mcal-week-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+
+.mcal-wcell {
+    background: white;
+    border-radius: 10px;
+    padding: 8px 5px;
+    min-height: 90px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.mcal-wcell.mcal-today {
+    border: 2px solid #1976D2;
+}
+
+.mcal-wcell:active {
+    opacity: 0.75;
+}
+
+.mcal-wday-name {
+    font-size: 0.7rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.mcal-wday-num {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.mcal-wcell.mcal-today .mcal-wday-num {
+    color: #1976D2;
+}
+
+.mcal-wchip {
+    display: block;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    padding: 3px 5px;
+    margin-bottom: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    background: #888;
+}
+
+/* Vista día */
+.mcal-today-title {
+    color: #1976D2;
+}
+
+.mcal-nav-title small {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: #666;
+    margin-top: 2px;
 }

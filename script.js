@@ -4,10 +4,14 @@
 
 function formatFecha(dateStr) {
     const [y, m, d] = dateStr.split("-").map(Number);
-    const date = new Date(y, m - 1, d);
-    const dias  = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
-    const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-    return `${dias[date.getDay()]} ${d} de ${meses[m - 1]}`;
+    const date  = new Date(y, m - 1, d);
+    const diasES  = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+    const mesesES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+    const diasEN  = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const mesesEN = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const es = `${diasES[date.getDay()]} ${d} de ${mesesES[m - 1]}`;
+    const en = `${diasEN[date.getDay()]} ${mesesEN[m - 1]} ${d}`;
+    return `${es}<br><small>${en}</small>`;
 }
 
 /* ---------------------------------------------
@@ -634,7 +638,38 @@ async function loadMonthlyCalendar() {
 
 
 /* ---------------------------------------------
-   CALENDARIO MENSUAL
+   CALENDARIO MENSUAL — utilidades
+--------------------------------------------- */
+
+function addDays(dateStr, n) {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const date = new Date(y, m - 1, d);
+    date.setDate(date.getDate() + n);
+    return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
+}
+
+function getMondayOfWeek(dateStr) {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const date = new Date(y, m - 1, d);
+    const dow = (date.getDay() + 6) % 7;
+    date.setDate(date.getDate() - dow);
+    return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}-${String(date.getDate()).padStart(2,"0")}`;
+}
+
+function mcalViewBar(activeView, anchorDate) {
+    const [y, m] = anchorDate.split("-");
+    const monday = getMondayOfWeek(anchorDate);
+    return `
+        <div class="mcal-view-bar">
+            <button class="mcal-vbtn${activeView==='month'?' active':''}" onclick="loadMonthlyView(${y},${parseInt(m)})">Mes</button>
+            <button class="mcal-vbtn${activeView==='week'?' active':''}" onclick="loadWeekView('${monday}')">Semana</button>
+            <button class="mcal-vbtn${activeView==='day'?' active':''}" onclick="loadDayView('${anchorDate}')">Día</button>
+        </div>
+    `;
+}
+
+/* ---------------------------------------------
+   VISTA MES
 --------------------------------------------- */
 
 async function loadMonthlyView(year, month) {
@@ -651,17 +686,20 @@ async function loadMonthlyView(year, month) {
 
     const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio",
                    "Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-
     const prevY = month === 1 ? year - 1 : year;
     const prevM = month === 1 ? 12 : month - 1;
     const nextY = month === 12 ? year + 1 : year;
     const nextM = month === 12 ? 1 : month + 1;
 
-    const firstDate  = new Date(year, month - 1, 1);
+    const firstDate   = new Date(year, month - 1, 1);
     const daysInMonth = new Date(year, month, 0).getDate();
-    const firstDay   = (firstDate.getDay() + 6) % 7; // Lun=0 … Dom=6
+    const firstDay    = (firstDate.getDay() + 6) % 7;
 
-    let html = `
+    const todayInMonth = today.getFullYear() === year && today.getMonth() + 1 === month;
+    const anchorDate = todayInMonth ? todayStr : `${year}-${String(month).padStart(2,"0")}-01`;
+
+    let html = mcalViewBar('month', anchorDate);
+    html += `
         <div class="mcal-wrapper">
             <div class="mcal-nav">
                 <button class="mcal-nav-btn" onclick="loadMonthlyView(${prevY},${prevM})">◀</button>
@@ -689,14 +727,12 @@ async function loadMonthlyView(year, month) {
 
         const classes = [
             "mcal-cell",
-            dow >= 5           ? "mcal-weekend"   : "",
-            dayStr === todayStr ? "mcal-today"     : "",
-            dayTests.length    ? "mcal-has-tests"  : ""
+            dow >= 5            ? "mcal-weekend"  : "",
+            dayStr === todayStr ? "mcal-today"    : "",
+            dayTests.length     ? "mcal-has-tests" : ""
         ].filter(Boolean).join(" ");
 
-        const click = dayTests.length ? `onclick="openMcalDay('${dayStr}')"` : "";
-
-        html += `<div class="${classes}" ${click}>`;
+        html += `<div class="${classes}" onclick="loadDayView('${dayStr}')">`;
         html += `<div class="mcal-num">${day}</div>`;
         dayTests.forEach(t => {
             html += `<div class="mcal-chip mcal-${t.subject || ''}">${t.subject || t.title || ""}</div>`;
@@ -705,28 +741,99 @@ async function loadMonthlyView(year, month) {
     }
 
     html += `</div></div>`;
-
     openSubject("Calendario", html);
 }
 
-function openMcalDay(dateStr) {
-    if (!DATA) return;
-    const tests = DATA.calendar.filter(t => t.date === dateStr);
-    if (!tests.length) return;
+/* ---------------------------------------------
+   VISTA SEMANA (Lun–Vie)
+--------------------------------------------- */
 
-    let html = `<h3>${formatFecha(dateStr)}</h3>`;
-    tests.forEach(t => {
-        html += `
-            <div class="test-card test-${t.subject || ""}">
-                <div class="test-title">${t.subject || t.title || ""}</div>
-                <div class="test-desc">${t.description || ""}</div>
+async function loadWeekView(mondayStr) {
+    const data = await loadMasterData();
+    const todayStr = new Date().toISOString().slice(0, 10);
+
+    const days = Array.from({length: 5}, (_, i) => addDays(mondayStr, i));
+    const prevMonday = addDays(mondayStr, -7);
+    const nextMonday = addDays(mondayStr, 7);
+
+    const meses = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+    const [y1, m1, d1] = mondayStr.split("-").map(Number);
+    const [y2, m2, d2] = days[4].split("-").map(Number);
+    const rangeLabel = (m1 === m2)
+        ? `${d1}–${d2} ${meses[m1-1]} ${y1}`
+        : `${d1} ${meses[m1-1]} – ${d2} ${meses[m2-1]} ${y1}`;
+
+    const diasCortos = ["Lun","Mar","Mié","Jue","Vie"];
+
+    let html = mcalViewBar('week', mondayStr);
+    html += `
+        <div class="mcal-wrapper">
+            <div class="mcal-nav">
+                <button class="mcal-nav-btn" onclick="loadWeekView('${prevMonday}')">◀</button>
+                <span class="mcal-nav-title">${rangeLabel}</span>
+                <button class="mcal-nav-btn" onclick="loadWeekView('${nextMonday}')">▶</button>
             </div>
-        `;
-    });
-    html += `<p class="mcal-close-hint">Toca fuera para cerrar</p>`;
+            <div class="mcal-week-grid">
+    `;
 
-    document.getElementById("modal-content").innerHTML = html;
-    document.getElementById("modal").style.display = "flex";
+    days.forEach((dayStr, i) => {
+        const [,, dd] = dayStr.split("-").map(Number);
+        const dayTests = data.calendar.filter(t => t.date === dayStr);
+        const isToday = dayStr === todayStr;
+
+        const classes = ["mcal-wcell", isToday ? "mcal-today" : ""].filter(Boolean).join(" ");
+
+        html += `<div class="${classes}" onclick="loadDayView('${dayStr}')">`;
+        html += `<div class="mcal-wday-name">${diasCortos[i]}</div>`;
+        html += `<div class="mcal-wday-num">${dd}</div>`;
+        dayTests.forEach(t => {
+            html += `<div class="mcal-wchip mcal-${t.subject || ''}">${t.subject || t.title || ""}</div>`;
+        });
+        html += `</div>`;
+    });
+
+    html += `</div></div>`;
+    openSubject("Calendario", html);
+}
+
+/* ---------------------------------------------
+   VISTA DÍA
+--------------------------------------------- */
+
+async function loadDayView(dateStr) {
+    const data = await loadMasterData();
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const dayTests = data.calendar.filter(t => t.date === dateStr);
+
+    const prevDay = addDays(dateStr, -1);
+    const nextDay = addDays(dateStr, 1);
+    const isToday = dateStr === todayStr;
+
+    let html = mcalViewBar('day', dateStr);
+    html += `
+        <div class="mcal-wrapper">
+            <div class="mcal-nav">
+                <button class="mcal-nav-btn" onclick="loadDayView('${prevDay}')">◀</button>
+                <span class="mcal-nav-title${isToday ? ' mcal-today-title' : ''}">${formatFecha(dateStr)}</span>
+                <button class="mcal-nav-btn" onclick="loadDayView('${nextDay}')">▶</button>
+            </div>
+    `;
+
+    if (dayTests.length) {
+        dayTests.forEach(t => {
+            html += `
+                <div class="test-card test-${t.subject || ''}">
+                    <div class="test-title">${t.subject || t.title || ''}</div>
+                    <div class="test-desc">${t.description || ''}</div>
+                </div>
+            `;
+        });
+    } else {
+        html += `<p class="no-upcoming">Sin evaluaciones este día.</p>`;
+    }
+
+    html += `</div>`;
+    openSubject("Calendario", html);
 }
 
 loadHomeItems();

@@ -808,16 +808,16 @@ iframe {
 
 .mcal-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr) 0.45fr 0.45fr;
     gap: 3px;
 }
 
 .mcal-header {
     text-align: center;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     font-weight: bold;
     color: #666;
-    padding: 5px 0;
+    padding: 5px 2px;
     background: #f0f0f0;
     border-radius: 5px;
 }
@@ -825,10 +825,16 @@ iframe {
 .mcal-cell {
     background: #ffffff;
     border-radius: 6px;
-    min-height: 52px;
-    padding: 3px;
+    min-height: 80px;
+    padding: 4px 3px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     overflow: hidden;
+}
+
+/* Sáb y Dom: sin mínimo de alto si están vacíos */
+.mcal-cell.mcal-weekend:not(.mcal-has-tests) {
+    min-height: 40px;
+    background: #f5f5f5;
 }
 
 .mcal-cell.mcal-has-tests {
@@ -853,10 +859,10 @@ iframe {
 }
 
 .mcal-num {
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 .mcal-today .mcal-num {
@@ -866,15 +872,21 @@ iframe {
 /* Chip de asignatura dentro de la celda */
 .mcal-chip {
     display: block;
-    font-size: 0.55rem;
+    font-size: 0.65rem;
     border-radius: 3px;
-    padding: 1px 3px;
+    padding: 2px 4px;
     margin-bottom: 2px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     color: white;
     background: #888;
+}
+
+/* En fin de semana con contenido, chips más compactos */
+.mcal-weekend .mcal-chip {
+    font-size: 0.5rem;
+    padding: 1px 2px;
 }
 
 .mcal-chip.mcal-Art,

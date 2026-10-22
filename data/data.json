@@ -440,6 +440,21 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIyNDkwNjg3",
       "unidades": [
         {
+          "titulo": "Water Cycle",
+          "videos": [
+            {
+              "title": "The Water Cycle (1)",
+              "url": "https://www.youtube.com/embed/ncORPosDrjI"
+            },
+            {
+              "title": "The Water Cycle (2)",
+              "url": "https://www.youtube.com/embed/s0bS-SBAgJI"
+            }
+          ],
+          "games": [],
+          "extra": ""
+        },
+        {
           "titulo": "Unidad 1",
           "videos": [
             {
@@ -1207,7 +1222,7 @@
     "description": "Feria Científica — Science fair, Project: Water wheel."
   },
   {
-    "date": "2026-10-21",
+    "date": "2026-10-28",
     "subject": "EnglishLanguage",
     "description": "Unit 6 test: People. Vocabulary (page 70), Emotions vocabulary (page 71), possessive pronouns (my, our, its, their, her, his), months of the year vocabulary."
   },
@@ -1222,14 +1237,29 @@
     "description": "Evaluación sumativa canción 'The Elephant' (página 7, Music Book Level 4): interpretación vocal (cantar la canción) y ejecución en el metalófono."
   },
   {
-    "date": "2026-10-27",
+    "date": "2026-11-10",
     "subject": "Drama",
     "description": "Play Presentation: 'The Three Billy Goats Gruff'."
   },
   {
-    "date": "2026-10-28",
+    "date": "2026-10-26",
     "subject": "EnglishLanguage",
-    "description": "Birthday card making (Page 80): materiales decorativos para crear tarjeta de cumpleaños. Traer marcadores (cartulina está en sala; evitar escarcha, escarcha líquida o lentejuelas pequeñas)."
+    "description": "Birthday card making – Clase 1 (Page 80): materiales decorativos para crear tarjeta de cumpleaños. Traer marcadores (cartulina está en sala; evitar escarcha, escarcha líquida o lentejuelas pequeñas)."
+  },
+  {
+    "date": "2026-10-27",
+    "subject": "EnglishLanguage",
+    "description": "Birthday card making – Clase 2 (Page 80): continuación de la tarjeta de cumpleaños."
+  },
+  {
+    "date": "2026-10-27",
+    "subject": "Spanish",
+    "description": "2do dictado en clases. Palabras con: r fuerte inicial, rr, r suave, uso de Mayúscula, signos de interrogación y exclamación."
+  },
+  {
+    "date": "2026-10-29",
+    "title": "Salida Pedagógica – Planetario (11:00–15:00)",
+    "allday": true
   },
   {
     "date": "2026-10-29",

@@ -748,8 +748,8 @@ SUMMARY:STEM
 DESCRIPTION:Feria Científica — Science fair, Project: Water wheel.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20261021T135000Z
-DTEND:20261021T143000Z
+DTSTART:20261028T135000Z
+DTEND:20261028T143000Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Unit 6 test: People. Vocabulary (page 70), Emotions vocabulary (page 71), possessive pronouns (my, our, its, their, her, his), months of the year vocabulary.
 END:VEVENT
@@ -766,16 +766,34 @@ SUMMARY:Music
 DESCRIPTION:Evaluación sumativa canción 'The Elephant' (página 7, Music Book Level 4): interpretación vocal (cantar la canción) y ejecución en el metalófono.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20261027
-DTEND;VALUE=DATE:20261028
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
 SUMMARY:Drama
 DESCRIPTION:Play Presentation: 'The Three Billy Goats Gruff'.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20261028T135000Z
-DTEND:20261028T143000Z
+DTSTART:20261026T135000Z
+DTEND:20261026T143000Z
 SUMMARY:EnglishLanguage
-DESCRIPTION:Birthday card making (Page 80): materiales decorativos para crear tarjeta de cumpleaños. Traer marcadores (cartulina está en sala; evitar escarcha, escarcha líquida o lentejuelas pequeñas).
+DESCRIPTION:Birthday card making – Clase 1 (Page 80): materiales decorativos para crear tarjeta de cumpleaños. Traer marcadores (cartulina está en sala; evitar escarcha, escarcha líquida o lentejuelas pequeñas).
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261027T135000Z
+DTEND:20261027T143000Z
+SUMMARY:EnglishLanguage
+DESCRIPTION:Birthday card making – Clase 2 (Page 80): continuación de la tarjeta de cumpleaños.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261027T143000Z
+DTEND:20261027T151500Z
+SUMMARY:Spanish
+DESCRIPTION:2do dictado en clases. Palabras con: r fuerte inicial, rr, r suave, uso de Mayúscula, signos de interrogación y exclamación.
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:Salida Pedagógica – Planetario (11:00–15:00)
+DESCRIPTION:
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20261029T121500Z

@@ -876,9 +876,8 @@ iframe {
     border-radius: 4px;
     padding: 3px 5px;
     margin-bottom: 3px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    word-break: break-word;
+    line-height: 1.2;
     color: white;
     background: #888;
 }

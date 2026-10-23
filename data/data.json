@@ -426,10 +426,23 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIxODk2MDc4",
       "unidades": [
         {
-          "titulo": "Unidad 1",
-          "videos": [],
+          "titulo": "Hito Formativo: My Friends and I are a great constellation",
+          "videos": [
+            {
+              "title": "Constelaciones (1)",
+              "url": "https://www.youtube.com/embed/V3YwUNTHWkM"
+            },
+            {
+              "title": "Constelaciones (2)",
+              "url": "https://www.youtube.com/embed/w2b9JShncUM"
+            },
+            {
+              "title": "Constelaciones (3)",
+              "url": "https://www.youtube.com/embed/gJyZJ42g5UM"
+            }
+          ],
           "games": [],
-          "extra": "<p>Material adicional de Formación Integral.</p>"
+          "extra": "<p>Para contextualizar nuestro hito formativo, hemos aprendido de las constelaciones. ¡Los invitamos a salir a observar el cielo en familia y encontrar las constelaciones aprendidas! 🌟</p>"
         }
       ]
     },

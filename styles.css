@@ -1035,3 +1035,249 @@ iframe {
     color: #666;
     margin-top: 2px;
 }
+
+/* --------------------------------------------------
+   WEEK TIME GRID (vista semana con horario)
+-------------------------------------------------- */
+
+.week-tgrid-wrap {
+    overflow-x: auto;
+}
+
+.week-tgrid {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 300px;
+    font-size: 0.75rem;
+}
+
+.week-tgrid th,
+.week-tgrid td {
+    border: 1px solid #e0e6f0;
+}
+
+.week-tgrid thead th {
+    background: #f5f7fa;
+    padding: 5px 2px;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+}
+
+.wtg-today-hdr {
+    color: #1976D2;
+}
+
+.wtg-day-name {
+    display: block;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+
+.wtg-day-num {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.wtg-today-hdr .wtg-day-num {
+    color: #1976D2;
+}
+
+.wtg-time-col {
+    width: 40px;
+    min-width: 40px;
+}
+
+.wtg-time-cell {
+    font-size: 0.58rem;
+    color: #999;
+    text-align: right;
+    padding: 3px 5px 3px 2px !important;
+    vertical-align: top;
+    white-space: nowrap;
+    background: #fff;
+    font-variant-numeric: tabular-nums;
+}
+
+.wtg-break-row td {
+    background: #f8f9fb;
+    color: #bbb;
+    font-size: 0.58rem;
+    text-align: center;
+    padding: 2px 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.wtg-class-cell {
+    padding: 4px 2px !important;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.wtg-class-cell:active {
+    opacity: 0.75;
+}
+
+.wtg-class-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    display: block;
+    padding: 1px 0;
+}
+
+.wtg-test-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 0.68rem;
+    line-height: 1;
+    background: rgba(255,255,255,0.35);
+    border-radius: 3px;
+    padding: 1px 2px;
+    cursor: pointer;
+}
+
+.wtg-has-test {
+    outline: 2px solid rgba(255,255,255,0.7);
+    outline-offset: -2px;
+}
+
+.wtg-empty-cell {
+    background: #fff;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------
+   DAY TIMELINE (vista día con horario)
+-------------------------------------------------- */
+
+.day-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.dtl-slot {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 8px;
+}
+
+.dtl-time {
+    font-size: 0.62rem;
+    color: #999;
+    text-align: right;
+    padding-top: 9px;
+    font-variant-numeric: tabular-nums;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.dtl-block {
+    grid-column: 2;
+    grid-row: 1;
+    border-radius: 9px;
+    padding: 7px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.dtl-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.dtl-test-icon {
+    font-size: 0.75rem;
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    padding: 3px 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-weight: 700;
+}
+
+.dtl-test-icon:active {
+    opacity: 0.7;
+}
+
+.dtl-test-desc {
+    grid-column: 2;
+    grid-row: 2;
+    background: #fff;
+    border-radius: 0 0 9px 9px;
+    padding: 7px 11px;
+    font-size: 0.8rem;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    line-height: 1.45;
+    margin-top: -4px;
+}
+
+.dtl-test-item {
+    line-height: 1.5;
+}
+
+.dtl-break {
+    text-align: center;
+    font-size: 0.62rem;
+    color: #ccc;
+    padding: 3px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dtl-has-test .dtl-block {
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.6) inset;
+}
+
+/* --------------------------------------------------
+   MONTH SCHEDULE DOTS
+-------------------------------------------------- */
+
+.mcal-dot-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-top: 3px;
+}
+
+.mcal-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: #ccc;
+}
+
+.mcal-dot-test {
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.3);
+}
+
+.mcal-dot-Art                { background: var(--color-Art) }
+.mcal-dot-CommunicativeSkills{ background: var(--color-CommunicativeSkills) }
+.mcal-dot-Drama              { background: var(--color-Drama) }
+.mcal-dot-PhysicalEducation  { background: var(--color-PhysicalEducation) }
+.mcal-dot-EnglishLanguage    { background: var(--color-EnglishLanguage) }
+.mcal-dot-FormacionCiudadana { background: var(--color-FormacionCiudadana) }
+.mcal-dot-FormacionIntegral  { background: var(--color-FormacionIntegral) }
+.mcal-dot-Literacy           { background: var(--color-Literacy) }
+.mcal-dot-Math               { background: var(--color-Math) }
+.mcal-dot-Music              { background: var(--color-Music) }
+.mcal-dot-NaturalScience     { background: var(--color-NaturalScience) }
+.mcal-dot-SocialStudies      { background: var(--color-SocialStudies) }
+.mcal-dot-Spanish            { background: var(--color-Spanish) }
+.mcal-dot-STEM               { background: var(--color-STEM) }

@@ -27,6 +27,63 @@ async function loadMasterData() {
     return DATA;
 }
 
+let HORARIO_DATA = null;
+
+async function loadHorarioData() {
+    if (HORARIO_DATA) return HORARIO_DATA;
+    const res = await fetch("data/horario.json");
+    HORARIO_DATA = await res.json();
+    return HORARIO_DATA;
+}
+
+const DARK_TEXT_SUBJECTS = new Set([
+    'Art','PhysicalEducation','FormacionIntegral','Literacy',
+    'SocialStudies','STEM','FormacionCiudadana','Drama'
+]);
+
+function subjectNeedsDarkText(subject) {
+    return DARK_TEXT_SUBJECTS.has(subject);
+}
+
+const SUBJECT_SHORT_LABELS = {
+    Art:'Art', CommunicativeSkills:'C.Skills', Drama:'Drama',
+    PhysicalEducation:'Ed.Física', EnglishLanguage:'English',
+    FormacionCiudadana:'F.Ciudadana', FormacionIntegral:'F.Integral',
+    Literacy:'Literacy', Math:'Math', Music:'Music',
+    NaturalScience:'Ciencias', SocialStudies:'Historia',
+    Spanish:'Spanish', STEM:'STEM'
+};
+
+function subjectShortLabel(subject) {
+    return SUBJECT_SHORT_LABELS[subject] || subject;
+}
+
+const WEEK_TIME_SLOTS = [
+    {t:'08:15'},{t:'08:55'},{B:'Recreo'},
+    {t:'09:50'},{t:'10:30'},{B:'Recreo'},
+    {t:'11:30'},{B:'Almuerzo'},
+    {t:'13:00'},{t:'13:45'},{B:'Recreo'},
+    {t:'14:40'},{t:'15:25'}
+];
+
+function showTestDetail(dateStr, subject) {
+    const tests = (DATA ? DATA.calendar : [])
+        .filter(t => t.date === dateStr && t.subject === subject);
+    if (!tests.length) return;
+
+    let html = `<h3 style="margin:0 0 12px;font-size:1rem;color:#2a4d69">${formatFecha(dateStr)}</h3>`;
+    tests.forEach(t => {
+        html += `<div class="cal-chip test-${t.subject}" style="white-space:normal;padding:10px 12px;border-radius:10px;margin-bottom:8px;display:block">
+            <strong>${t.subject}</strong><br>
+            <span style="font-weight:normal">${t.description}</span>
+        </div>`;
+    });
+    html += `<p class="mcal-close-hint">Toca fuera para cerrar</p>`;
+
+    document.getElementById("modal-content").innerHTML = html;
+    document.getElementById("modal").style.display = "flex";
+}
+
 /* ---------------------------------------------
    HOME DINÁMICO (home_items)
 --------------------------------------------- */
@@ -674,6 +731,7 @@ function mcalViewBar(activeView, anchorDate) {
 
 async function loadMonthlyView(year, month) {
     const data = await loadMasterData();
+    const horario = await loadHorarioData();
     const today = new Date();
     const todayStr = today.toISOString().slice(0, 10);
 
@@ -737,6 +795,18 @@ async function loadMonthlyView(year, month) {
         dayTests.forEach(t => {
             html += `<div class="mcal-chip mcal-${t.subject || ''}">${t.subject || t.title || ""}</div>`;
         });
+        if (dow < 5) {
+            const diaKey = ["Lunes","Martes","Miércoles","Jueves","Viernes"][dow];
+            const subjects = [...new Set((horario[diaKey] || []).map(s => s.subject))];
+            if (subjects.length) {
+                html += `<div class="mcal-dot-row">`;
+                subjects.forEach(s => {
+                    const isTest = dayTests.some(t => t.subject === s);
+                    html += `<span class="mcal-dot mcal-dot-${s}${isTest ? ' mcal-dot-test' : ''}"></span>`;
+                });
+                html += `</div>`;
+            }
+        }
         html += `</div>`;
     }
 
@@ -750,6 +820,7 @@ async function loadMonthlyView(year, month) {
 
 async function loadWeekView(mondayStr) {
     const data = await loadMasterData();
+    const horario = await loadHorarioData();
     const todayStr = new Date().toISOString().slice(0, 10);
 
     const days = Array.from({length: 5}, (_, i) => addDays(mondayStr, i));
@@ -764,6 +835,11 @@ async function loadWeekView(mondayStr) {
         : `${d1} ${meses[m1-1]} – ${d2} ${meses[m2-1]} ${y1}`;
 
     const diasCortos = ["Lun","Mar","Mié","Jue","Vie"];
+    const diasHorario = ["Lunes","Martes","Miércoles","Jueves","Viernes"];
+
+    const slotsByDay = diasHorario.map(d =>
+        Object.fromEntries((horario[d] || []).map(s => [s.start, s.subject]))
+    );
 
     let html = mcalViewBar('week', mondayStr);
     html += `
@@ -773,26 +849,46 @@ async function loadWeekView(mondayStr) {
                 <span class="mcal-nav-title">${rangeLabel}</span>
                 <button class="mcal-nav-btn" onclick="loadWeekView('${nextMonday}')">▶</button>
             </div>
-            <div class="mcal-week-grid">
+            <div class="week-tgrid-wrap"><table class="week-tgrid">
+                <thead><tr><th class="wtg-time-col"></th>
     `;
 
     days.forEach((dayStr, i) => {
         const [,, dd] = dayStr.split("-").map(Number);
-        const dayTests = data.calendar.filter(t => t.date === dayStr);
         const isToday = dayStr === todayStr;
-
-        const classes = ["mcal-wcell", isToday ? "mcal-today" : ""].filter(Boolean).join(" ");
-
-        html += `<div class="${classes}" onclick="loadDayView('${dayStr}')">`;
-        html += `<div class="mcal-wday-name">${diasCortos[i]}</div>`;
-        html += `<div class="mcal-wday-num">${dd}</div>`;
-        dayTests.forEach(t => {
-            html += `<div class="mcal-wchip mcal-${t.subject || ''}">${t.subject || t.title || ""}</div>`;
-        });
-        html += `</div>`;
+        html += `<th class="${isToday ? 'wtg-today-hdr' : ''}" onclick="loadDayView('${dayStr}')">
+            <span class="wtg-day-name">${diasCortos[i]}</span>
+            <span class="wtg-day-num">${dd}</span>
+        </th>`;
     });
 
-    html += `</div></div>`;
+    html += `</tr></thead><tbody>`;
+
+    WEEK_TIME_SLOTS.forEach(slot => {
+        if (slot.B) {
+            html += `<tr class="wtg-break-row"><td class="wtg-time-cell"></td><td colspan="5">${slot.B}</td></tr>`;
+            return;
+        }
+        html += `<tr><td class="wtg-time-cell">${slot.t}</td>`;
+        days.forEach((dayStr, i) => {
+            const subj = slotsByDay[i][slot.t];
+            if (subj) {
+                const hasTest = data.calendar.some(t => t.date === dayStr && t.subject === subj);
+                const fg = subjectNeedsDarkText(subj) ? '#222' : '#fff';
+                html += `<td class="wtg-class-cell${hasTest ? ' wtg-has-test' : ''}"
+                    style="background:var(--color-${subj});color:${fg}"
+                    onclick="loadDayView('${dayStr}')">
+                    <span class="wtg-class-label">${subjectShortLabel(subj)}</span>
+                    ${hasTest ? `<span class="wtg-test-badge" onclick="event.stopPropagation();showTestDetail('${dayStr}','${subj}')">📝</span>` : ''}
+                </td>`;
+            } else {
+                html += `<td class="wtg-empty-cell" onclick="loadDayView('${dayStr}')"></td>`;
+            }
+        });
+        html += `</tr>`;
+    });
+
+    html += `</tbody></table></div></div>`;
     openSubject("Calendario", html);
 }
 
@@ -802,12 +898,21 @@ async function loadWeekView(mondayStr) {
 
 async function loadDayView(dateStr) {
     const data = await loadMasterData();
+    const horario = await loadHorarioData();
     const todayStr = new Date().toISOString().slice(0, 10);
     const dayTests = data.calendar.filter(t => t.date === dateStr);
 
     const prevDay = addDays(dateStr, -1);
     const nextDay = addDays(dateStr, 1);
     const isToday = dateStr === todayStr;
+
+    const [dy, dm, dd] = dateStr.split("-").map(Number);
+    const diasES = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+    const diaKey = diasES[new Date(dy, dm - 1, dd).getDay()];
+    const slots = horario[diaKey] || [];
+    const slotMap = Object.fromEntries(slots.map(s => [s.start, s.subject]));
+
+    const specialEvents = dayTests.filter(t => !t.subject);
 
     let html = mcalViewBar('day', dateStr);
     html += `
@@ -819,17 +924,37 @@ async function loadDayView(dateStr) {
             </div>
     `;
 
-    if (dayTests.length) {
-        dayTests.forEach(t => {
-            html += `
-                <div class="test-card test-${t.subject || ''}">
-                    <div class="test-title">${t.subject || t.title || ''}</div>
-                    <div class="test-desc">${t.description || ''}</div>
+    specialEvents.forEach(t => {
+        html += `<div class="test-card" style="margin-bottom:10px">
+            <div class="test-title">${t.title || ''}</div>
+            <div class="test-desc">${t.description || ''}</div>
+        </div>`;
+    });
+
+    if (slots.length) {
+        html += `<div class="day-timeline">`;
+        WEEK_TIME_SLOTS.forEach(slot => {
+            if (slot.B) {
+                html += `<div class="dtl-break">${slot.B}</div>`;
+                return;
+            }
+            const subj = slotMap[slot.t];
+            if (!subj) return;
+            const tests = dayTests.filter(t => t.subject === subj);
+            const hasTest = tests.length > 0;
+            const fg = subjectNeedsDarkText(subj) ? '#222' : '#fff';
+            html += `<div class="dtl-slot${hasTest ? ' dtl-has-test' : ''}">
+                <div class="dtl-time">${slot.t}</div>
+                <div class="dtl-block" style="background:var(--color-${subj});color:${fg}">
+                    <span class="dtl-label">${subjectShortLabel(subj)}</span>
+                    ${hasTest ? `<span class="dtl-test-icon" onclick="showTestDetail('${dateStr}','${subj}')">📝 Prueba</span>` : ''}
                 </div>
-            `;
+                ${hasTest ? `<div class="dtl-test-desc">${tests.map(t => `<div class="dtl-test-item">${t.description}</div>`).join('')}</div>` : ''}
+            </div>`;
         });
-    } else {
-        html += `<p class="no-upcoming">Sin evaluaciones este día.</p>`;
+        html += `</div>`;
+    } else if (!specialEvents.length) {
+        html += `<p class="no-upcoming">Sin actividades este día.</p>`;
     }
 
     html += `</div>`;

@@ -453,6 +453,34 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIyNDkwNjg3",
       "unidades": [
         {
+          "titulo": "Prueba 2 nov — Unit 4: Why is it important to save water?",
+          "videos": [
+            {
+              "title": "The Water Cycle",
+              "url": "https://www.youtube.com/embed/s0bS-SBAgJI"
+            }
+          ],
+          "games": [
+            {
+              "title": "The Water Cycle",
+              "url": "https://wordwall.net/es/resource/2103318/science/the-water-cycle"
+            },
+            {
+              "title": "States of Water (1)",
+              "url": "https://wordwall.net/es/resource/5349632/states-of-water"
+            },
+            {
+              "title": "States of Water (2)",
+              "url": "https://wordwall.net/resource/24862112/states-of-water"
+            },
+            {
+              "title": "Properties of Water",
+              "url": "https://wordwall.net/es/resource/80375577/science/properties-of-water"
+            }
+          ],
+          "extra": "<p>Repasar páginas 134–187 y la guía de repaso.</p>"
+        },
+        {
           "titulo": "Water Cycle",
           "videos": [
             {
@@ -1282,7 +1310,7 @@
   {
     "date": "2026-11-02",
     "subject": "NaturalScience",
-    "description": "Unit 4: lesson 1 — What are the characteristics of water? lesson 2 — What's water like in its different states? lesson 3 — How does water circulate in nature and why is it important to take care of it? Más detalles en Google Classroom."
+    "description": "Evaluación Unit 4: Why is it important to save water? (páginas 134–187). Repasar la guía de repaso."
   },
   {
     "date": "2026-11-04",

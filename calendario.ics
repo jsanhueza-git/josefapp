@@ -118,8 +118,8 @@ SUMMARY:Spanish
 DESCRIPTION:Día del libro (actividad)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260424T143000Z
-DTEND:20260424T151500Z
+DTSTART;VALUE=DATE:20260424
+DTEND;VALUE=DATE:20260425
 SUMMARY:Drama
 DESCRIPTION:Storyboard – preparación para puppet show
 END:VEVENT
@@ -136,8 +136,8 @@ SUMMARY:NaturalScience
 DESCRIPTION:Trabajo práctico – Lesson 1: Function of organs (instrucciones en Classroom)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260428T170000Z
-DTEND:20260428T174500Z
+DTSTART;VALUE=DATE:20260428
+DTEND;VALUE=DATE:20260429
 SUMMARY:Literacy
 DESCRIPTION:Dictation (cumulative) – detalles en Classroom
 END:VEVENT
@@ -268,8 +268,8 @@ SUMMARY:CommunicativeSkills
 DESCRIPTION:Evaluated worksheet — Clothes (writing and speaking) - revisar material en josefa app y classroom (Continuación)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260529T143000Z
-DTEND:20260529T151500Z
+DTSTART;VALUE=DATE:20260529
+DTEND;VALUE=DATE:20260530
 SUMMARY:Drama
 DESCRIPTION:Puppet show — formative evaluation (Students made their own puppets and presented their dialogues. More details will be shared through)
 END:VEVENT
@@ -280,8 +280,8 @@ SUMMARY:Math
 DESCRIPTION:Math Test — Addition and subtraction with/without regrouping
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260602T170000Z
-DTEND:20260602T174500Z
+DTSTART;VALUE=DATE:20260602
+DTEND;VALUE=DATE:20260603
 SUMMARY:Literacy
 DESCRIPTION:Phonics Project: Students will create their own phonics book using the sound studied in class. This project will be carried out during all Literacy classes throughout the week. More details will be shared through Classroom.
 END:VEVENT
@@ -304,8 +304,8 @@ SUMMARY:STEM
 DESCRIPTION:Project 2: Process Evaluation - Booklet (work in class)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260605T143000Z
-DTEND:20260605T151500Z
+DTSTART;VALUE=DATE:20260605
+DTEND;VALUE=DATE:20260606
 SUMMARY:Drama
 DESCRIPTION:Self-assessment: students evaluate their own work on a worksheet.
 END:VEVENT
@@ -568,8 +568,8 @@ SUMMARY:Spanish
 DESCRIPTION:Libro: Lectura complementaria — Sapo y Sepo, inseparables de Arnold Lobel, editorial Alfaguara.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260821T143000Z
-DTEND:20260821T151500Z
+DTSTART;VALUE=DATE:20260821
+DTEND;VALUE=DATE:20260822
 SUMMARY:Drama
 DESCRIPTION:Play Preparation Progress — evaluación acumulativa (cumulative).
 END:VEVENT
@@ -682,8 +682,8 @@ SUMMARY:Literacy
 DESCRIPTION:Sentence Building Quiz — detalles en Google Classroom.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20261006
-DTEND;VALUE=DATE:20261007
+DTSTART:20261006T170000Z
+DTEND:20261006T174500Z
 SUMMARY:Drama
 DESCRIPTION:Drama: progress revision — Stage preparing and building (actividades en clases durante el mes).
 END:VEVENT
@@ -766,8 +766,8 @@ SUMMARY:Music
 DESCRIPTION:Evaluación sumativa canción 'The Elephant' (página 7, Music Book Level 4): interpretación vocal (cantar la canción) y ejecución en el metalófono.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20261110
-DTEND;VALUE=DATE:20261111
+DTSTART:20261110T170000Z
+DTEND:20261110T174500Z
 SUMMARY:Drama
 DESCRIPTION:Play Presentation: 'The Three Billy Goats Gruff'.
 END:VEVENT

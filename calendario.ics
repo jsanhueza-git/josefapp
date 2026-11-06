@@ -10,8 +10,8 @@ SUMMARY:EnglishLanguage
 DESCRIPTION:Dictation (Vocabulary p.6)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260325T135000Z
-DTEND:20260325T143000Z
+DTSTART:20260325T170000Z
+DTEND:20260325T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Unit 0 Test – Vocabulary (p.6), There is/There are (p.5)
 END:VEVENT
@@ -58,14 +58,14 @@ SUMMARY:Math
 DESCRIPTION:Unit 1 Test – Counting up to 50, skip counting, tens and ones, numbers in words
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260415T135000Z
-DTEND:20260415T143000Z
+DTSTART:20260415T170000Z
+DTEND:20260415T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Dictation – Classroom objects (Unit 0) y daily routines (Unit 1) Hello everyone! Remember! Dictation: 15/04 📖 1) brush your teeth 2) Play in the park 3) have breakfast 4) get dressed 5) have dinner 6) go to bed 7) get up 8) have lunch 9) go to school Las palabras seran dictadas en cualquier orden. Pueden estudiar de forma entretenida desde casa usando plasticina o arroz, etc para escribir las palabras. Además se recuerda que previo al dictado los alumnos se dictan y corrigen entre ellos como una forma entretenida de practicar, por lo que es importante que tengan en sala las pizarras individuales de forma permanente. best, Miss Fran 😎
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260415T170000Z
-DTEND:20260415T174500Z
+DTSTART:20260415T135000Z
+DTEND:20260415T143000Z
 SUMMARY:Spanish
 DESCRIPTION:Declamación poética ((instrucciones en Classroom .... continuación)
 END:VEVENT
@@ -100,8 +100,8 @@ SUMMARY:EnglishLanguage
 DESCRIPTION:Proyecto 'My routine' (continuación)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260422T135000Z
-DTEND:20260422T143000Z
+DTSTART:20260422T170000Z
+DTEND:20260422T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:(todo el dia) Día de la convivencia escolar (actividad)
 END:VEVENT
@@ -142,8 +142,8 @@ SUMMARY:Literacy
 DESCRIPTION:Dictation (cumulative) – detalles en Classroom
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260429T135000Z
-DTEND:20260429T143000Z
+DTSTART:20260429T170000Z
+DTEND:20260429T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Unit 1 Test – Daily routines, telling the time, present simple (3rd person)
 END:VEVENT
@@ -202,8 +202,8 @@ SUMMARY:NaturalScience
 DESCRIPTION:Trabajo práctico – Lesson 1: Function of organs (instrucciones en Classroom) ... [Continuación del 27/04]
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260513T135000Z
-DTEND:20260513T143000Z
+DTSTART:20260513T170000Z
+DTEND:20260513T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Dictation — Unit 2 vocabulary (page 22)
 END:VEVENT
@@ -250,8 +250,8 @@ SUMMARY:Art
 DESCRIPTION:Término de proceso marionetas
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260527T170000Z
-DTEND:20260527T174500Z
+DTSTART:20260527T135000Z
+DTEND:20260527T143000Z
 SUMMARY:Spanish
 DESCRIPTION:Prueba contenidos — comprensión lectora, cuento, poema, texto informativo (estructura y función)
 END:VEVENT
@@ -286,14 +286,14 @@ SUMMARY:Literacy
 DESCRIPTION:Phonics Project: Students will create their own phonics book using the sound studied in class. This project will be carried out during all Literacy classes throughout the week. More details will be shared through Classroom.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260603T170000Z
-DTEND:20260603T174500Z
+DTSTART:20260603T135000Z
+DTEND:20260603T143000Z
 SUMMARY:Spanish
 DESCRIPTION:Fábula: Análisis de una fábula y su estructura. (instrucciones por classroom)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260603T135000Z
-DTEND:20260603T143000Z
+DTSTART:20260603T170000Z
+DTEND:20260603T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Unit 2: the zoo ● Vocabulary (page 22) ● Use of like/ doesn’t like (page 23) ● Answers: does/ doesn’t (page 25) ● Animals habitat (page 30-31)
 END:VEVENT
@@ -430,14 +430,14 @@ SUMMARY:Inicio II Semestre
 DESCRIPTION:
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260708T170000Z
-DTEND:20260708T174500Z
+DTSTART:20260708T135000Z
+DTEND:20260708T143000Z
 SUMMARY:Spanish
 DESCRIPTION:Lectura complementaria: ¡Ay, cuánto me quiero!, de Mauricio Paredes, editorial Alfaguara
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260715T135000Z
-DTEND:20260715T143000Z
+DTSTART:20260715T170000Z
+DTEND:20260715T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Dictation: Vocabulary Unit 3 (page 34)
 END:VEVENT
@@ -460,8 +460,8 @@ SUMMARY:NaturalScience
 DESCRIPTION:Unit 2: What are the animals around me like? Lesson 2 — Invertebrates (more details in Classroom)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260722T135000Z
-DTEND:20260722T143000Z
+DTSTART:20260722T170000Z
+DTEND:20260722T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Unit 3 Test: Where we live — Vocabulary (p.34 y 42), Has...got...? (p.35-36), Prepositions: in front of, between, next to, behind (p.37)
 END:VEVENT
@@ -490,8 +490,8 @@ SUMMARY:Math
 DESCRIPTION:Evaluated worksheet: Counting up to 1000, estimating, decimal numbers
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260729T170000Z
-DTEND:20260729T174500Z
+DTSTART:20260729T135000Z
+DTEND:20260729T143000Z
 SUMMARY:Spanish
 DESCRIPTION:Prueba de Contenidos: Uso de mayúsculas, artículos indefinidos y definidos, sustantivos propios y comunes
 END:VEVENT
@@ -502,8 +502,8 @@ SUMMARY:Literacy
 DESCRIPTION:Dictation — Sonidos AR y OR (r-controlled vowels)
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260805T135000Z
-DTEND:20260805T143000Z
+DTSTART:20260805T170000Z
+DTEND:20260805T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Dictation: Vocabulary Unit 4 (page 46)
 END:VEVENT
@@ -532,8 +532,8 @@ SUMMARY:Literacy
 DESCRIPTION:Sound Jars — detalles en Google Classroom.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260812T135000Z
-DTEND:20260812T143000Z
+DTSTART:20260812T170000Z
+DTEND:20260812T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Test Unit 4: 'The market'. Contenido: Food vocabulary (p.46), Would you like...? (p.47), a, an, some, any (p.47), Are there / Is there any...? (p.49), listening exercises.
 END:VEVENT
@@ -556,8 +556,8 @@ SUMMARY:Math
 DESCRIPTION:Unit 2 Test: Decomposing numbers, Fact families (lesson 3), Spatial location (lesson 4).
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260819T135000Z
-DTEND:20260819T143000Z
+DTSTART:20260819T170000Z
+DTEND:20260819T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Dictation: unit 5 vocabulary (page 58).
 END:VEVENT
@@ -586,8 +586,8 @@ SUMMARY:CommunicativeSkills
 DESCRIPTION:Oral evaluation: 'At the beach' — use of vocabulary in dialogue. Detalles en Google Classroom.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260826T170000Z
-DTEND:20260826T174500Z
+DTSTART:20260826T135000Z
+DTEND:20260826T143000Z
 SUMMARY:Spanish
 DESCRIPTION:Leyenda: Presentación — trabajo en clases, instrucciones en Classroom.
 END:VEVENT
@@ -664,14 +664,14 @@ SUMMARY:Math
 DESCRIPTION:Evaluated worksheet Unit 3, lessons 1 y 2: Addition and subtraction from the action of comparing. Additive problems. Instrucciones en Classroom.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260923T135000Z
-DTEND:20260923T143000Z
+DTSTART:20260923T170000Z
+DTEND:20260923T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Test Unit 5: My bedroom. Contenido: Bedroom vocabulary (p.58), this/that/these/those (p.59), questions with whose (p.61), answers using they're/it's.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260930T170000Z
-DTEND:20260930T174500Z
+DTSTART:20260930T135000Z
+DTEND:20260930T143000Z
 SUMMARY:Spanish
 DESCRIPTION:Prueba de contenidos — Unidad 3, Lección 2: ¿Qué nos alegra? Adjetivos calificativos, singular y plural, estructura de un poema, signo de interrogación y exclamación.
 END:VEVENT
@@ -688,8 +688,8 @@ SUMMARY:Drama
 DESCRIPTION:Drama: progress revision — Stage preparing and building (actividades en clases durante el mes).
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20261007T135000Z
-DTEND:20261007T143000Z
+DTSTART:20261007T170000Z
+DTEND:20261007T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Dictation Unit 6 (page 70).
 END:VEVENT
@@ -748,8 +748,8 @@ SUMMARY:STEM
 DESCRIPTION:Feria Científica — Science fair, Project: Water wheel.
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20261028T135000Z
-DTEND:20261028T143000Z
+DTSTART:20261028T170000Z
+DTEND:20261028T174500Z
 SUMMARY:EnglishLanguage
 DESCRIPTION:Unit 6 test: People. Vocabulary (page 70), Emotions vocabulary (page 71), possessive pronouns (my, our, its, their, her, his), months of the year vocabulary.
 END:VEVENT
@@ -850,8 +850,8 @@ SUMMARY:English Week
 DESCRIPTION:
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20261118T170000Z
-DTEND:20261118T174500Z
+DTSTART:20261118T135000Z
+DTEND:20261118T143000Z
 SUMMARY:Spanish
 DESCRIPTION:Evaluación de Fluidez y Expresividad Lectora: Fluidez, Velocidad y Prosodia.
 END:VEVENT

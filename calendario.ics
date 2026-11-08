@@ -766,6 +766,12 @@ SUMMARY:Music
 DESCRIPTION:Evaluación sumativa canción 'The Elephant' (página 7, Music Book Level 4): interpretación vocal (cantar la canción) y ejecución en el metalófono.
 END:VEVENT
 BEGIN:VEVENT
+DTSTART:20261110T143000Z
+DTEND:20261110T151500Z
+SUMMARY:Spanish
+DESCRIPTION:Dictado: palabras con pl, bl, br, pr.
+END:VEVENT
+BEGIN:VEVENT
 DTSTART:20261110T170000Z
 DTEND:20261110T174500Z
 SUMMARY:Drama

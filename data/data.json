@@ -102,6 +102,21 @@
       "classroom": "https://classroom.google.com/c/ODUwMjIyNzIxOTE1",
       "unidades": [
         {
+          "titulo": "Dictado 10 de Noviembre — pl, bl, br, pr",
+          "videos": [],
+          "games": [
+            {
+              "title": "Palabras con pl, bl, br, pr (1)",
+              "url": "https://wordwall.net/es/resource/24729272/recuerda-palabras-con-pl-bl-br-pr"
+            },
+            {
+              "title": "Fonemas pr, pl, br, bl (2)",
+              "url": "https://wordwall.net/es/resource/36515425/fonemas-pr-pl-br-bl"
+            }
+          ],
+          "extra": ""
+        },
+        {
           "titulo": "Libro 20 de Agosto — Sapo y Sepo inseparables",
           "videos": [],
           "games": [
@@ -1276,6 +1291,11 @@
     "date": "2026-11-02",
     "subject": "Music",
     "description": "Evaluación sumativa canción 'The Elephant' (página 7, Music Book Level 4): interpretación vocal (cantar la canción) y ejecución en el metalófono."
+  },
+  {
+    "date": "2026-11-10",
+    "subject": "Spanish",
+    "description": "Dictado: palabras con pl, bl, br, pr."
   },
   {
     "date": "2026-11-10",

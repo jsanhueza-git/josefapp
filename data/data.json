@@ -19,6 +19,7 @@
       "type": "monthly-calendar"
     },
 
+    { "key": "LecturaVeloz", "title": "Lectura Veloz", "icon": "📖", "type": "link", "url": "lectura/" },
     { "key": "Music", "title": "Music", "icon": "🎵", "type": "subject" },
     { "key": "Math", "title": "Matemáticas", "icon": "🧮", "type": "subject" },
     { "key": "Spanish", "title": "Spanish", "icon": "🇪🇸", "type": "subject" },

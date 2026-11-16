@@ -119,6 +119,8 @@ async function loadHomeItems() {
             card.onclick = () => loadCalendar();
         } else if (item.type === "monthly-calendar") {
             card.onclick = () => loadMonthlyView();
+        } else if (item.type === "link") {
+            card.onclick = () => { window.location.href = item.url; };
         }
 
         const badge = thisWeek.has(item.key)

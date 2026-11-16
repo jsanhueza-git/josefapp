@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lectura Veloz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdf8ef; --card:#ffffff; --ink:#2b2a33; --muted:#7a7686; --line:#ece5d8;
+  --accent:#ff7a59; --accent-ink:#fff; --accent-soft:#ffe3d9;
+  --hl:#ffd84d; --hl-ink:#2b2a33; --read:#b9b4c4; --good:#3bb37a;
+  --shadow:0 4px 18px rgba(60,40,10,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1c1b22; --card:#26252e; --ink:#f1eef7; --muted:#a9a4b8; --line:#393744;
+    --accent:#ff8a6b; --accent-ink:#1c1b22; --accent-soft:#4a3029;
+    --hl:#ffd84d; --hl-ink:#1c1b22; --read:#6c6879; --good:#4cc98d;
+    --shadow:0 4px 18px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1c1b22; --card:#26252e; --ink:#f1eef7; --muted:#a9a4b8; --line:#393744;
+  --accent:#ff8a6b; --accent-ink:#1c1b22; --accent-soft:#4a3029;
+  --hl:#ffd84d; --hl-ink:#1c1b22; --read:#6c6879; --good:#4cc98d;
+  --shadow:0 4px 18px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Andika",system-ui,sans-serif;overflow:hidden}
+button,select,input{font-family:inherit;font-size:15px;color:inherit}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:6px 10px;cursor:pointer;transition:transform .08s, background .15s;line-height:1.2}
+.btn:hover{background:var(--accent-soft)}
+.btn:active{transform:scale(.95)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
+.btn.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+
+/* ===== Layout de una sola pantalla ===== */
+.app{display:grid;grid-template-columns:250px 1fr;gap:12px;height:100vh;height:100dvh;padding:12px}
+
+/* Barra lateral */
+#side{display:flex;flex-direction:column;min-height:0;padding:12px}
+h1{font-family:"Fredoka",system-ui,sans-serif;font-weight:600;margin:0 0 10px;font-size:22px}
+h1 span{color:var(--accent)}
+.add{display:flex;gap:6px;margin-bottom:10px}
+.add .btn{flex:1;font-size:13px;padding:6px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px}
+.tabs .btn{font-size:12px;padding:3px 8px;border-radius:999px}
+#chips{flex:1;overflow:auto;display:flex;flex-direction:column;gap:3px;margin:0 -4px;padding:0 4px}
+.item{display:flex;align-items:center;gap:6px;text-align:left;border:none;background:none;border-radius:10px;padding:7px 10px;cursor:pointer;font-size:15px;width:100%}
+.item:hover{background:var(--accent-soft)}
+.item.active{background:var(--accent);color:var(--accent-ink);font-weight:700}
+.item .t{flex:1}
+.item .x{opacity:.6;padding:0 4px;border-radius:6px}
+.item .x:hover{opacity:1;background:rgba(0,0,0,.12)}
+
+/* Lectura */
+#main{display:flex;flex-direction:column;min-height:0;min-width:0;gap:10px}
+#reader{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;padding:12px 16px}
+.head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+#menuBtn{display:none}
+#title{font-family:"Fredoka",sans-serif;font-size:20px;margin:0}
+#meta{color:var(--muted);font-size:13px}
+#text{flex:1;min-height:0;font-size:var(--fs,30px);line-height:1.75;overflow:auto;padding:8px 6px 35% 6px;margin-top:6px;word-wrap:break-word}
+#text p{margin:0 0 .7em}
+.w{border-radius:8px;padding:0 3px;margin:0 -1px;cursor:pointer;transition:background .12s,color .12s}
+.w:hover{outline:2px dashed var(--line)}
+.dim .w.done{color:var(--read)}
+.w.cur{background:var(--hl);color:var(--hl-ink);box-shadow:0 0 0 3px var(--hl)}
+#rsvp{display:none;flex:1;min-height:0;align-items:center;justify-content:center;flex-direction:column;gap:18px}
+#rsvpWord{font-size:calc(var(--fs,30px) * 2.2);font-weight:700;text-align:center;min-height:1.4em}
+#rsvpCtx{color:var(--muted);font-size:calc(var(--fs,30px) * .7);text-align:center;max-width:90%}
+.mode-rsvp #text{display:none}
+.mode-rsvp #rsvp{display:flex}
+.progress{height:8px;background:var(--line);border-radius:999px;overflow:hidden;margin-top:8px;flex:none}
+.progress>div{height:100%;width:0;background:var(--accent);transition:width .2s}
+#overlay{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;background:color-mix(in srgb,var(--card) 88%,transparent);border-radius:16px;z-index:5;text-align:center;padding:16px}
+#overlay.show{display:flex}
+#count{font-family:"Fredoka",sans-serif;font-size:120px;color:var(--accent)}
+#done h2{font-family:"Fredoka",sans-serif;font-size:34px;margin:0 0 8px;color:var(--good)}
+#done p{font-size:19px;margin:4px 0}
+
+/* Controles: una sola fila */
+#controls{flex:none;padding:8px 12px;display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;justify-content:center;position:relative}
+.grp{display:flex;align-items:center;gap:4px}
+.transport .btn{font-size:16px;min-width:38px;padding:6px 8px}
+#play{min-width:96px;font-size:16px}
+.wpmBig{font-family:"Fredoka",sans-serif;font-size:17px;min-width:70px;text-align:center}
+#presets .btn{padding:5px 7px;font-size:13px;font-weight:700}
+.stats{font-size:13px;color:var(--muted);display:flex;gap:12px;margin-left:auto}
+.stats b{color:var(--ink)}
+.sep{width:1px;align-self:stretch;background:var(--line)}
+
+/* Ajustes (ventana flotante) */
+details.more{position:relative}
+details.more summary{list-style:none;cursor:pointer}
+details.more summary::-webkit-details-marker{display:none}
+.settings{position:absolute;bottom:calc(100% + 12px);right:0;width:290px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:14px;display:flex;flex-direction:column;gap:10px;font-size:15px;z-index:20}
+.settings label{display:flex;align-items:center;gap:8px;cursor:pointer}
+.settings .hint{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;line-height:1.7}
+kbd{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:0 5px;font-size:12px}
+
+/* Modal */
+dialog{border:none;border-radius:20px;padding:20px;background:var(--card);color:var(--ink);width:min(640px,calc(100% - 32px));box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(0,0,0,.4)}
+dialog input[type=text],dialog textarea,dialog select{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--bg);margin:6px 0 12px}
+dialog textarea{min-height:220px;font-size:17px;line-height:1.5}
+
+/* Pantallas angostas: la lista se abre como panel */
+@media (max-width:820px){
+  .app{grid-template-columns:1fr;padding:8px}
+  #side{position:fixed;inset:8px auto 8px 8px;width:min(300px,85vw);z-index:30;transform:translateX(-110%);transition:transform .2s}
+  body.menu #side{transform:none}
+  body.menu::after{content:"";position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:25}
+  #menuBtn{display:inline-block}
+  #meta{display:none}
+  #presets{display:none}
+}
+@media (max-height:560px){
+  #text{line-height:1.55}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside id="side" class="card">
+    <h1><a id="homeLink" href="../" title="Volver a la app" hidden style="text-decoration:none;margin-right:4px">🏠</a>📖 Lectura <span>Veloz</span></h1>
+    <div class="add">
+      <button class="btn" id="btnPaste" title="Escribir o pegar un texto">✏️ Pegar texto</button>
+      <button class="btn" id="btnUpload" title="Subir un archivo .txt">📂 Subir .txt</button>
+      <input type="file" id="file" accept=".txt,text/plain" hidden>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div id="chips"></div>
+  </aside>
+
+  <main id="main">
+    <section id="reader" class="card">
+      <div class="head">
+        <button class="btn" id="menuBtn">📚 Textos</button>
+        <h2 id="title"></h2>
+        <span id="meta"></span>
+        <span class="stats">
+          <span>Palabra <b id="pos">0</b> de <b id="total">0</b></span>
+          <span>⏱ <b id="elapsed">0:00</b> de <b id="est">0:00</b></span>
+        </span>
+      </div>
+      <div id="text" class="dim"></div>
+      <div id="rsvp"><div id="rsvpWord"></div><div id="rsvpCtx"></div></div>
+      <div class="progress"><div id="bar"></div></div>
+      <div id="overlay">
+        <div id="count"></div>
+        <div id="done" hidden>
+          <h2>🌟 ¡Muy bien!</h2>
+          <p id="doneMsg"></p>
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap">
+            <button class="btn primary" id="again">🔁 Leer otra vez</button>
+            <button class="btn" id="faster">🚀 Probar más rápido</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="controls" class="card">
+      <div class="grp transport">
+        <button class="btn" id="restart" title="Volver al inicio (Inicio)">⏮</button>
+        <button class="btn" id="backS" title="Frase anterior (↑)">⏪</button>
+        <button class="btn" id="backW" title="Palabra anterior (←)">◀</button>
+        <button class="btn primary" id="play" title="Leer / pausa (Espacio)">▶ Leer</button>
+        <button class="btn" id="fwdW" title="Palabra siguiente (→)">▶</button>
+        <button class="btn" id="fwdS" title="Frase siguiente (↓)">⏩</button>
+      </div>
+      <span class="sep"></span>
+      <div class="grp">
+        <button class="btn" id="slower" title="−5 ppm (−)">−</button>
+        <div class="wpmBig"><span id="wpmVal">60</span> ppm</div>
+        <button class="btn" id="quicker" title="+5 ppm (+)">+</button>
+      </div>
+      <div class="grp" id="presets"></div>
+      <span class="sep"></span>
+      <details class="more" id="more">
+        <summary class="btn" title="Ajustes">⚙️</summary>
+        <div class="settings">
+          <label><input type="radio" name="mode" value="hl" checked> Resaltar en el texto</label>
+          <label><input type="radio" name="mode" value="rsvp"> Palabra por palabra</label>
+          <label><input type="checkbox" id="dim" checked> Atenuar lo leído</label>
+          <label>Pausas en comas y puntos
+            <select id="pausa" style="margin-left:auto;border:1px solid var(--line);border-radius:8px;padding:3px 6px;background:var(--bg)">
+              <option value="0">Sin pausa</option>
+              <option value="1">Suaves</option>
+              <option value="2">Normales</option>
+              <option value="3">Largas</option>
+            </select>
+          </label>
+          <label><input type="checkbox" id="countdown" checked> Cuenta 3‑2‑1</label>
+          <div style="display:flex;gap:6px;align-items:center">Letra
+            <button class="btn" id="fsDown">A−</button><button class="btn" id="fsUp">A+</button>
+            <span style="flex:1"></span>
+            <button class="btn" id="theme" title="Cambiar tema">🌓 Tema</button>
+          </div>
+          <div class="hint">Toca una palabra para empezar desde ahí<br><kbd>Espacio</kbd> leer/pausa · <kbd>←</kbd><kbd>→</kbd> palabra<br><kbd>↑</kbd><kbd>↓</kbd> frase · <kbd>+</kbd><kbd>−</kbd> velocidad</div>
+        </div>
+      </details>
+    </section>
+  </main>
+</div>
+
+<dialog id="dlg">
+  <form method="dialog" id="dlgForm">
+    <h2 style="margin:0 0 10px;font-family:Fredoka,sans-serif">Nuevo texto</h2>
+    <label>Título<input type="text" id="inTitle" placeholder="Ej: Mi cuento favorito" required></label>
+    <label>Tipo
+      <select id="inCat"><option value="cuentos">Cuento</option><option value="poemas">Poema</option><option value="canciones">Canción</option><option value="otros">Otro</option></select>
+    </label>
+    <label>Texto<textarea id="inText" placeholder="Pega o escribe el texto aquí. Deja una línea en blanco entre párrafos." required></textarea></label>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="btn" value="cancel" formnovalidate>Cancelar</button>
+      <button class="btn primary" value="ok">Guardar y leer</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+/* ---------- Biblioteca incluida (textos originales y canciones tradicionales) ---------- */
+const BUILTIN = [
+{id:"liebre",cat:"cuentos",title:"La liebre y la tortuga",text:
+`Había una vez una liebre muy rápida que siempre se reía de la tortuga.
+—¡Eres tan lenta que nunca llegarás a ningún lado! —le decía.
+
+Un día, la tortuga se cansó de las burlas y le dijo:
+—Te reto a una carrera hasta el árbol grande del cerro.
+
+La liebre aceptó riendo. Todos los animales del bosque se reunieron para mirar. Cuando el búho dio la señal, la liebre salió corriendo como el viento y la tortuga empezó a caminar despacito, paso a paso.
+
+A mitad del camino, la liebre miró hacia atrás y no vio a la tortuga.
+—Tengo mucho tiempo. Dormiré una siesta bajo esta sombra —pensó.
+
+Mientras la liebre dormía, la tortuga siguió caminando sin parar. Pasó junto a la liebre dormida, subió el cerro y llegó al árbol grande.
+
+Cuando la liebre despertó, corrió con todas sus fuerzas, pero ya era tarde. La tortuga había ganado.
+
+Desde ese día, la liebre aprendió que el que avanza con constancia llega más lejos que el que se confía.`},
+{id:"leon",cat:"cuentos",title:"El león y el ratón",text:
+`Un león dormía tranquilo en la selva cuando un ratoncito pasó corriendo sobre su nariz. El león despertó enojado y atrapó al ratón con su enorme pata.
+
+—¡Por favor, déjame ir! —dijo el ratón temblando—. Algún día yo podré ayudarte.
+
+El león se rió mucho. ¿Cómo podría un ratón tan pequeño ayudar al rey de la selva? Pero le pareció gracioso y lo dejó ir.
+
+Unos días después, el león cayó en una red que habían puesto unos cazadores. Rugió y rugió, pero no podía soltarse.
+
+El ratoncito escuchó los rugidos y corrió a ayudarlo. Con sus dientes pequeños y filosos mordió las cuerdas, una por una, hasta que la red se rompió.
+
+—Tenías razón —dijo el león—. Hasta el amigo más pequeño puede hacer algo muy grande.
+
+Y desde entonces, el león y el ratón fueron grandes amigos.`},
+{id:"cigarra",cat:"cuentos",title:"La cigarra y la hormiga",text:
+`Durante todo el verano, la cigarra cantaba y tocaba su guitarra bajo el sol. Mientras tanto, la hormiga trabajaba sin descanso llevando granos de trigo a su casa.
+
+—¿Por qué trabajas tanto? —le preguntó la cigarra—. Ven a cantar conmigo.
+
+—Estoy guardando comida para el invierno —respondió la hormiga—. Deberías hacer lo mismo.
+
+Pero la cigarra solo se rió y siguió cantando.
+
+Llegó el invierno, con frío, lluvia y nieve. La cigarra no tenía comida ni un lugar para abrigarse. Muy triste, fue a tocar la puerta de la hormiga.
+
+La hormiga la miró y sintió pena. La dejó entrar, le dio sopa caliente y un rincón junto al fuego.
+
+—Gracias, amiga —dijo la cigarra—. El próximo verano cantaré, pero también trabajaré.
+
+Y así fue. Al verano siguiente, las dos trabajaron juntas, y por las tardes, la cigarra cantaba para todas las hormigas.`},
+{id:"dragon",cat:"cuentos",title:"El dragón que tenía hipo",text:
+`En lo alto de una montaña vivía Tito, un dragón verde y simpático. Tito tenía un problema: le había dado hipo.
+
+Cada vez que hacía ¡hip!, le salía una pequeña llamarada por la nariz. ¡Hip! Se quemó la cola. ¡Hip! Se quemó una flor. ¡Hip! Casi quema el sombrero de su amigo el conejo.
+
+—Tienes que asustarte para que se te quite —dijo el conejo.
+Entonces se escondió detrás de una roca y gritó: ¡BU!
+Pero Tito solo se rió. ¡Hip!
+
+—Toma agua al revés —dijo la ardilla.
+Tito lo intentó, pero se mojó entero. ¡Hip!
+
+Al final llegó la abuela tortuga, muy despacio, y le dijo:
+—Respira hondo, cuenta hasta diez y piensa en algo bonito.
+
+Tito cerró los ojos. Respiró. Contó: uno, dos, tres... hasta diez. Pensó en el cielo lleno de estrellas.
+
+Abrió los ojos y esperó... esperó... ¡y el hipo se había ido!
+
+Todos aplaudieron, y esa noche Tito usó su fuego para encender una fogata y contar cuentos con sus amigos.`},
+{id:"luna",cat:"poemas",title:"La luna curiosa",text:
+`La luna se asoma
+detrás de la loma,
+redonda y brillante
+como una paloma.
+
+Mira por la ventana,
+mira mi cuaderno,
+quiere saber todo
+lo que estoy leyendo.
+
+Luna, lunita,
+ven a mi lado,
+que leo un cuento
+de un gato encantado.
+
+Y cuando termine
+y cierre los ojos,
+me cuidas los sueños
+dorados y rojos.`},
+{id:"mar",cat:"poemas",title:"El mar y yo",text:
+`El mar me saluda
+con olas de espuma,
+me trae caracoles
+y un poco de bruma.
+
+Yo hago castillos
+de arena mojada,
+el mar los visita
+y no deja nada.
+
+—¡Oye, mar travieso!
+—le digo riendo—,
+mañana los hago
+y tú, ¡ven corriendo!`},
+{id:"semana",cat:"poemas",title:"Los días de la semana",text:
+`El lunes voy a la escuela
+con mi mochila nueva,
+el martes juego en el patio
+y salto sobre la hierba.
+
+El miércoles pinto un sol,
+el jueves leo un cuento,
+el viernes canto una canción
+que se la lleva el viento.
+
+El sábado ayudo en casa
+y el domingo, a pasear,
+¡siete días en la semana
+para aprender y jugar!`},
+{id:"pollitos",cat:"canciones",title:"Los pollitos dicen (tradicional)",text:
+`Los pollitos dicen
+pío, pío, pío,
+cuando tienen hambre,
+cuando tienen frío.
+
+La gallina busca
+el maíz y el trigo,
+les da la comida
+y les presta abrigo.
+
+Bajo sus dos alas,
+acurrucaditos,
+duermen los pollitos
+hasta el otro día.`},
+{id:"arroz",cat:"canciones",title:"Arroz con leche (tradicional)",text:
+`Arroz con leche,
+me quiero casar
+con una señorita
+de San Nicolás,
+
+que sepa coser,
+que sepa bordar,
+que sepa abrir la puerta
+para ir a jugar.`},
+{id:"trabalenguas",cat:"otros",title:"Trabalenguas",text:
+`Tres tristes tigres tragaban trigo en un trigal.
+
+Pablito clavó un clavito. ¿Qué clavito clavó Pablito?
+
+El perro de San Roque no tiene rabo, porque Ramón Ramírez se lo ha cortado.
+
+Como poco coco como, poco coco compro.
+
+Pepe Pecas pica papas con un pico. Con un pico pica papas Pepe Pecas.`}
+];
+const CATS = {todos:"⭐ Todos",cuentos:"📚 Cuentos",poemas:"🌙 Poemas",canciones:"🎵 Canciones",otros:"🔤 Otros",mios:"💾 Mis textos"};
+
+/* ---------- Almacenamiento seguro ---------- */
+const store = {
+  get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+let custom = store.get("lv_custom",[]);
+let settings = Object.assign({wpm:60,fs:30,mode:"hl",dim:true,pausa:2,countdown:true,cat:"todos",last:"liebre"}, store.get("lv_settings",{}));
+const save = ()=>store.set("lv_settings",settings);
+
+/* ---------- Estado ---------- */
+const $ = id=>document.getElementById(id);
+let words=[], spans=[], idx=0, playing=false, timer=null, current=null;
+let elapsedMs=0, tickStart=0, clock=null;
+
+/* ---------- Biblioteca UI ---------- */
+function allTexts(){return BUILTIN.concat(custom.map(c=>Object.assign({mine:true},c)))}
+function renderTabs(){
+  $("tabs").innerHTML="";
+  for(const [k,v] of Object.entries(CATS)){
+    if(k==="mios" && !custom.length) continue;
+    const b=document.createElement("button");
+    b.className="btn"+(settings.cat===k?" on":""); b.textContent=v;
+    b.onclick=()=>{settings.cat=k;save();renderTabs();renderChips()};
+    $("tabs").appendChild(b);
+  }
+}
+function renderChips(){
+  $("chips").innerHTML="";
+  const list=allTexts().filter(t=>settings.cat==="todos"||(settings.cat==="mios"?t.mine:t.cat===settings.cat));
+  for(const t of list){
+    const c=document.createElement("button");
+    c.className="item"+(current&&current.id===t.id?" active":"");
+    const tt=document.createElement("span");tt.className="t";
+    tt.textContent=(t.mine?"💾 ":"")+t.title; c.appendChild(tt);
+    c.onclick=()=>{load(t);document.body.classList.remove("menu")};
+    if(t.mine){
+      const x=document.createElement("span");x.className="x";x.textContent="×";x.title="Borrar";
+      x.onclick=e=>{e.stopPropagation();if(confirm(`¿Borrar "${t.title}"?`)){custom=custom.filter(z=>z.id!==t.id);store.set("lv_custom",custom);renderTabs();renderChips()}};
+      c.appendChild(x);
+    }
+    $("chips").appendChild(c);
+  }
+}
+
+/* ---------- Cargar texto ---------- */
+function load(t){
+  stop(); current=t; settings.last=t.id; save();
+  $("title").textContent=t.title;
+  const box=$("text"); box.innerHTML=""; words=[]; spans=[];
+  const paras=t.text.replace(/\r/g,"").trim().split(/\n\s*\n/);
+  paras.forEach(p=>{
+    const pe=document.createElement("p");
+    p.split("\n").forEach((line,li)=>{
+      if(li) pe.appendChild(document.createElement("br"));
+      line.split(/\s+/).filter(Boolean).forEach(w=>{
+        const s=document.createElement("span"); s.className="w"; s.textContent=w;
+        const i=words.length; s.onclick=()=>{jump(i);};
+        words.push({w});
+        spans.push(s); pe.appendChild(s); pe.appendChild(document.createTextNode(" "));
+      });
+      // marcar fin de línea (para retroceso por frase en poemas)
+      if(words.length) words[words.length-1].eol=true;
+    });
+    if(words.length) words[words.length-1].eop=true;
+    box.appendChild(pe);
+  });
+  $("total").textContent=words.length;
+  $("meta").textContent=`${words.length} palabras · ${(CATS[t.cat]||"").replace(/^\S+\s/,"")}`;
+  idx=0; elapsedMs=0; renderPos(); updateEst(); renderChips();
+  box.scrollTop=0;
+}
+
+/* ---------- Lectura ---------- */
+function delayFor(i){
+  let d=60000/settings.wpm;
+  // Multiplicadores por nivel: [coma o fin de verso, punto seguido, punto aparte]
+  const P={0:[1,1,1],1:[1.5,2,3],2:[2,3,4.5],3:[2.5,4,6]}[settings.pausa]||[1,1,1];
+  const w=words[i].w, last=i===words.length-1;
+  if(last) return d;
+  if(words[i].eop) return d*P[2];                         // punto aparte / fin de estrofa
+  if(/[.!?…]["»”)\-—]*$/.test(w)) return d*P[1];          // punto seguido
+  if(/[,;:]["»”)]*$/.test(w)||/—$/.test(w)||words[i].eol) return d*P[0]; // coma o fin de línea
+  return d;
+}
+function renderPos(){
+  spans.forEach((s,i)=>{s.classList.toggle("done",i<idx);s.classList.toggle("cur",i===idx&&(playing||idx>0))});
+  $("pos").textContent=Math.min(idx+1,words.length);
+  $("bar").style.width=(words.length?(idx/(words.length-1||1))*100:0)+"%";
+  // palabra por palabra
+  if(words[idx]){
+    $("rsvpWord").textContent=words[idx].w;
+    const a=Math.max(0,idx-4), b=Math.min(words.length,idx+5);
+    $("rsvpCtx").textContent=words.slice(a,b).map(x=>x.w).join(" ");
+  }
+  // auto‑scroll
+  const s=spans[idx], box=$("text");
+  if(s && settings.mode==="hl"){
+    const top=s.offsetTop-box.offsetTop, h=box.clientHeight;
+    if(top<box.scrollTop+h*0.15||top>box.scrollTop+h*0.6) box.scrollTop=top-h*0.3;
+  }
+}
+function step(){
+  if(!playing) return;
+  renderPos();
+  timer=setTimeout(()=>{
+    if(idx>=words.length-1){finish();return}
+    idx++; step();
+  },delayFor(idx));
+}
+function startClock(){tickStart=performance.now();clock=setInterval(showElapsed,250)}
+function stopClock(){if(clock){elapsedMs+=performance.now()-tickStart;clearInterval(clock);clock=null}showElapsed()}
+function curElapsed(){return elapsedMs+(clock?performance.now()-tickStart:0)}
+function showElapsed(){$("elapsed").textContent=fmt(curElapsed())}
+function fmt(ms){const s=Math.round(ms/1000);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")}
+function updateEst(){
+  let t=0; for(let i=0;i<words.length;i++) t+=delayFor(i);
+  $("est").textContent=fmt(t);
+}
+
+let counting=null;
+function play(){
+  if(!words.length||playing||counting) return;
+  hideOverlay(); $("more").open=false;
+  if(idx>=words.length-1 && spans[idx]&&spans[idx].classList.contains("done")) {idx=0;elapsedMs=0}
+  const go=()=>{playing=true;setPlayBtn();startClock();step()};
+  if(settings.countdown){
+    let n=3; $("count").textContent=n; $("done").hidden=true; $("count").hidden=false; $("overlay").classList.add("show");
+    setPlayBtn(true);
+    counting=setInterval(()=>{n--; if(n>0){$("count").textContent=n}else{clearInterval(counting);counting=null;hideOverlay();go()}},700);
+  } else go();
+}
+function pause(){
+  if(counting){clearInterval(counting);counting=null;hideOverlay()}
+  playing=false; clearTimeout(timer); stopClock(); setPlayBtn(); renderPos();
+}
+function stop(){pause();hideOverlay()}
+function toggle(){(playing||counting)?pause():play()}
+function setPlayBtn(c){$("play").textContent=(playing||c)?"⏸ Pausa":"▶ Leer"}
+function jump(i){
+  i=Math.max(0,Math.min(words.length-1,i));
+  idx=i; hideOverlay();
+  if(playing){clearTimeout(timer);step()} else renderPos();
+}
+function sentenceStart(i){
+  // retrocede hasta el inicio de la frase o línea que contiene i
+  const ends=k=>k>=0&&(/[.!?…]["»”)]*$/.test(words[k].w)||words[k].eol);
+  let k=i-1; while(k>=0&&!ends(k)) k--; return k+1;
+}
+function backSentence(){
+  let s=sentenceStart(idx);
+  if(idx-s<2) s=sentenceStart(Math.max(0,s-1)); // si ya estaba al inicio, ir a la anterior
+  jump(s);
+}
+function fwdSentence(){
+  const ends=k=>/[.!?…]["»”)]*$/.test(words[k].w)||words[k].eol;
+  let k=idx; while(k<words.length-1&&!ends(k)) k++; jump(k+1);
+}
+function finish(){
+  playing=false; clearTimeout(timer); stopClock(); setPlayBtn();
+  idx=words.length-1; renderPos(); spans[idx]&&spans[idx].classList.add("done");
+  const ms=curElapsed(); const real=Math.round(words.length/(ms/60000));
+  $("doneMsg").innerHTML=`Leíste <b>${words.length}</b> palabras en <b>${fmt(ms)}</b><br>Velocidad: <b>${settings.wpm} ppm</b>`;
+  $("count").hidden=true; $("done").hidden=false; $("overlay").classList.add("show");
+}
+function hideOverlay(){$("overlay").classList.remove("show")}
+
+/* ---------- Velocidad ---------- */
+const PRESETS=[40,50,60,70,80,90,100,120,150];
+function renderPresets(){
+  $("presets").innerHTML="";
+  PRESETS.forEach(p=>{
+    const b=document.createElement("button");b.className="btn"+(settings.wpm===p?" on":"");b.textContent=p;
+    b.onclick=()=>setWpm(p); $("presets").appendChild(b);
+  });
+}
+function setWpm(v){
+  settings.wpm=Math.max(10,Math.min(400,v)); save();
+  $("wpmVal").textContent=settings.wpm; renderPresets(); updateEst();
+  if(playing){clearTimeout(timer);step()}
+}
+
+/* ---------- Ajustes ---------- */
+function applySettings(){
+  document.documentElement.style.setProperty("--fs",settings.fs+"px");
+  $("reader").classList.toggle("mode-rsvp",settings.mode==="rsvp");
+  $("text").classList.toggle("dim",settings.dim);
+  document.querySelector(`input[name=mode][value=${settings.mode}]`).checked=true;
+  $("dim").checked=settings.dim; $("pausa").value=String(settings.pausa); $("countdown").checked=settings.countdown;
+  if(settings.theme) document.documentElement.dataset.theme=settings.theme;
+}
+document.querySelectorAll("input[name=mode]").forEach(r=>r.onchange=()=>{settings.mode=r.value;save();applySettings();renderPos()});
+$("dim").onchange=e=>{settings.dim=e.target.checked;save();applySettings()};
+$("pausa").onchange=e=>{settings.pausa=+e.target.value;save();updateEst()};
+$("countdown").onchange=e=>{settings.countdown=e.target.checked;save()};
+$("fsDown").onclick=()=>{settings.fs=Math.max(16,settings.fs-3);save();applySettings();renderPos()};
+$("fsUp").onclick=()=>{settings.fs=Math.min(72,settings.fs+3);save();applySettings();renderPos()};
+$("theme").onclick=()=>{
+  const dark=getComputedStyle(document.body).backgroundColor!=="rgb(253, 248, 239)";
+  settings.theme=dark?"light":"dark";save();applySettings();
+};
+
+/* ---------- Controles ---------- */
+$("play").onclick=toggle;
+$("restart").onclick=()=>{pause();idx=0;elapsedMs=0;showElapsed();hideOverlay();renderPos();$("text").scrollTop=0};
+$("backW").onclick=()=>jump(idx-1);
+$("fwdW").onclick=()=>jump(idx+1);
+$("backS").onclick=backSentence;
+$("fwdS").onclick=fwdSentence;
+$("slower").onclick=()=>setWpm(settings.wpm-5);
+$("quicker").onclick=()=>setWpm(settings.wpm+5);
+$("again").onclick=()=>{idx=0;elapsedMs=0;showElapsed();renderPos();$("text").scrollTop=0;play()};
+$("faster").onclick=()=>{setWpm(settings.wpm+10);idx=0;elapsedMs=0;showElapsed();renderPos();$("text").scrollTop=0;play()};
+document.addEventListener("keydown",e=>{
+  if($("dlg").open||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)&&e.target.type!=="radio"&&e.target.type!=="checkbox") return;
+  const k=e.key;
+  if(k===" "){e.preventDefault();toggle()}
+  else if(k==="ArrowLeft"){e.preventDefault();jump(idx-1)}
+  else if(k==="ArrowRight"){e.preventDefault();jump(idx+1)}
+  else if(k==="ArrowUp"){e.preventDefault();backSentence()}
+  else if(k==="ArrowDown"){e.preventDefault();fwdSentence()}
+  else if(k==="+"||k==="="){setWpm(settings.wpm+5)}
+  else if(k==="-"){setWpm(settings.wpm-5)}
+  else if(k==="Home"){$("restart").click()}
+});
+
+/* ---------- Agregar textos ---------- */
+function addCustom(title,text,cat){
+  const t={id:"c"+Date.now(),title:title.trim()||"Sin título",text,cat:cat||"otros"};
+  custom.push(t); store.set("lv_custom",custom);
+  settings.cat="mios"; save(); renderTabs(); load(t);
+}
+$("btnPaste").onclick=()=>{$("inTitle").value="";$("inText").value="";$("inCat").value="cuentos";$("dlg").showModal()};
+$("dlgForm").addEventListener("submit",e=>{
+  if(e.submitter&&e.submitter.value==="ok"){addCustom($("inTitle").value,$("inText").value,$("inCat").value)}
+});
+$("btnUpload").onclick=()=>$("file").click();
+$("file").onchange=e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{
+    $("inTitle").value=f.name.replace(/\.[^.]+$/,"").replace(/[_-]+/g," ");
+    $("inText").value=r.result; $("inCat").value="cuentos"; $("dlg").showModal();
+  };
+  r.readAsText(f,"UTF-8"); e.target.value="";
+};
+
+/* ---------- Panel de textos (pantallas angostas) y ajustes ---------- */
+$("menuBtn").onclick=()=>document.body.classList.add("menu");
+document.addEventListener("click",e=>{
+  if(document.body.classList.contains("menu")&&!$("side").contains(e.target)&&e.target!==$("menuBtn")) document.body.classList.remove("menu");
+  if($("more").open&&!$("more").contains(e.target)) $("more").open=false;
+});
+
+/* ---------- Cuentos de la carpeta cuentos/ (lista.json) ---------- */
+async function loadFolderStories(){
+  try{
+    const res=await fetch("cuentos/lista.json",{cache:"no-cache"}); if(!res.ok) return;
+    const list=await res.json(); let added=0;
+    const got=await Promise.all(list.map(async c=>{
+      const id="f:"+c.archivo; if(BUILTIN.some(t=>t.id===id)) return null;
+      try{
+        const r=await fetch("cuentos/"+encodeURIComponent(c.archivo)); if(!r.ok) return null;
+        return {id,cat:c.categoria||"cuentos",title:c.titulo||c.archivo.replace(/\.txt$/,""),text:await r.text()};
+      }catch(e){return null}
+    }));
+    got.forEach(t=>{if(t){BUILTIN.push(t);added++}});
+    if(added){
+      renderChips();
+      const t=BUILTIN.find(t=>t.id===settings.last);
+      if(t&&current&&current.id!==t.id&&!playing) load(t);
+    }
+  }catch(e){/* sin servidor (archivo local): se usan solo los textos incluidos */}
+}
+if(/\/lectura\/?/.test(location.pathname)) $("homeLink").hidden=false;
+
+/* ---------- Inicio ---------- */
+applySettings(); $("wpmVal").textContent=settings.wpm; renderPresets(); renderTabs();
+load(allTexts().find(t=>t.id===settings.last)||BUILTIN[0]);
+loadFolderStories();
+</script>
+</body>
+</html>

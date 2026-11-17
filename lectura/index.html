@@ -487,8 +487,8 @@ function renderPos(){
   // palabra por palabra
   if(words[idx]){
     $("rsvpWord").textContent=words[idx].w;
-    const a=Math.max(0,idx-4), b=Math.min(words.length,idx+5);
-    $("rsvpCtx").textContent=words.slice(a,b).map(x=>x.w).join(" ");
+    const a=Math.max(0,idx-10);
+    $("rsvpCtx").textContent=words.slice(a,idx+1).map(x=>x.w).join(" ");
   }
   // auto‑scroll
   const s=spans[idx], box=$("text");

@@ -1412,6 +1412,21 @@
     "date": "2026-11-30",
     "subject": "NaturalScience",
     "description": "Unit 3 assessment: Animals and their habitats. Instrucciones se comunican por Classroom."
+  },
+  {
+    "date": "2026-12-01",
+    "subject": "Spanish",
+    "description": "Picnic Literario"
+  },
+  {
+    "date": "2026-12-03",
+    "title": "Evaluación Impulso Lector (8:00 - primer recreo)",
+    "allday": true
+  },
+  {
+    "date": "2026-12-04",
+    "title": "Evaluación Impulso Lector (8:00 - primer recreo)",
+    "allday": true
   }
 
   ]

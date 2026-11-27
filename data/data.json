@@ -1414,9 +1414,24 @@
     "description": "Unit 3 assessment: Animals and their habitats. Instrucciones se comunican por Classroom."
   },
   {
+    "date": "2026-11-30",
+    "title": "Ensayo Impulso Lector",
+    "allday": true
+  },
+  {
     "date": "2026-12-01",
     "subject": "Spanish",
     "description": "Picnic Literario"
+  },
+  {
+    "date": "2026-12-01",
+    "title": "Ensayo Impulso Lector",
+    "allday": true
+  },
+  {
+    "date": "2026-12-02",
+    "title": "Últimas evaluaciones pendientes",
+    "allday": true
   },
   {
     "date": "2026-12-03",
@@ -1424,8 +1439,48 @@
     "allday": true
   },
   {
+    "date": "2026-12-03",
+    "title": "Amigo Secreto",
+    "allday": true
+  },
+  {
     "date": "2026-12-04",
     "title": "Evaluación Impulso Lector (8:00 - primer recreo)",
+    "allday": true
+  },
+  {
+    "date": "2026-12-07",
+    "title": "Interferiado",
+    "allday": true
+  },
+  {
+    "date": "2026-12-08",
+    "title": "Feriado",
+    "allday": true
+  },
+  {
+    "date": "2026-12-09",
+    "title": "Closing Conference AM",
+    "allday": true
+  },
+  {
+    "date": "2026-12-10",
+    "title": "Closing Conference PM",
+    "allday": true
+  },
+  {
+    "date": "2026-12-11",
+    "title": "Ceremonia: What a Nice Year",
+    "allday": true
+  },
+  {
+    "date": "2026-12-11",
+    "title": "Convivencia Fin de Año",
+    "allday": true
+  },
+  {
+    "date": "2026-12-14",
+    "title": "Casos pendientes",
     "allday": true
   }
 
